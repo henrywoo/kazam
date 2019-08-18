@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"POT-Creation-Date: 2019-08-17 23:34-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,8 @@ msgstr ""
 msgid "Kazam"
 msgstr ""
 
-#: ../data/ui/kazam.ui.h:2
+#: ../data/ui/kazam.ui.h:2 ../kazam/app.py:400 ../kazam/app.py:411
+#: ../kazam/app.py:427
 msgid "Capture"
 msgstr ""
 
@@ -31,7 +32,7 @@ msgid "Seconds to wait before capturing:"
 msgstr ""
 
 #: ../data/ui/kazam.ui.h:4
-msgid "Sound from microphone"
+msgid "Mouse cursor"
 msgstr ""
 
 #: ../data/ui/kazam.ui.h:5
@@ -39,24 +40,41 @@ msgid "Sound from speakers"
 msgstr ""
 
 #: ../data/ui/kazam.ui.h:6
-msgid "Mouse cursor"
+msgid "Sound from microphone"
 msgstr ""
 
-#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
-#: ../kazam/frontend/save_dialog.py:42
-msgid "Screencast"
+#: ../data/ui/kazam.ui.h:7
+msgid "Video from webcam"
 msgstr ""
 
 #: ../data/ui/kazam.ui.h:8
-msgid "Window borders"
+msgid "Key presses and mouse clicks"
 msgstr ""
 
-#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
-#: ../kazam/frontend/save_dialog.py:44
-msgid "Screenshot"
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:17 ../kazam/app.py:199
+#: ../kazam/frontend/save_dialog.py:43
+msgid "Screencast"
 msgstr ""
 
 #: ../data/ui/kazam.ui.h:10
+msgid "Window borders"
+msgstr ""
+
+#: ../data/ui/kazam.ui.h:11 ../data/ui/preferences.ui.h:20 ../kazam/app.py:214
+#: ../kazam/frontend/save_dialog.py:45
+msgid "Screenshot"
+msgstr ""
+
+#: ../data/ui/kazam.ui.h:12 ../data/ui/preferences.ui.h:35 ../kazam/app.py:228
+#: ../kazam/app.py:418
+msgid "Broadcast"
+msgstr ""
+
+#: ../data/ui/kazam.ui.h:13 ../data/ui/preferences.ui.h:47 ../kazam/app.py:242
+msgid "Webcam"
+msgstr ""
+
+#: ../data/ui/kazam.ui.h:14
 msgid "When capturing include:"
 msgstr ""
 
@@ -73,19 +91,19 @@ msgid "Microphone:"
 msgstr ""
 
 #: ../data/ui/preferences.ui.h:4
-msgid "Set volume"
+msgid "+"
 msgstr ""
 
 #: ../data/ui/preferences.ui.h:5
-msgid "Countdown splash:"
+msgid "-"
 msgstr ""
 
 #: ../data/ui/preferences.ui.h:6
-msgid "Toggle display of countdown splash"
+msgid "Countdown splash:"
 msgstr ""
 
 #: ../data/ui/preferences.ui.h:7
-msgid "General"
+msgid "Toggle display of countdown splash"
 msgstr ""
 
 #: ../data/ui/preferences.ui.h:8
@@ -97,31 +115,131 @@ msgid "Set the number of frames per second"
 msgstr ""
 
 #: ../data/ui/preferences.ui.h:10
-msgid "Record with:"
+msgid "15"
 msgstr ""
 
 #: ../data/ui/preferences.ui.h:11
-msgid "Automatic file saving:"
+msgid "Record with:"
 msgstr ""
 
 #: ../data/ui/preferences.ui.h:12
-msgid "Directory:"
+msgid "General"
 msgstr ""
 
 #: ../data/ui/preferences.ui.h:13
-msgid "Select a directory"
+msgid "Automatic file saving:"
 msgstr ""
 
 #: ../data/ui/preferences.ui.h:14
-msgid "Filename prefix:"
+msgid "Directory:"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:15
+msgid "Select a directory"
 msgstr ""
 
 #: ../data/ui/preferences.ui.h:16
+msgid "Filename prefix:"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:18
 msgid "Shutter sound:"
 msgstr ""
 
-#: ../data/ui/preferences.ui.h:17
+#: ../data/ui/preferences.ui.h:19
 msgid "Shutter type:"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:21
+msgid "YouTube"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:22
+msgid "Twitch"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:23
+msgid "Broadcast destination service"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:24
+msgid "Stream Name"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:25
+msgid "Primary Server URL"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:26
+msgid "YouTube Live settings"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:27
+msgid ""
+"Make a YouTube Live event and \n"
+"select Custom Ingestion  for it.\n"
+"Copy Stream Name and Primary\n"
+"Server URL in the entry fields."
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:31
+msgid "Server URL"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:32
+msgid "Stream Key"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:33
+msgid "rtmp://live.twitch.tv/app/"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:34
+msgid "Twitch TV Settings"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:36
+msgid "Select webcam:"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:37
+msgid "Show preview:"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:38
+msgid "Preview position:"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:39
+msgid "Top Left"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:40
+msgid "Top Right"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:41
+msgid "Bottom Right"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:42
+msgid "Bottom Left"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:43
+msgid "Webcam resolution:"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:44
+msgid "320x240"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:45
+msgid "640x480"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:46
+msgid "800x600"
 msgstr ""
 
 #: ../data/kazam.desktop.in.h:2
@@ -152,117 +270,121 @@ msgstr ""
 msgid "Preferences"
 msgstr ""
 
-#: ../kazam/app.py:57 ../kazam/app.py:66
+#: ../kazam/app.py:61 ../kazam/app.py:70
 msgid "Gstreamer 1.0 or higher required, bailing out."
 msgstr ""
 
-#: ../kazam/app.py:172
+#: ../kazam/app.py:97
+msgid "Pulse Audio Failed to load. Sound recording disabled."
+msgstr ""
+
+#: ../kazam/app.py:164
+msgid "No Xlib support in python3, unable to capture key and mouse clicks."
+msgstr ""
+
+#: ../kazam/app.py:200
 msgid "Record a video of your desktop."
 msgstr ""
 
-#: ../kazam/app.py:186
+#: ../kazam/app.py:215
 msgid "Record a picture of your desktop."
 msgstr ""
 
-#: ../kazam/app.py:198
-msgid "Webcam"
-msgstr ""
-
-#: ../kazam/app.py:199
-msgid "Capture form your webcam."
-msgstr ""
-
-#: ../kazam/app.py:212
-msgid "Broadcast"
-msgstr ""
-
-#: ../kazam/app.py:213
+#: ../kazam/app.py:229
 msgid "Broadcast your desktop."
 msgstr ""
 
-#: ../kazam/app.py:239
+#: ../kazam/app.py:243
+msgid "Capture form your webcam."
+msgstr ""
+
+#: ../kazam/app.py:272
 msgid "Fullscreen"
 msgstr ""
 
-#: ../kazam/app.py:240
+#: ../kazam/app.py:273
 msgid "Capture contents of the current screen."
 msgstr ""
 
-#: ../kazam/app.py:251
+#: ../kazam/app.py:284
 msgid "All Screens"
 msgstr ""
 
-#: ../kazam/app.py:252
+#: ../kazam/app.py:285
 msgid "Capture contents of all of your screens."
 msgstr ""
 
-#: ../kazam/app.py:264
+#: ../kazam/app.py:297
 msgid "Window"
 msgstr ""
 
-#: ../kazam/app.py:265
+#: ../kazam/app.py:298
 msgid "Capture contents of a single window."
 msgstr ""
 
-#: ../kazam/app.py:276
+#: ../kazam/app.py:309
 msgid "Area"
 msgstr ""
 
-#: ../kazam/app.py:277
+#: ../kazam/app.py:310
 msgid "Capture a pre-selected area of your screen."
 msgstr ""
 
-#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+#: ../kazam/app.py:399 ../kazam/app.py:426 ../kazam/frontend/indicator.py:69
 msgid "Start recording"
 msgstr ""
 
-#: ../kazam/app.py:349
+#: ../kazam/app.py:408
 msgid "Take screenshot"
 msgstr ""
 
-#: ../kazam/app.py:363
+#: ../kazam/app.py:417
 msgid "Start broadcasting"
 msgstr ""
 
-#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+#: ../kazam/app.py:690
+msgid "Finish broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:692 ../kazam/app.py:716 ../kazam/frontend/indicator.py:77
 msgid "Finish recording"
 msgstr ""
 
-#: ../kazam/app.py:790
+#: ../kazam/app.py:934
 msgid "Cancel countdown"
 msgstr ""
 
-#: ../kazam/frontend/window_select.py:155
+#: ../kazam/frontend/window_select.py:154
 msgid "Select a window by clicking on it."
 msgstr ""
 
-#: ../kazam/frontend/window_select.py:156
+#: ../kazam/frontend/window_select.py:155
 msgid "Press ENTER or ESC to cancel"
 msgstr ""
 
-#: ../kazam/frontend/done_recording.py:50
+#: ../kazam/frontend/done_recording.py:51
 msgid "Recording finished"
 msgstr ""
 
-#: ../kazam/frontend/done_recording.py:62
+#: ../kazam/frontend/done_recording.py:63
 msgid ""
 "Kazam finished recording.\n"
 "What do you want to do now?"
 msgstr ""
 
-#: ../kazam/frontend/done_recording.py:65
+#: ../kazam/frontend/done_recording.py:66
 msgid "Edit with:"
 msgstr ""
 
-#: ../kazam/frontend/done_recording.py:73
+#: ../kazam/frontend/done_recording.py:74
 msgid "Save for later"
 msgstr ""
 
-#: ../kazam/frontend/done_recording.py:83
+#: ../kazam/frontend/done_recording.py:84
 msgid "Cancel"
 msgstr ""
 
-#: ../kazam/frontend/done_recording.py:85
+#: ../kazam/frontend/done_recording.py:86
 msgid "Continue"
 msgstr ""
 
@@ -274,7 +396,7 @@ msgstr ""
 msgid "Record a video of activity on your screen or capture a screenshot."
 msgstr ""
 
-#: ../kazam/frontend/save_dialog.py:37
+#: ../kazam/frontend/save_dialog.py:39
 msgid "Save"
 msgstr ""
 
@@ -282,7 +404,7 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:83
 msgid "Quit"
 msgstr ""
 
@@ -306,15 +428,15 @@ msgstr ""
 msgid "About Kazam"
 msgstr ""
 
-#: ../kazam/frontend/window_area.py:384
+#: ../kazam/frontend/window_area.py:383
 msgid "Select an area by clicking and dragging."
 msgstr ""
 
-#: ../kazam/frontend/window_area.py:385
+#: ../kazam/frontend/window_area.py:384
 msgid "Press ENTER to confirm or ESC to cancel"
 msgstr ""
 
-#: ../kazam/frontend/indicator.py:72
+#: ../kazam/frontend/indicator.py:73
 msgid "Pause recording"
 msgstr ""
 
@@ -322,6 +444,6 @@ msgstr ""
 msgid "Save capture"
 msgstr ""
 
-#: ../kazam/backend/prefs.py:148
+#: ../kazam/backend/prefs.py:175
 msgid "Unknown"
 msgstr ""
