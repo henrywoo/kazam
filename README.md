@@ -34,15 +34,19 @@ If you are using Ubuntu 14.04 then stable version (1.4.4) is available from
 universe repository. You can find it in Ubuntu Softare Center or install it
 from the terminal with the following command:
 
+```shell script
 $ sudo apt-get install kazam
+```
+
 
 For other Ubuntu based distributions the best way to install Kazam is
 to add a PPA repository and then use apt-get command or Software Center.
 
+```shell script
 $ sudo add-apt-repository ppa:kazam-team/stable-series
 $ sudo apt-get update
 $ sudo apt-get install kazam
-
+```
 For distribution independent installation you will have to get the latest
 tarball release from Launchpad:
 
@@ -50,13 +54,15 @@ http://launchpad.net/kazam/stable/1.4.4/+download/kazam_1.4.4.tar.gz
 
 Unpack it and then run setup:
 
+```shell script
    $ tar -xzf kazam_1.4.4.tar.gz
    $ cd kazam-1.4.4
-
+```
 Run installation as root user, or use sudo:
 
+```shell script
    # python3 setup.py install
-
+```
 
 Installation - unstable version
 -------------------------------
@@ -64,10 +70,11 @@ Installation - unstable version
 Installing current unstable build from a PPA can be done by adding
 unstable series PPA.
 
+```shell script
 $ sudo add-apt-repository ppa:kazam-team/unstable-series
 $ sudo apt-get update
 $ sudo apt-get install kazam
-
+```
 
 Installation - development version
 ----------------------------------
@@ -75,12 +82,16 @@ Installation - development version
 If you want bleeding edge, development version then you will have to get
 source code from Launchpad by running the following command:
 
+```shell script
    $ bzr branch lp:kazam/unstable
+```
 
 Then you need to run setup.py to build and install Kazam:
 
+```shell script
    $ cd kazam
    # python3 setup.py install
+```
 
 You will have to run setup as root user or use sudo. Default installation
 path is /usr/local.
@@ -96,9 +107,10 @@ will not see Unity AppIndicator.
 
 To run Kazam simply execute te following commands in the source tree:
 
+```shell script
 $ cd bin
 $ ./kazam
-
+```
 If you already have Kazam installed then Kazam icons will be displayed
 properly.
 
@@ -106,10 +118,12 @@ properly.
 Keyboard shortcuts
 ------------------
 
+```shell script
 SUPER-CTRL-Q - Quit
 SUPER-CTRL-W - Show/Hide main window
 SUPER-CTRL-R - Start Recording
 SUPER-CTRL-F - Finish Recording
+```
 
 Keyboard shortcuts will work on Precise Pangolin only if you installed
 Kazam 1.4.x from the PPA, keybinder 3.0 is a dependency and will be installed
