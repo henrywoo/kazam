@@ -281,7 +281,9 @@ class Prefs():
         self.tw_stream = self.config.get("main", "tw_stream")
         self.tw_server = self.config.get("main", "tw_server")
 
-        self.broadcast_dst = int(self.config.get("main", "broadcast_dst"))
+        self.broadcast_dst = self.config.get("main", "broadcast_dst")
+        if self.broadcast_dst is not None:
+            self.broadcast_dst = int(self.broadcast_dst)
 
         self.first_run = self.config.getboolean("main", "first_run")
 

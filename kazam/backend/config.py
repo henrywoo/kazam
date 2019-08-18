@@ -25,7 +25,7 @@ from configparser import ConfigParser, NoSectionError, NoOptionError
 from xdg.BaseDirectory import xdg_config_home
 
 
-class KazamConfig(ConfigParser):
+class KazamConfig(object):
 
     DEFAULTS = [{
                 "name": "main",
@@ -86,21 +86,21 @@ class KazamConfig(ConfigParser):
     CONFIGFILE = os.path.join(CONFIGDIR, "kazam.conf")
 
     def __init__(self):
-        #self.config = ConfigParser(self.DEFAULTS[0]['keys'])
+        self.config = ConfigParser(self.DEFAULTS[0]['keys'])
         #print("CONFIGFILE: {}\n".format(KazamConfig.CONFIGFILE))
-        ConfigParser.__init__(self, self.DEFAULTS[0]['keys'])
+        #ConfigParser.__init__(self, self.DEFAULTS[0]['keys'])
         if not os.path.isdir(self.CONFIGDIR):
             os.makedirs(self.CONFIGDIR)
         if not os.path.isfile(self.CONFIGFILE):
             self.create_default()
             self.write()
-        self.read(self.CONFIGFILE)
+        self.config.read(self.CONFIGFILE)
 
     def create_default(self):
         # For every section
         for section in self.DEFAULTS:
             # Add the section
-            self.add_section(section["name"])
+            self.config.add_section(section["name"])
             # And add every key in it, with its default value
             for key in section["keys"]:
                 value = section["keys"][key]
@@ -115,7 +115,7 @@ class KazamConfig(ConfigParser):
 
     def get(self, section, key):
         try:
-            ret = ConfigParser.get(self, section, key)
+            ret = self.config.get(section, key)
             if ret == "None":
                 default = self.find_default(section, key)
                 self.set(section, key, default)
@@ -149,11 +149,11 @@ class KazamConfig(ConfigParser):
     def set(self, section, option, value):
         # If the section referred to doesn't exist (rare case),
         # then create it
-        if not self.has_section(section):
-            self.add_section(section)
-        ConfigParser.set(self, section, option, str(value))
+        if not self.config.has_section(section):
+            self.config.add_section(section)
+        self.config.set(section, option, str(value))
 
     def write(self):
         file_ = open(self.CONFIGFILE, "w")
-        ConfigParser.write(self, file_)
+        self.config.write(file_)
         file_.close()
