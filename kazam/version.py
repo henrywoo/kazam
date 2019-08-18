@@ -1,4 +1,4 @@
-VERSION = '1.5.4'
-CODENAME = 'NX-72307'
+VERSION = '1.5.5'
+CODENAME = 'Bugfix'
 DISTRO = 'Ubuntu'
-RELEASE = '14.04'
+RELEASE = '19.04'
