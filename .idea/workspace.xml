@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69498926-5641-4e2f-ba7c-8f1ffa5c255c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kazam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kazam.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kazam/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/kazam/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kazam/backend/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/kazam/backend/config.py" afterDir="false" />
-    </list>
+    <list default="true" id="69498926-5641-4e2f-ba7c-8f1ffa5c255c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1566095455152</updated>
       <workItem from="1566095456682" duration="7966000" />
-      <workItem from="1566106385465" duration="1881000" />
+      <workItem from="1566106385465" duration="2150000" />
     </task>
     <servers />
   </component>
@@ -146,11 +139,6 @@
           <url>file://$PROJECT_DIR$/kazam/frontend/preferences.py</url>
           <line>217</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/kazam/frontend/preferences.py</url>
-          <line>430</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
