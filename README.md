@@ -1,5 +1,4 @@
-
-           Kazam v1.5.5 "Bugfix"
+> Kazam v1.5.5 "Bugfix"
 
 
 # Introduction
