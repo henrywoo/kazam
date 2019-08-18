@@ -71,7 +71,8 @@ class KazamConfig(object):
                          "capture_keys":           "False",
                          "capture_keys_b":         "False",
                          "yt_stream":              "",
-                         "yt_server":              ""
+                         "yt_server":              "",
+                         "broadcast_dst":          "1"
                          },
                 },
                 {"name": "keyboard_shortcuts",
@@ -87,8 +88,6 @@ class KazamConfig(object):
 
     def __init__(self):
         self.config = ConfigParser(self.DEFAULTS[0]['keys'])
-        #print("CONFIGFILE: {}\n".format(KazamConfig.CONFIGFILE))
-        #ConfigParser.__init__(self, self.DEFAULTS[0]['keys'])
         if not os.path.isdir(self.CONFIGDIR):
             os.makedirs(self.CONFIGDIR)
         if not os.path.isfile(self.CONFIGFILE):

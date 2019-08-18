@@ -123,8 +123,12 @@ class KazamApp(GObject.GObject):
         self.cam = None
 
         if prefs.sound:
-            prefs.pa_q = pulseaudio_q()
-            prefs.pa_q.start()
+            try:
+                prefs.pa_q = pulseaudio_q()
+                prefs.pa_q.start()
+            except:
+                logger.warning("Pulse Audio Failed to load. Sound recording disabled.")
+                prefs.sound = False
 
         prefs.get_webcam_sources()
 
@@ -1029,8 +1033,12 @@ class KazamApp(GObject.GObject):
     def setup_translations(self):
         gettext.bindtextdomain("kazam", "/usr/share/locale")
         gettext.textdomain("kazam")
+        locale.bindtextdomain("kazam", "/usr/share/locale")
+        locale.textdomain("kazam")
+        currentLocale = locale.getlocale()
         try:
-            locale.setlocale(locale.LC_ALL, "")
+            # loading full localization
+            locale.setlocale(locale.LC_ALL, currentLocale)
         except:
             logger.exception("EXCEPTION: Setlocale failed, no language support.")
 
