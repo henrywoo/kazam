@@ -1,0 +1,17 @@
+[type: python] bin/kazam
+[type: gettext/glade] data/ui/kazam.ui
+[type: gettext/glade] data/ui/preferences.ui
+data/kazam.desktop.in
+kazam/app.py
+kazam/frontend/window_select.py
+kazam/frontend/done_recording.py
+kazam/frontend/about_dialog.py
+kazam/frontend/save_dialog.py
+kazam/frontend/main_menu.py
+kazam/frontend/preferences.py
+kazam/frontend/window_area.py
+kazam/frontend/window_countdown.py
+kazam/frontend/indicator.py
+kazam/backend/grabber.py
+kazam/backend/prefs.py
+

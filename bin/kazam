@@ -1,0 +1,154 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+#
+#       kazam
+#
+#       Copyright 2012 David Klasinc <bigwhale@lubica.net>
+#       Copyright 2010 Andrew <andrew@karmic-desktop>
+#
+#       This program is free software; you can redistribute it and/or modify
+#       it under the terms of the GNU General Public License as published by
+#       the Free Software Foundation; either version 3 of the License, or
+#       (at your option) any later version.
+#
+#       This program is distributed in the hope that it will be useful,
+#       but WITHOUT ANY WARRANTY; without even the implied warranty of
+#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#       GNU General Public License for more details.
+#
+#       You should have received a copy of the GNU General Public License
+#       along with this program; if not, write to the Free Software
+#       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#       MA 02110-1301, USA.
+
+import os
+import sys
+import dbus
+import logging
+import dbus.service
+from argparse import ArgumentParser
+from dbus.mainloop.glib import DBusGMainLoop
+
+from gi.repository import Gtk
+
+
+class KazamService(dbus.service.Object):
+
+    def __init__(self, app):
+        self.app = app
+        bus_name = dbus.service.BusName('org.kazam', bus=dbus.SessionBus())
+        dbus.service.Object.__init__(self, bus_name, "/org/kazam")
+
+    @dbus.service.method('org.kazam')
+    def instance(self):
+        self.app.window.show()
+        self.app.window.present()
+
+    @dbus.service.method('org.kazam')
+    def prefs(self):
+        self.app.cb_preferences_request(None)
+
+if __name__ == "__main__":
+
+    logger = logging.getLogger()
+    logger.name = "Kazam"
+    handler = logging.StreamHandler()
+    formatter = logging.Formatter('%(levelname)s %(name)s - %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    logger.setLevel(logging.INFO)
+
+    logger.debug("Logger intialized.")
+
+    if os.path.exists("./kazam") and os.path.exists("../data"):
+        logger.warning("Running from local directory, AppIndicator icons could be missing.")
+        datadir = "../data"
+        sys.path.insert(0, "..")
+    else:
+        # A bit more flexible setting of datadir, it works
+        # when base install path is not /usr
+        curpath = os.path.abspath(__file__)
+        curpath = os.path.realpath(curpath)
+        datadir = curpath.split('bin/')[0] + "share/kazam/"
+
+    try:
+        import platform
+        dist = platform.linux_distribution()
+    except:
+        # Fallback to the almighty Ubuntu 12.10 ;)
+        dist = ('Ubuntu', '12.10', 'quantal')
+        logger.warning("Failed to correctly detect operating system.")
+
+    from kazam.version import *
+    version = "%(prog)s {0} '{1}'".format(VERSION, CODENAME)
+    parser = ArgumentParser(description="Kazam - Screen recording and capturing program.")
+
+    parser.add_argument("--debug",              action="store_true",  help="enable debug mode")
+    parser.add_argument("--silent",             action="store_true",  help="silent start, no UI shown")
+    parser.add_argument("--nosound",            action="store_false", help="disable PulseAudio")
+    parser.add_argument("--test",               action="store_true",  help="generate test video signal")
+    parser.add_argument("-v", "--version",      action="version",     version=version)
+    parser.add_argument("-f", "--fullscreen",   action="store_true",  help="instant screenshot of a full screen")
+    parser.add_argument("-a", "--area",         action="store_true",
+                        help="instant screenshot of a preselected screen area")
+    parser.add_argument("-s", "--select",       action="store_true",  help="instant screenshot of a preselected window")
+    parser.add_argument("-w", "--window",       action="store_true",  help="instant screenshot of an active window")
+    parser.add_argument("-p", "--preferences",  action="store_true",  help="show preferences window")
+    parser.add_argument("-g", "--godmode",      action="store_true",  help="god mode of capture")
+    parser.add_argument("-x", "--instance",     action="store_true",  help="spawn new instance")
+
+    args = parser.parse_args()
+    if args.debug:
+        logger.setLevel(logging.DEBUG)
+    else:
+        logger.setLevel(logging.INFO)
+
+    logger.debug("Starting ...")
+    logger.debug("Running on: {0} {1}".format(dist[0], dist[1]))
+    logger.debug("Kazam version: {0} {1}".format(VERSION, CODENAME))
+
+    if args.fullscreen:
+        from kazam.instant import InstantApp
+        app = InstantApp(datadir, dist, args.debug, 1)  # MODE_ALL
+    elif args.area:
+        from kazam.instant import InstantApp
+        app = InstantApp(datadir, dist, args.debug, 2)  # MODE_AREA
+    elif args.select:
+        from kazam.instant import InstantApp
+        app = InstantApp(datadir, dist, args.debug, 3)  # MODE_WIN
+    elif args.window:
+        from kazam.instant import InstantApp
+        app = InstantApp(datadir, dist, args.debug, 4)  # MODE_ACTIVE
+    elif args.godmode:
+        from kazam.instant import InstantApp
+        app = InstantApp(datadir, dist, args.debug, 666)  # MODE_ACTIVE
+    else:
+
+        DBusGMainLoop(set_as_default=True)
+        bus = dbus.SessionBus()
+        instance = bus.request_name("org.kazam")
+
+        if not args.instance and instance != dbus.bus.REQUEST_NAME_REPLY_PRIMARY_OWNER:
+            logger.debug("Getting existing instance ...")
+            if args.preferences:
+                logger.debug("Opening preferences ...")
+                app = dbus.SessionBus().get_object("org.kazam", "/org/kazam").get_dbus_method("prefs")
+            else:
+                logger.debug("Showing main window ...")
+                app = dbus.SessionBus().get_object("org.kazam", "/org/kazam").get_dbus_method("instance")
+            app()
+            sys.exit(0)
+        else:
+            if args.preferences:
+                from kazam.instant import InstantApp
+                app = InstantApp(datadir, dist, args.debug, 0, preferences=True)
+            else:
+                logger.debug("Starting new instance ...")
+                from kazam.app import KazamApp
+                app = KazamApp(datadir, dist, args.debug, args.test, args.nosound, args.silent)
+
+                kazam_service = KazamService(app)
+
+    Gtk.main()
+    logger.debug("Finishing ...")
+    sys.exit(0)

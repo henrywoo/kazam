@@ -1,0 +1,334 @@
+# French translation for kazam
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the kazam package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kazam\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"PO-Revision-Date: 2016-03-18 19:33+0000\n"
+"Last-Translator: Jean-Marc <Unknown>\n"
+"Language-Team: French <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-10-10 05:35+0000\n"
+"X-Generator: Launchpad (build 18790)\n"
+
+#: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
+#: ../kazam/frontend/about_dialog.py:59
+msgid "Kazam"
+msgstr "Kazam"
+
+#: ../data/ui/kazam.ui.h:2
+msgid "Capture"
+msgstr "Capturer"
+
+#: ../data/ui/kazam.ui.h:3
+msgid "Seconds to wait before capturing:"
+msgstr "Secondes avant le début de la capture :"
+
+#: ../data/ui/kazam.ui.h:4
+msgid "Sound from microphone"
+msgstr "Son du microphone"
+
+#: ../data/ui/kazam.ui.h:5
+msgid "Sound from speakers"
+msgstr "Son des haut-parleurs"
+
+#: ../data/ui/kazam.ui.h:6
+msgid "Mouse cursor"
+msgstr "Curseur de la souris"
+
+#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
+#: ../kazam/frontend/save_dialog.py:42
+msgid "Screencast"
+msgstr "Capture vidéo"
+
+#: ../data/ui/kazam.ui.h:8
+msgid "Window borders"
+msgstr "Bordures de fenêtre"
+
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
+#: ../kazam/frontend/save_dialog.py:44
+msgid "Screenshot"
+msgstr "Capture d'écran"
+
+#: ../data/ui/kazam.ui.h:10
+msgid "When capturing include:"
+msgstr "Lors de la capture, inclure :"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Kazam Preferences"
+msgstr "Préférences de Kazam"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Speakers:"
+msgstr "Haut-parleurs :"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Microphone:"
+msgstr "Microphone :"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Set volume"
+msgstr "Régler le volume"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Countdown splash:"
+msgstr "Fenêtre de décompte :"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "Toggle display of countdown splash"
+msgstr "Activer l'affichage du compte à rebours"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "General"
+msgstr "Paramètres généraux"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Framerate:"
+msgstr "Images par seconde :"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Set the number of frames per second"
+msgstr "Choisissez le nombre d'images par seconde"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Record with:"
+msgstr "Enregistrer avec :"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Automatic file saving:"
+msgstr "Enregistrer automatiquement le fichier :"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Directory:"
+msgstr "Répertoire :"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Select a directory"
+msgstr "Sélectionner un répertoire"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Filename prefix:"
+msgstr "Préfixe du nom du fichier :"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Shutter sound:"
+msgstr "Son de l'obturateur :"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Shutter type:"
+msgstr "Type d'obturateur :"
+
+#: ../data/kazam.desktop.in.h:2
+msgid "Screencast and Screenshot tool"
+msgstr "Outil de screencast et de capture d'écran"
+
+#: ../data/kazam.desktop.in.h:3
+msgid "Record a video or take a screenshot of your screen"
+msgstr "Enregistrer une vidéo ou prendre une capture d'écran de votre écran"
+
+#: ../data/kazam.desktop.in.h:4
+msgid "screenshot;screencast;videorecord;desktop recording;"
+msgstr "capture d'écran;screencast;videorecord;enregistrement du bureau;"
+
+#: ../data/kazam.desktop.in.h:5
+msgid "Take a screenshot of entire workspace"
+msgstr "Prendre une capture d'écran du bureau entier"
+
+#: ../data/kazam.desktop.in.h:6
+msgid "Select an area to screenshot"
+msgstr "Sélectionner un espace à capturer"
+
+#: ../data/kazam.desktop.in.h:7
+msgid "Select a window to screenshot"
+msgstr "Sélectionner une fenêtre à capturer"
+
+#: ../data/kazam.desktop.in.h:8 ../kazam/frontend/main_menu.py:65
+msgid "Preferences"
+msgstr "Préférences"
+
+#: ../kazam/app.py:57 ../kazam/app.py:66
+msgid "Gstreamer 1.0 or higher required, bailing out."
+msgstr "Gstreamer 1.0 ou plus récent requis."
+
+#: ../kazam/app.py:172
+msgid "Record a video of your desktop."
+msgstr "Enregistrer une vidéo de votre bureau."
+
+#: ../kazam/app.py:186
+msgid "Record a picture of your desktop."
+msgstr "Enregistrer une image de votre bureau."
+
+#: ../kazam/app.py:198
+msgid "Webcam"
+msgstr "Webcam"
+
+#: ../kazam/app.py:199
+msgid "Capture form your webcam."
+msgstr ""
+
+#: ../kazam/app.py:212
+msgid "Broadcast"
+msgstr ""
+
+#: ../kazam/app.py:213
+msgid "Broadcast your desktop."
+msgstr ""
+
+#: ../kazam/app.py:239
+msgid "Fullscreen"
+msgstr "Plein écran"
+
+#: ../kazam/app.py:240
+msgid "Capture contents of the current screen."
+msgstr "Capture le contenu de l'écran actif."
+
+#: ../kazam/app.py:251
+msgid "All Screens"
+msgstr "Tous les écrans"
+
+#: ../kazam/app.py:252
+msgid "Capture contents of all of your screens."
+msgstr "Capture le contenu de tous les écrans."
+
+#: ../kazam/app.py:264
+msgid "Window"
+msgstr "Fenêtre"
+
+#: ../kazam/app.py:265
+msgid "Capture contents of a single window."
+msgstr "Capture le contenu d'une fenêtre spécifique."
+
+#: ../kazam/app.py:276
+msgid "Area"
+msgstr "Zone"
+
+#: ../kazam/app.py:277
+msgid "Capture a pre-selected area of your screen."
+msgstr "Capturer une zone pré-selectionnée de votre écran."
+
+#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+msgid "Start recording"
+msgstr "Débuter l'enregistrement"
+
+#: ../kazam/app.py:349
+msgid "Take screenshot"
+msgstr "Prendre une capture d'écran"
+
+#: ../kazam/app.py:363
+msgid "Start broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+msgid "Finish recording"
+msgstr "Terminer l'enregistrement"
+
+#: ../kazam/app.py:790
+msgid "Cancel countdown"
+msgstr "Annuler la temporisation"
+
+#: ../kazam/frontend/window_select.py:155
+msgid "Select a window by clicking on it."
+msgstr "Sélectionnez une fenêtre en cliquant dessus."
+
+#: ../kazam/frontend/window_select.py:156
+msgid "Press ENTER or ESC to cancel"
+msgstr "Appuyez sur Entrée ou Echap pour annuler"
+
+#: ../kazam/frontend/done_recording.py:50
+msgid "Recording finished"
+msgstr "Enregistrement terminé"
+
+#: ../kazam/frontend/done_recording.py:62
+msgid ""
+"Kazam finished recording.\n"
+"What do you want to do now?"
+msgstr ""
+"Kazam a terminé l'enregistrement.\n"
+"Que désirez-vous faire maintenant ?"
+
+#: ../kazam/frontend/done_recording.py:65
+msgid "Edit with:"
+msgstr "Modifier avec :"
+
+#: ../kazam/frontend/done_recording.py:73
+msgid "Save for later"
+msgstr "Enregistrer pour plus tard"
+
+#: ../kazam/frontend/done_recording.py:83
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../kazam/frontend/done_recording.py:85
+msgid "Continue"
+msgstr "Continuer"
+
+#: ../kazam/frontend/done_recording.py:121
+msgid "Save screencast"
+msgstr "Enregistrer la capture vidéo"
+
+#: ../kazam/frontend/about_dialog.py:60
+msgid "Record a video of activity on your screen or capture a screenshot."
+msgstr ""
+"Capturer sous forme de vidéo l'activité de votre écran ou faire une capture "
+"d'écran."
+
+#: ../kazam/frontend/save_dialog.py:37
+msgid "Save"
+msgstr "Enregistrer"
+
+#: ../kazam/frontend/main_menu.py:62
+msgid "File"
+msgstr "Fichier"
+
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+msgid "Quit"
+msgstr "Quitter"
+
+#: ../kazam/frontend/main_menu.py:63
+msgid "Quit Kazam"
+msgstr "Quitter Kazam"
+
+#: ../kazam/frontend/main_menu.py:65
+msgid "Open preferences"
+msgstr "Ouvrir les préférences"
+
+#: ../kazam/frontend/main_menu.py:67
+msgid "Help"
+msgstr "Aide"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About"
+msgstr "À propos"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About Kazam"
+msgstr "À propos de Kazam"
+
+#: ../kazam/frontend/window_area.py:384
+msgid "Select an area by clicking and dragging."
+msgstr "Sélectionnez une zone en cliquant et déplaçant."
+
+#: ../kazam/frontend/window_area.py:385
+msgid "Press ENTER to confirm or ESC to cancel"
+msgstr "Appuyer sur Entrée pour confirmer ou Echap pour annuler."
+
+#: ../kazam/frontend/indicator.py:72
+msgid "Pause recording"
+msgstr "Suspendre l'enregistrement"
+
+#: ../kazam/backend/grabber.py:172
+msgid "Save capture"
+msgstr "Sauvegarder l'enregistrement"
+
+#: ../kazam/backend/prefs.py:148
+msgid "Unknown"
+msgstr "Inconnu"
+
+#~ msgid "Kazam_screencast"
+#~ msgstr "Kazam_screencast"

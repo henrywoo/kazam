@@ -1,0 +1,332 @@
+# Turkish translation for kazam
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the kazam package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kazam\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"PO-Revision-Date: 2012-12-21 20:38+0000\n"
+"Last-Translator: jan <Unknown>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-10-10 05:35+0000\n"
+"X-Generator: Launchpad (build 18790)\n"
+
+#: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
+#: ../kazam/frontend/about_dialog.py:59
+msgid "Kazam"
+msgstr "Kazam"
+
+#: ../data/ui/kazam.ui.h:2
+msgid "Capture"
+msgstr "Yakala"
+
+#: ../data/ui/kazam.ui.h:3
+msgid "Seconds to wait before capturing:"
+msgstr "Kayıt öncesi bekleme süresi"
+
+#: ../data/ui/kazam.ui.h:4
+msgid "Sound from microphone"
+msgstr "Mikrofon sesi"
+
+#: ../data/ui/kazam.ui.h:5
+msgid "Sound from speakers"
+msgstr "Hoparlör sesi"
+
+#: ../data/ui/kazam.ui.h:6
+msgid "Mouse cursor"
+msgstr "Fare imleci"
+
+#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
+#: ../kazam/frontend/save_dialog.py:42
+msgid "Screencast"
+msgstr "Ekran kaydı"
+
+#: ../data/ui/kazam.ui.h:8
+msgid "Window borders"
+msgstr "Pencere kenarlıkları"
+
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
+#: ../kazam/frontend/save_dialog.py:44
+msgid "Screenshot"
+msgstr "Ekran Görüntüsü"
+
+#: ../data/ui/kazam.ui.h:10
+msgid "When capturing include:"
+msgstr "Kayıtta dahil et:"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Kazam Preferences"
+msgstr "Kazam seçenekleri"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Speakers:"
+msgstr "Hoparlör:"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Microphone:"
+msgstr "Mikrofon:"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Set volume"
+msgstr "Sesi düzeyini ayarla"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Countdown splash:"
+msgstr "Geri sayım ekranı"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "Toggle display of countdown splash"
+msgstr "Geri sayım penceresini aç/kapa"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "General"
+msgstr "Genel"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Framerate:"
+msgstr "Kare sayısı:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Set the number of frames per second"
+msgstr "Saniyedeki kare sayısını ayarla"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Record with:"
+msgstr "Bununla kaydet:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Automatic file saving:"
+msgstr "Otomotik dosya kaydı:"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Directory:"
+msgstr "Dizin:"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Select a directory"
+msgstr "Bir dizin seçin"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Filename prefix:"
+msgstr "Dosya ismi öneki"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Shutter sound:"
+msgstr "Deklanşör sesi"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Shutter type:"
+msgstr "Deklanşör tipi"
+
+#: ../data/kazam.desktop.in.h:2
+msgid "Screencast and Screenshot tool"
+msgstr "Ekran video kaydı ve ekran görüntüsü kaydı aracı"
+
+#: ../data/kazam.desktop.in.h:3
+msgid "Record a video or take a screenshot of your screen"
+msgstr "Ekranınızdan bir video veya ekran görüntüsü kaydedin"
+
+#: ../data/kazam.desktop.in.h:4
+msgid "screenshot;screencast;videorecord;desktop recording;"
+msgstr "ekrangörüntüsü;ekrankaydı;videokaydı;masaüstü kaydı;"
+
+#: ../data/kazam.desktop.in.h:5
+msgid "Take a screenshot of entire workspace"
+msgstr "Bütün çalışma alanı ekran görüntüsünü kaydedin"
+
+#: ../data/kazam.desktop.in.h:6
+msgid "Select an area to screenshot"
+msgstr "Ekran görüntüsü almak için bir alan seçin"
+
+#: ../data/kazam.desktop.in.h:7
+msgid "Select a window to screenshot"
+msgstr "Ekran görünütüsü almak için bir pencere seçin"
+
+#: ../data/kazam.desktop.in.h:8 ../kazam/frontend/main_menu.py:65
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: ../kazam/app.py:57 ../kazam/app.py:66
+msgid "Gstreamer 1.0 or higher required, bailing out."
+msgstr "Gstreamer 1.0 veya daha güncel versiyonu gerekli,sonlandırılıyor."
+
+#: ../kazam/app.py:172
+msgid "Record a video of your desktop."
+msgstr "Masaüstü videonuzu kaydedin"
+
+#: ../kazam/app.py:186
+msgid "Record a picture of your desktop."
+msgstr "Masüstünüzden ekran görüntüsü alın"
+
+#: ../kazam/app.py:198
+msgid "Webcam"
+msgstr ""
+
+#: ../kazam/app.py:199
+msgid "Capture form your webcam."
+msgstr ""
+
+#: ../kazam/app.py:212
+msgid "Broadcast"
+msgstr ""
+
+#: ../kazam/app.py:213
+msgid "Broadcast your desktop."
+msgstr ""
+
+#: ../kazam/app.py:239
+msgid "Fullscreen"
+msgstr "Tam ekran"
+
+#: ../kazam/app.py:240
+msgid "Capture contents of the current screen."
+msgstr "Şuanki ekrangöntüsü içeriklerini kaydedin"
+
+#: ../kazam/app.py:251
+msgid "All Screens"
+msgstr "Tüm Ekranlar"
+
+#: ../kazam/app.py:252
+msgid "Capture contents of all of your screens."
+msgstr "Bütün ekranlarınızın içeriklerini kaydedin"
+
+#: ../kazam/app.py:264
+msgid "Window"
+msgstr "Pencere"
+
+#: ../kazam/app.py:265
+msgid "Capture contents of a single window."
+msgstr "Tek bir pencere içeriklerini kaydedin"
+
+#: ../kazam/app.py:276
+msgid "Area"
+msgstr "Alan"
+
+#: ../kazam/app.py:277
+msgid "Capture a pre-selected area of your screen."
+msgstr "Ekranınızın önceden belirlediğiniz bir alanında kayıt yapın"
+
+#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+msgid "Start recording"
+msgstr "Kayda başla"
+
+#: ../kazam/app.py:349
+msgid "Take screenshot"
+msgstr "Ekran görüntüsü al"
+
+#: ../kazam/app.py:363
+msgid "Start broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+msgid "Finish recording"
+msgstr "Kaydı bitir"
+
+#: ../kazam/app.py:790
+msgid "Cancel countdown"
+msgstr "Geri sayımı iptal et"
+
+#: ../kazam/frontend/window_select.py:155
+msgid "Select a window by clicking on it."
+msgstr "Üzerine tıklayarak bir pencere seçin"
+
+#: ../kazam/frontend/window_select.py:156
+msgid "Press ENTER or ESC to cancel"
+msgstr "ENTER'a basın veya ESC ile çıkın"
+
+#: ../kazam/frontend/done_recording.py:50
+msgid "Recording finished"
+msgstr "Kayıt tamamlandı"
+
+#: ../kazam/frontend/done_recording.py:62
+msgid ""
+"Kazam finished recording.\n"
+"What do you want to do now?"
+msgstr ""
+"Kazam kaydı tamamladı.\n"
+"Şimdi ne yapmak istersiniz?"
+
+#: ../kazam/frontend/done_recording.py:65
+msgid "Edit with:"
+msgstr "Şununla düzenle:"
+
+#: ../kazam/frontend/done_recording.py:73
+msgid "Save for later"
+msgstr "Sonrası için kaydet"
+
+#: ../kazam/frontend/done_recording.py:83
+msgid "Cancel"
+msgstr "İptal"
+
+#: ../kazam/frontend/done_recording.py:85
+msgid "Continue"
+msgstr "Devam Et"
+
+#: ../kazam/frontend/done_recording.py:121
+msgid "Save screencast"
+msgstr "Kaydı sakla"
+
+#: ../kazam/frontend/about_dialog.py:60
+msgid "Record a video of activity on your screen or capture a screenshot."
+msgstr "Ekran etkinliklerinizi kaydedin veya ekran görüntüsü alın."
+
+#: ../kazam/frontend/save_dialog.py:37
+msgid "Save"
+msgstr "Kaydet"
+
+#: ../kazam/frontend/main_menu.py:62
+msgid "File"
+msgstr "Dosya"
+
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+msgid "Quit"
+msgstr "Çık"
+
+#: ../kazam/frontend/main_menu.py:63
+msgid "Quit Kazam"
+msgstr "Kazam'dan Çık"
+
+#: ../kazam/frontend/main_menu.py:65
+msgid "Open preferences"
+msgstr "Tercihleri aç"
+
+#: ../kazam/frontend/main_menu.py:67
+msgid "Help"
+msgstr "Yardım"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About"
+msgstr "Hakkında"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About Kazam"
+msgstr "Kazam Hakkında"
+
+#: ../kazam/frontend/window_area.py:384
+msgid "Select an area by clicking and dragging."
+msgstr "Tıklayarak veya sürükleyerek bir alan seçin"
+
+#: ../kazam/frontend/window_area.py:385
+msgid "Press ENTER to confirm or ESC to cancel"
+msgstr "Onaylamak için ENTER'a, iptal etmek için ESC'e basın"
+
+#: ../kazam/frontend/indicator.py:72
+msgid "Pause recording"
+msgstr "Kaydı duraklat"
+
+#: ../kazam/backend/grabber.py:172
+msgid "Save capture"
+msgstr "Kaydı sakla"
+
+#: ../kazam/backend/prefs.py:148
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#~ msgid "Kazam_screencast"
+#~ msgstr "Kazam_ekrankaydı"

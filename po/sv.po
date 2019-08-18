@@ -1,0 +1,337 @@
+# Swedish translation for kazam
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the kazam package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kazam\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"PO-Revision-Date: 2013-01-25 08:29+0000\n"
+"Last-Translator: Mikael Hiort af Ornäs <lakritslemmel@hotmail.com>\n"
+"Language-Team: Launchpad Swedish Translators <lp-l10n-"
+"sv@lists.launchpad.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-10-10 05:35+0000\n"
+"X-Generator: Launchpad (build 18790)\n"
+"X-Poedit-Language: Swedish\n"
+
+#: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
+#: ../kazam/frontend/about_dialog.py:59
+msgid "Kazam"
+msgstr "Kazam"
+
+#: ../data/ui/kazam.ui.h:2
+msgid "Capture"
+msgstr "Fånga in"
+
+#: ../data/ui/kazam.ui.h:3
+msgid "Seconds to wait before capturing:"
+msgstr "Fördröjning innan infångst (s):"
+
+#: ../data/ui/kazam.ui.h:4
+msgid "Sound from microphone"
+msgstr "Ljud från mikrofon"
+
+#: ../data/ui/kazam.ui.h:5
+msgid "Sound from speakers"
+msgstr "Ljud från högtalare"
+
+#: ../data/ui/kazam.ui.h:6
+msgid "Mouse cursor"
+msgstr "Muspekare"
+
+#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
+#: ../kazam/frontend/save_dialog.py:42
+msgid "Screencast"
+msgstr "Skärminspelning"
+
+#: ../data/ui/kazam.ui.h:8
+msgid "Window borders"
+msgstr "Fönsterramar"
+
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
+#: ../kazam/frontend/save_dialog.py:44
+msgid "Screenshot"
+msgstr "Skärmbild"
+
+#: ../data/ui/kazam.ui.h:10
+msgid "When capturing include:"
+msgstr "Inkludera följande vid infångst:"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Kazam Preferences"
+msgstr "Inställningar för Kazam"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Speakers:"
+msgstr "Högtalare:"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Microphone:"
+msgstr "Mikrofon:"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Set volume"
+msgstr "Ange volym"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Countdown splash:"
+msgstr "Nedräkningsskärm:"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "Toggle display of countdown splash"
+msgstr "Växla visning av nedräkningsskärmen"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "General"
+msgstr "Allmänt"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Framerate:"
+msgstr "Bildfrekvens:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Set the number of frames per second"
+msgstr "Ställ in antalet bilder per sekund"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Record with:"
+msgstr "Spela in med:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Automatic file saving:"
+msgstr "Autmatiskt sparande av fil:"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Directory:"
+msgstr "Mapp:"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Select a directory"
+msgstr "Välj en mapp"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Filename prefix:"
+msgstr "Filnamnsprefix:"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Shutter sound:"
+msgstr "Ljud för slutare:"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Shutter type:"
+msgstr "Typ av slutare:"
+
+#: ../data/kazam.desktop.in.h:2
+msgid "Screencast and Screenshot tool"
+msgstr "Verktyg för skärminspelning och skärmbildstagning"
+
+#: ../data/kazam.desktop.in.h:3
+msgid "Record a video or take a screenshot of your screen"
+msgstr "Spela in en video eller ta en bild av din skärm"
+
+#: ../data/kazam.desktop.in.h:4
+msgid "screenshot;screencast;videorecord;desktop recording;"
+msgstr ""
+"screenshot;screencast;videorecord;desktop "
+"recording;skärmbild;skärmdump;skärminspelning;skärmsändning;skrivbordsinspeln"
+"ing;"
+
+#: ../data/kazam.desktop.in.h:5
+msgid "Take a screenshot of entire workspace"
+msgstr "Ta en skärmbild av hela arbetsytan"
+
+#: ../data/kazam.desktop.in.h:6
+msgid "Select an area to screenshot"
+msgstr "Ta en skärmbild av ett område"
+
+#: ../data/kazam.desktop.in.h:7
+msgid "Select a window to screenshot"
+msgstr "Ta en skärmbild av ett fönster"
+
+#: ../data/kazam.desktop.in.h:8 ../kazam/frontend/main_menu.py:65
+msgid "Preferences"
+msgstr "Inställningar"
+
+#: ../kazam/app.py:57 ../kazam/app.py:66
+msgid "Gstreamer 1.0 or higher required, bailing out."
+msgstr "Gstreamer 1.0 eller senare krävs, åtgärden avbryts."
+
+#: ../kazam/app.py:172
+msgid "Record a video of your desktop."
+msgstr "Spela in en video av ditt skrivbord."
+
+#: ../kazam/app.py:186
+msgid "Record a picture of your desktop."
+msgstr "Ta en bild av ditt skrivbord."
+
+#: ../kazam/app.py:198
+msgid "Webcam"
+msgstr ""
+
+#: ../kazam/app.py:199
+msgid "Capture form your webcam."
+msgstr ""
+
+#: ../kazam/app.py:212
+msgid "Broadcast"
+msgstr ""
+
+#: ../kazam/app.py:213
+msgid "Broadcast your desktop."
+msgstr ""
+
+#: ../kazam/app.py:239
+msgid "Fullscreen"
+msgstr "Helskärm"
+
+#: ../kazam/app.py:240
+msgid "Capture contents of the current screen."
+msgstr "Fånga innehållet i den aktuella skärmen."
+
+#: ../kazam/app.py:251
+msgid "All Screens"
+msgstr "Alla skärmar"
+
+#: ../kazam/app.py:252
+msgid "Capture contents of all of your screens."
+msgstr "Fånga innehållet i alla dina skärmar."
+
+#: ../kazam/app.py:264
+msgid "Window"
+msgstr "Fönster"
+
+#: ../kazam/app.py:265
+msgid "Capture contents of a single window."
+msgstr "Fånga innehållet i ett enskilt fönster."
+
+#: ../kazam/app.py:276
+msgid "Area"
+msgstr "Område"
+
+#: ../kazam/app.py:277
+msgid "Capture a pre-selected area of your screen."
+msgstr "Fånga ett förvalt område av din skärm."
+
+#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+msgid "Start recording"
+msgstr "Starta inspelning"
+
+#: ../kazam/app.py:349
+msgid "Take screenshot"
+msgstr "Ta skärmbild"
+
+#: ../kazam/app.py:363
+msgid "Start broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+msgid "Finish recording"
+msgstr "Avsluta inspelning"
+
+#: ../kazam/app.py:790
+msgid "Cancel countdown"
+msgstr "Avbryt nedräkningen"
+
+#: ../kazam/frontend/window_select.py:155
+msgid "Select a window by clicking on it."
+msgstr "Välj ett fönster genom att klicka på det."
+
+#: ../kazam/frontend/window_select.py:156
+msgid "Press ENTER or ESC to cancel"
+msgstr "Tryck ned Retur eller Esc för att avbryta."
+
+#: ../kazam/frontend/done_recording.py:50
+msgid "Recording finished"
+msgstr "Inspelningen har slutförts"
+
+#: ../kazam/frontend/done_recording.py:62
+msgid ""
+"Kazam finished recording.\n"
+"What do you want to do now?"
+msgstr ""
+"Kazam är färdig med inspelningen.\n"
+"Vad vill du göra nu?"
+
+#: ../kazam/frontend/done_recording.py:65
+msgid "Edit with:"
+msgstr "Redigera med:"
+
+#: ../kazam/frontend/done_recording.py:73
+msgid "Save for later"
+msgstr "Spara till senare"
+
+#: ../kazam/frontend/done_recording.py:83
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: ../kazam/frontend/done_recording.py:85
+msgid "Continue"
+msgstr "Fortsätt"
+
+#: ../kazam/frontend/done_recording.py:121
+msgid "Save screencast"
+msgstr "Spara skärminspelning"
+
+#: ../kazam/frontend/about_dialog.py:60
+msgid "Record a video of activity on your screen or capture a screenshot."
+msgstr "Spela in en video av aktiviteten på din skärm eller ta en skärmbild."
+
+#: ../kazam/frontend/save_dialog.py:37
+msgid "Save"
+msgstr "Spara"
+
+#: ../kazam/frontend/main_menu.py:62
+msgid "File"
+msgstr "Arkiv"
+
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+msgid "Quit"
+msgstr "Avsluta"
+
+#: ../kazam/frontend/main_menu.py:63
+msgid "Quit Kazam"
+msgstr "Avsluta Kaxam"
+
+#: ../kazam/frontend/main_menu.py:65
+msgid "Open preferences"
+msgstr "Öppna inställningarna"
+
+#: ../kazam/frontend/main_menu.py:67
+msgid "Help"
+msgstr "Hjälp"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About"
+msgstr "Om"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About Kazam"
+msgstr "Om Kazam"
+
+#: ../kazam/frontend/window_area.py:384
+msgid "Select an area by clicking and dragging."
+msgstr "Välj ett område genom att klicka och dra."
+
+#: ../kazam/frontend/window_area.py:385
+msgid "Press ENTER to confirm or ESC to cancel"
+msgstr "Tryck ned Retur för att bekräfta eller Esc för att avbryta."
+
+#: ../kazam/frontend/indicator.py:72
+msgid "Pause recording"
+msgstr "Pausa inspelning"
+
+#: ../kazam/backend/grabber.py:172
+msgid "Save capture"
+msgstr "Spara fångst"
+
+#: ../kazam/backend/prefs.py:148
+msgid "Unknown"
+msgstr "Okänd"
+
+#~ msgid "Kazam_screencast"
+#~ msgstr "Kazamskärminspelning"

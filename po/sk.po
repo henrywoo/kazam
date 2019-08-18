@@ -1,0 +1,332 @@
+# Slovak translation for kazam
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the kazam package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kazam\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"PO-Revision-Date: 2011-04-08 17:17+0000\n"
+"Last-Translator: Branislav Machava <Unknown>\n"
+"Language-Team: Slovak <sk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-10-10 05:35+0000\n"
+"X-Generator: Launchpad (build 18790)\n"
+
+#: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
+#: ../kazam/frontend/about_dialog.py:59
+msgid "Kazam"
+msgstr "Kazam"
+
+#: ../data/ui/kazam.ui.h:2
+msgid "Capture"
+msgstr "Nahrať"
+
+#: ../data/ui/kazam.ui.h:3
+msgid "Seconds to wait before capturing:"
+msgstr "Koľko sekúnd čakať pred nahrávaním:"
+
+#: ../data/ui/kazam.ui.h:4
+msgid "Sound from microphone"
+msgstr "Zvuk z mikrofónu"
+
+#: ../data/ui/kazam.ui.h:5
+msgid "Sound from speakers"
+msgstr "Zvuk z reproduktorov"
+
+#: ../data/ui/kazam.ui.h:6
+msgid "Mouse cursor"
+msgstr "Kurzor"
+
+#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
+#: ../kazam/frontend/save_dialog.py:42
+msgid "Screencast"
+msgstr "Nahrávanie obrazovky"
+
+#: ../data/ui/kazam.ui.h:8
+msgid "Window borders"
+msgstr "Ohraničenie okna"
+
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
+#: ../kazam/frontend/save_dialog.py:44
+msgid "Screenshot"
+msgstr "Snímka obrazovky"
+
+#: ../data/ui/kazam.ui.h:10
+msgid "When capturing include:"
+msgstr "Pri snímaní zahrnúť:"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Kazam Preferences"
+msgstr "Nastavenie Kazam"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Speakers:"
+msgstr "Reproduktory:"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Microphone:"
+msgstr "Mikrofón:"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Set volume"
+msgstr "Nastaviť hlasitosť"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Countdown splash:"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:6
+msgid "Toggle display of countdown splash"
+msgstr ""
+
+#: ../data/ui/preferences.ui.h:7
+msgid "General"
+msgstr "Všeobecné"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Framerate:"
+msgstr "Frekvencia snímok:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Set the number of frames per second"
+msgstr "Nastaviť počet obrázkov za sekundu"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Record with:"
+msgstr "Nahrať s:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Automatic file saving:"
+msgstr "Automatické uloženie súboru:"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Directory:"
+msgstr "Adresár:"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Select a directory"
+msgstr "Vyberte priečinok"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Filename prefix:"
+msgstr "Predvoľba pre názov súboru:"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Shutter sound:"
+msgstr "Zvuk uzávierky:"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Shutter type:"
+msgstr "Typ uzávierky:"
+
+#: ../data/kazam.desktop.in.h:2
+msgid "Screencast and Screenshot tool"
+msgstr ""
+
+#: ../data/kazam.desktop.in.h:3
+msgid "Record a video or take a screenshot of your screen"
+msgstr "Nahrať video alebo urobiť snímku vašej obrazovky"
+
+#: ../data/kazam.desktop.in.h:4
+msgid "screenshot;screencast;videorecord;desktop recording;"
+msgstr ""
+
+#: ../data/kazam.desktop.in.h:5
+msgid "Take a screenshot of entire workspace"
+msgstr "Urobiť snímok celej pracovnej plochy"
+
+#: ../data/kazam.desktop.in.h:6
+msgid "Select an area to screenshot"
+msgstr "Vybrať oblasť pre snímku"
+
+#: ../data/kazam.desktop.in.h:7
+msgid "Select a window to screenshot"
+msgstr "Vybrať okno z ktorého bude urobený snímok"
+
+#: ../data/kazam.desktop.in.h:8 ../kazam/frontend/main_menu.py:65
+msgid "Preferences"
+msgstr "Predvoľby"
+
+#: ../kazam/app.py:57 ../kazam/app.py:66
+msgid "Gstreamer 1.0 or higher required, bailing out."
+msgstr ""
+
+#: ../kazam/app.py:172
+msgid "Record a video of your desktop."
+msgstr "Nahrať video vašej plochy."
+
+#: ../kazam/app.py:186
+msgid "Record a picture of your desktop."
+msgstr "Nahrať obrázok vašej plochy."
+
+#: ../kazam/app.py:198
+msgid "Webcam"
+msgstr ""
+
+#: ../kazam/app.py:199
+msgid "Capture form your webcam."
+msgstr ""
+
+#: ../kazam/app.py:212
+msgid "Broadcast"
+msgstr ""
+
+#: ../kazam/app.py:213
+msgid "Broadcast your desktop."
+msgstr ""
+
+#: ../kazam/app.py:239
+msgid "Fullscreen"
+msgstr "Celá obrazovka"
+
+#: ../kazam/app.py:240
+msgid "Capture contents of the current screen."
+msgstr "Zachytiť obsah aktuálnej obrazovky."
+
+#: ../kazam/app.py:251
+msgid "All Screens"
+msgstr "Všetky obrazovky"
+
+#: ../kazam/app.py:252
+msgid "Capture contents of all of your screens."
+msgstr "Zachytiť obsah všetkých obrazoviek."
+
+#: ../kazam/app.py:264
+msgid "Window"
+msgstr "Okno"
+
+#: ../kazam/app.py:265
+msgid "Capture contents of a single window."
+msgstr "Zachytiť obsah jedného okna."
+
+#: ../kazam/app.py:276
+msgid "Area"
+msgstr "Oblasť"
+
+#: ../kazam/app.py:277
+msgid "Capture a pre-selected area of your screen."
+msgstr "Zachytiť vopred vybrané oblasti na obrazovke."
+
+#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+msgid "Start recording"
+msgstr "Štart nahrávania"
+
+#: ../kazam/app.py:349
+msgid "Take screenshot"
+msgstr "Urobiť snímku obrazovky"
+
+#: ../kazam/app.py:363
+msgid "Start broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+msgid "Finish recording"
+msgstr "Ukončiť nahrávanie"
+
+#: ../kazam/app.py:790
+msgid "Cancel countdown"
+msgstr "Zrušiť odpočítavanie"
+
+#: ../kazam/frontend/window_select.py:155
+msgid "Select a window by clicking on it."
+msgstr "Vybrať okno kliknutím."
+
+#: ../kazam/frontend/window_select.py:156
+msgid "Press ENTER or ESC to cancel"
+msgstr "Stlačte ENTER alebo ESC pre zrušenie"
+
+#: ../kazam/frontend/done_recording.py:50
+msgid "Recording finished"
+msgstr "Nahrávanie ukončené"
+
+#: ../kazam/frontend/done_recording.py:62
+msgid ""
+"Kazam finished recording.\n"
+"What do you want to do now?"
+msgstr ""
+"Kazam ukončil nahrávanie.\n"
+"Čo chcete urobiť teraz?"
+
+#: ../kazam/frontend/done_recording.py:65
+msgid "Edit with:"
+msgstr "Upraviť s:"
+
+#: ../kazam/frontend/done_recording.py:73
+msgid "Save for later"
+msgstr "Uložiť na neskôr"
+
+#: ../kazam/frontend/done_recording.py:83
+msgid "Cancel"
+msgstr "Žrušiť"
+
+#: ../kazam/frontend/done_recording.py:85
+msgid "Continue"
+msgstr "Pokračovať"
+
+#: ../kazam/frontend/done_recording.py:121
+msgid "Save screencast"
+msgstr "Uložiť Screencast"
+
+#: ../kazam/frontend/about_dialog.py:60
+msgid "Record a video of activity on your screen or capture a screenshot."
+msgstr "Nahrávanie videa z činnosti na obrazovke alebo zachytiť snímku."
+
+#: ../kazam/frontend/save_dialog.py:37
+msgid "Save"
+msgstr "Uložiť"
+
+#: ../kazam/frontend/main_menu.py:62
+msgid "File"
+msgstr "Súbor"
+
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+msgid "Quit"
+msgstr "Koniec"
+
+#: ../kazam/frontend/main_menu.py:63
+msgid "Quit Kazam"
+msgstr "Ukončiť Kazam"
+
+#: ../kazam/frontend/main_menu.py:65
+msgid "Open preferences"
+msgstr "Zobraziť Predvoľby"
+
+#: ../kazam/frontend/main_menu.py:67
+msgid "Help"
+msgstr "Pomocník"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About"
+msgstr "O aplikácii"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About Kazam"
+msgstr "O programe Kazam"
+
+#: ../kazam/frontend/window_area.py:384
+msgid "Select an area by clicking and dragging."
+msgstr "Vyberte oblasť kliknutím a potiahnutím."
+
+#: ../kazam/frontend/window_area.py:385
+msgid "Press ENTER to confirm or ESC to cancel"
+msgstr "Stlačte ENTER pre potvrdenie alebo ESC pre zrušenie"
+
+#: ../kazam/frontend/indicator.py:72
+msgid "Pause recording"
+msgstr "Pozastaviť nahrávanie"
+
+#: ../kazam/backend/grabber.py:172
+msgid "Save capture"
+msgstr "Uložiť nahrávku"
+
+#: ../kazam/backend/prefs.py:148
+msgid "Unknown"
+msgstr "Neznámy"
+
+#~ msgid "Kazam_screencast"
+#~ msgstr "Kazam_screencast"

@@ -1,0 +1,335 @@
+# Basque translation for kazam
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the kazam package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kazam\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"PO-Revision-Date: 2012-07-07 22:29+0000\n"
+"Last-Translator: Ibai Oihanguren Sala <Unknown>\n"
+"Language-Team: Basque <eu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-10-10 05:35+0000\n"
+"X-Generator: Launchpad (build 18790)\n"
+
+#: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
+#: ../kazam/frontend/about_dialog.py:59
+msgid "Kazam"
+msgstr "Kazam"
+
+#: ../data/ui/kazam.ui.h:2
+msgid "Capture"
+msgstr "Kapturatu"
+
+#: ../data/ui/kazam.ui.h:3
+msgid "Seconds to wait before capturing:"
+msgstr "Zenbat segundo itxaron beharko? Horra:"
+
+#: ../data/ui/kazam.ui.h:4
+msgid "Sound from microphone"
+msgstr "Mikrofonoko soinua"
+
+#: ../data/ui/kazam.ui.h:5
+msgid "Sound from speakers"
+msgstr "Bozgorailuetako soinua"
+
+#: ../data/ui/kazam.ui.h:6
+msgid "Mouse cursor"
+msgstr "Saguaren kurtsorea"
+
+#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
+#: ../kazam/frontend/save_dialog.py:42
+msgid "Screencast"
+msgstr "Pantaila-grabazioa (screencast)"
+
+#: ../data/ui/kazam.ui.h:8
+msgid "Window borders"
+msgstr "Leihoko ertzak"
+
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
+#: ../kazam/frontend/save_dialog.py:44
+msgid "Screenshot"
+msgstr "Pantaila-argazkia"
+
+#: ../data/ui/kazam.ui.h:10
+msgid "When capturing include:"
+msgstr "Kapturatzerakoan gehitu:"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Kazam Preferences"
+msgstr "Kazam hobespenak"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Speakers:"
+msgstr "Bozgorailuak:"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Microphone:"
+msgstr "Mikrofonoa:"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Set volume"
+msgstr "Ezarri bolumena"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Countdown splash:"
+msgstr "Atzera-kontua abiarazi:"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "Toggle display of countdown splash"
+msgstr "Gaitu/ezgaitu atzera-kontuaren leihoa"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "General"
+msgstr "Orokorra"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Framerate:"
+msgstr "Fotograma-emaria:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Set the number of frames per second"
+msgstr "Zehaztu ea zenbat fotograma segundoko"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Record with:"
+msgstr "Grabatu honekin:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Automatic file saving:"
+msgstr "Fitxategien gordetze automatikoa:"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Directory:"
+msgstr "Direktorioa:"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Select a directory"
+msgstr "Hautatu direktorio bat"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Filename prefix:"
+msgstr "Fitxategiaren izenaren aurrizkia:"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Shutter sound:"
+msgstr "Obturadorearen soinua:"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Shutter type:"
+msgstr "Obturadore mota:"
+
+#: ../data/kazam.desktop.in.h:2
+msgid "Screencast and Screenshot tool"
+msgstr "Pantaila-grabazioa (screencast) eta pantaila-argazkia tresna"
+
+#: ../data/kazam.desktop.in.h:3
+msgid "Record a video or take a screenshot of your screen"
+msgstr "Grabatu bideo bat edo egin pantaila-argazki bat zure pantailan"
+
+#: ../data/kazam.desktop.in.h:4
+msgid "screenshot;screencast;videorecord;desktop recording;"
+msgstr ""
+"pantaila-argazkia;pantaila-grabazioa;bideograbazio;mahaigainekoa gabatzen;"
+
+#: ../data/kazam.desktop.in.h:5
+msgid "Take a screenshot of entire workspace"
+msgstr "Atera lan-eremu osoko pantaila-argazki bat"
+
+#: ../data/kazam.desktop.in.h:6
+msgid "Select an area to screenshot"
+msgstr "Hautatu eremu mugatu bat pantaila-argazkia egiteko"
+
+#: ../data/kazam.desktop.in.h:7
+msgid "Select a window to screenshot"
+msgstr "Hautatu leiho bat pantaila-argazkia egiteko"
+
+#: ../data/kazam.desktop.in.h:8 ../kazam/frontend/main_menu.py:65
+msgid "Preferences"
+msgstr "Hobespenak"
+
+#: ../kazam/app.py:57 ../kazam/app.py:66
+msgid "Gstreamer 1.0 or higher required, bailing out."
+msgstr "Gstreamer 1.0 edo geroagoko bertsioa behar da; alde egiten."
+
+#: ../kazam/app.py:172
+msgid "Record a video of your desktop."
+msgstr "Grabatu zure mahaigainetik."
+
+#: ../kazam/app.py:186
+msgid "Record a picture of your desktop."
+msgstr "Grabatu irudia zure mahaigainetik."
+
+#: ../kazam/app.py:198
+msgid "Webcam"
+msgstr ""
+
+#: ../kazam/app.py:199
+msgid "Capture form your webcam."
+msgstr ""
+
+#: ../kazam/app.py:212
+msgid "Broadcast"
+msgstr ""
+
+#: ../kazam/app.py:213
+msgid "Broadcast your desktop."
+msgstr ""
+
+#: ../kazam/app.py:239
+msgid "Fullscreen"
+msgstr "Pantaila osoa"
+
+#: ../kazam/app.py:240
+msgid "Capture contents of the current screen."
+msgstr "Kapturatu oraingo pantailako edukiak."
+
+#: ../kazam/app.py:251
+msgid "All Screens"
+msgstr "Pantaila guztiak"
+
+#: ../kazam/app.py:252
+msgid "Capture contents of all of your screens."
+msgstr "Kapturatu zure pantailetako edukiak."
+
+#: ../kazam/app.py:264
+msgid "Window"
+msgstr "Leihoa"
+
+#: ../kazam/app.py:265
+msgid "Capture contents of a single window."
+msgstr "Kapturatu edukiak leiho bakar batetik."
+
+#: ../kazam/app.py:276
+msgid "Area"
+msgstr "Lurraldea"
+
+#: ../kazam/app.py:277
+msgid "Capture a pre-selected area of your screen."
+msgstr "Kapturatu aurrez hautatutako eremua zeure pantailan."
+
+#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+msgid "Start recording"
+msgstr "Hasi grabatzen"
+
+#: ../kazam/app.py:349
+msgid "Take screenshot"
+msgstr "Egin pantaila-argazkia"
+
+#: ../kazam/app.py:363
+msgid "Start broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+msgid "Finish recording"
+msgstr "Amaitu grabazioa"
+
+#: ../kazam/app.py:790
+msgid "Cancel countdown"
+msgstr "Bertan behera utzi atzera-kontua"
+
+#: ../kazam/frontend/window_select.py:155
+msgid "Select a window by clicking on it."
+msgstr "Hautatu lehio bat gainean klik eginez."
+
+#: ../kazam/frontend/window_select.py:156
+msgid "Press ENTER or ESC to cancel"
+msgstr "Sakatu ENTER edo ESC bertan behera uzteko"
+
+#: ../kazam/frontend/done_recording.py:50
+msgid "Recording finished"
+msgstr "Grabazioa amaiturik"
+
+#: ../kazam/frontend/done_recording.py:62
+msgid ""
+"Kazam finished recording.\n"
+"What do you want to do now?"
+msgstr ""
+"Kazamek grabazioa amaitu du.\n"
+"Zer egin nahi duzu orain?"
+
+#: ../kazam/frontend/done_recording.py:65
+msgid "Edit with:"
+msgstr "Editatu honekin:"
+
+#: ../kazam/frontend/done_recording.py:73
+msgid "Save for later"
+msgstr "Gorde geroko"
+
+#: ../kazam/frontend/done_recording.py:83
+msgid "Cancel"
+msgstr "Bertan behera utzi"
+
+#: ../kazam/frontend/done_recording.py:85
+msgid "Continue"
+msgstr "Jarraitu"
+
+#: ../kazam/frontend/done_recording.py:121
+msgid "Save screencast"
+msgstr "Gorde pantailaren grabazioa"
+
+#: ../kazam/frontend/about_dialog.py:60
+msgid "Record a video of activity on your screen or capture a screenshot."
+msgstr ""
+"Grabatu jardueraren bideo bat zure pantailan edo kapturatu pantaila-argazki "
+"bat."
+
+#: ../kazam/frontend/save_dialog.py:37
+msgid "Save"
+msgstr "Gorde"
+
+#: ../kazam/frontend/main_menu.py:62
+msgid "File"
+msgstr "Fitxategia"
+
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+msgid "Quit"
+msgstr "Irten"
+
+#: ../kazam/frontend/main_menu.py:63
+msgid "Quit Kazam"
+msgstr "Irten Kazametik"
+
+#: ../kazam/frontend/main_menu.py:65
+msgid "Open preferences"
+msgstr "Ireki hobespenak"
+
+#: ../kazam/frontend/main_menu.py:67
+msgid "Help"
+msgstr "Laguntza"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About"
+msgstr "Honi buruz"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About Kazam"
+msgstr "Kazami buruz"
+
+#: ../kazam/frontend/window_area.py:384
+msgid "Select an area by clicking and dragging."
+msgstr "Hautatu eremu bat gainean klik eginez eta arrastaka mugituz."
+
+#: ../kazam/frontend/window_area.py:385
+msgid "Press ENTER to confirm or ESC to cancel"
+msgstr "Sakatu ENTER baieztatzeko edo ESC bertan behera uzteko"
+
+#: ../kazam/frontend/indicator.py:72
+msgid "Pause recording"
+msgstr "Egin etenaldia grabazioan"
+
+#: ../kazam/backend/grabber.py:172
+msgid "Save capture"
+msgstr "Gorde kaptura"
+
+#: ../kazam/backend/prefs.py:148
+msgid "Unknown"
+msgstr "Ezezaguna"
+
+#~ msgid "Kazam_screencast"
+#~ msgstr "Kazam_screencast (pantaila-grabazioa)"

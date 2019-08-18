@@ -1,0 +1,329 @@
+# Vietnamese translation for kazam
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the kazam package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kazam\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"PO-Revision-Date: 2013-01-30 07:22+0000\n"
+"Last-Translator: Lê Trường An <pinkyfinger111@gmail.com>\n"
+"Language-Team: Vietnamese <vi@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-10-10 05:35+0000\n"
+"X-Generator: Launchpad (build 18790)\n"
+
+#: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
+#: ../kazam/frontend/about_dialog.py:59
+msgid "Kazam"
+msgstr "Kazam"
+
+#: ../data/ui/kazam.ui.h:2
+msgid "Capture"
+msgstr "Ghi hình"
+
+#: ../data/ui/kazam.ui.h:3
+msgid "Seconds to wait before capturing:"
+msgstr "Số giây đợi trước khi ghi hình:"
+
+#: ../data/ui/kazam.ui.h:4
+msgid "Sound from microphone"
+msgstr "Âm thanh từ mi-crô"
+
+#: ../data/ui/kazam.ui.h:5
+msgid "Sound from speakers"
+msgstr "Âm thanh từ loa"
+
+#: ../data/ui/kazam.ui.h:6
+msgid "Mouse cursor"
+msgstr "Con trỏ chuột"
+
+#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
+#: ../kazam/frontend/save_dialog.py:42
+msgid "Screencast"
+msgstr "Quay phim màn hình"
+
+#: ../data/ui/kazam.ui.h:8
+msgid "Window borders"
+msgstr "Viền cửa sổ"
+
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
+#: ../kazam/frontend/save_dialog.py:44
+msgid "Screenshot"
+msgstr "Ảnh chụp màn hình"
+
+#: ../data/ui/kazam.ui.h:10
+msgid "When capturing include:"
+msgstr "Khi ghi hình bao gồm cả:"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Kazam Preferences"
+msgstr "Thiết lập Kazam"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Speakers:"
+msgstr "Loa:"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Microphone:"
+msgstr "Mi-crô"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Set volume"
+msgstr "Thiết đặt âm lượng"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Countdown splash:"
+msgstr "Ảnh đến ngược"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "Toggle display of countdown splash"
+msgstr "Hiện/ẩn ảnh đếm ngược"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "General"
+msgstr "Tổng quát"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Framerate:"
+msgstr "Tần số khung hình:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Set the number of frames per second"
+msgstr "Thiết đặt số khung hình mỗi giây"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Record with:"
+msgstr "Ghi với:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Automatic file saving:"
+msgstr "Tự động lưu tập tin:"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Directory:"
+msgstr "Thư mục:"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Select a directory"
+msgstr "Chọn thư mục"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Filename prefix:"
+msgstr "Phần trước tên tập tin:"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Shutter sound:"
+msgstr "Âm thanh chụp:"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Shutter type:"
+msgstr "Kiểu chụp:"
+
+#: ../data/kazam.desktop.in.h:2
+msgid "Screencast and Screenshot tool"
+msgstr "Công cụ ghi hình và chụp hình"
+
+#: ../data/kazam.desktop.in.h:3
+msgid "Record a video or take a screenshot of your screen"
+msgstr "Ghi lại một đoạn video hoặc chụp ảnh màn hình"
+
+#: ../data/kazam.desktop.in.h:4
+msgid "screenshot;screencast;videorecord;desktop recording;"
+msgstr "screenshot;screencast;videorecord;desktop recording;"
+
+#: ../data/kazam.desktop.in.h:5
+msgid "Take a screenshot of entire workspace"
+msgstr "Chụp hình vùng làm việc hiện tại"
+
+#: ../data/kazam.desktop.in.h:6
+msgid "Select an area to screenshot"
+msgstr "Chọn vùng để chụp ảnh"
+
+#: ../data/kazam.desktop.in.h:7
+msgid "Select a window to screenshot"
+msgstr "Chọn cửa sổ để chụp ảnh"
+
+#: ../data/kazam.desktop.in.h:8 ../kazam/frontend/main_menu.py:65
+msgid "Preferences"
+msgstr "Tùy chỉnh"
+
+#: ../kazam/app.py:57 ../kazam/app.py:66
+msgid "Gstreamer 1.0 or higher required, bailing out."
+msgstr "Cần có Gstreamer 1.0 hoặc mới hơn, đnag thoát."
+
+#: ../kazam/app.py:172
+msgid "Record a video of your desktop."
+msgstr "Ghi hình màn hình làm việc."
+
+#: ../kazam/app.py:186
+msgid "Record a picture of your desktop."
+msgstr "Chụp ảnh màn hình làm việc."
+
+#: ../kazam/app.py:198
+msgid "Webcam"
+msgstr ""
+
+#: ../kazam/app.py:199
+msgid "Capture form your webcam."
+msgstr ""
+
+#: ../kazam/app.py:212
+msgid "Broadcast"
+msgstr ""
+
+#: ../kazam/app.py:213
+msgid "Broadcast your desktop."
+msgstr ""
+
+#: ../kazam/app.py:239
+msgid "Fullscreen"
+msgstr "Toàn màn hình"
+
+#: ../kazam/app.py:240
+msgid "Capture contents of the current screen."
+msgstr "Ghi hình trên màn hình hiện tại."
+
+#: ../kazam/app.py:251
+msgid "All Screens"
+msgstr "Tất cả màn hình"
+
+#: ../kazam/app.py:252
+msgid "Capture contents of all of your screens."
+msgstr "Ghi hình trên tất cả màn hình."
+
+#: ../kazam/app.py:264
+msgid "Window"
+msgstr "Cửa sổ"
+
+#: ../kazam/app.py:265
+msgid "Capture contents of a single window."
+msgstr "Ghi hình cửa sổ."
+
+#: ../kazam/app.py:276
+msgid "Area"
+msgstr "Khu vực"
+
+#: ../kazam/app.py:277
+msgid "Capture a pre-selected area of your screen."
+msgstr "Ghi hình một khu vực được lựa chọn trước."
+
+#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+msgid "Start recording"
+msgstr "Bắt đầu ghi hình"
+
+#: ../kazam/app.py:349
+msgid "Take screenshot"
+msgstr "Chụp ảnh màn hình"
+
+#: ../kazam/app.py:363
+msgid "Start broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+msgid "Finish recording"
+msgstr "Hoàn tất ghi hình"
+
+#: ../kazam/app.py:790
+msgid "Cancel countdown"
+msgstr "Thôi đếm ngược"
+
+#: ../kazam/frontend/window_select.py:155
+msgid "Select a window by clicking on it."
+msgstr "Nhấn chọn cửa sổ."
+
+#: ../kazam/frontend/window_select.py:156
+msgid "Press ENTER or ESC to cancel"
+msgstr "Nhấn ENTER hoặc ESC để thôi"
+
+#: ../kazam/frontend/done_recording.py:50
+msgid "Recording finished"
+msgstr "Đã ghi hình xong"
+
+#: ../kazam/frontend/done_recording.py:62
+msgid ""
+"Kazam finished recording.\n"
+"What do you want to do now?"
+msgstr ""
+"Kazam đã ghi hình xong.\n"
+"Bạn muốn làm gì tiếp theo?"
+
+#: ../kazam/frontend/done_recording.py:65
+msgid "Edit with:"
+msgstr "Chỉnh sửa bằng:"
+
+#: ../kazam/frontend/done_recording.py:73
+msgid "Save for later"
+msgstr "Lưu lại"
+
+#: ../kazam/frontend/done_recording.py:83
+msgid "Cancel"
+msgstr "Huỷ bỏ"
+
+#: ../kazam/frontend/done_recording.py:85
+msgid "Continue"
+msgstr "Tiếp tục"
+
+#: ../kazam/frontend/done_recording.py:121
+msgid "Save screencast"
+msgstr ""
+
+#: ../kazam/frontend/about_dialog.py:60
+msgid "Record a video of activity on your screen or capture a screenshot."
+msgstr "Ghi lại hoạt động trên màn hình làm việc hoặc chụp ảnh màn hình."
+
+#: ../kazam/frontend/save_dialog.py:37
+msgid "Save"
+msgstr "Lưu"
+
+#: ../kazam/frontend/main_menu.py:62
+msgid "File"
+msgstr "Tập tin"
+
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+msgid "Quit"
+msgstr "Thoát"
+
+#: ../kazam/frontend/main_menu.py:63
+msgid "Quit Kazam"
+msgstr "Thoát Kazam"
+
+#: ../kazam/frontend/main_menu.py:65
+msgid "Open preferences"
+msgstr "Mở tuỳ chỉnh"
+
+#: ../kazam/frontend/main_menu.py:67
+msgid "Help"
+msgstr "Trợ giúp"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About"
+msgstr "Giới thiệu"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About Kazam"
+msgstr "Giới thiệu Kazam"
+
+#: ../kazam/frontend/window_area.py:384
+msgid "Select an area by clicking and dragging."
+msgstr "Chọn khu vực bằng cách nhấn và kéo chuột."
+
+#: ../kazam/frontend/window_area.py:385
+msgid "Press ENTER to confirm or ESC to cancel"
+msgstr "Nhấn ENTER để xác nhận hoặc ESC để huỷ"
+
+#: ../kazam/frontend/indicator.py:72
+msgid "Pause recording"
+msgstr "Tạm dừng ghi hình"
+
+#: ../kazam/backend/grabber.py:172
+msgid "Save capture"
+msgstr ""
+
+#: ../kazam/backend/prefs.py:148
+msgid "Unknown"
+msgstr "Không biết"

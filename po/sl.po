@@ -1,0 +1,333 @@
+# Slovenian translation for kazam
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the kazam package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kazam\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"PO-Revision-Date: 2012-04-27 14:42+0000\n"
+"Last-Translator: Dražen Matešić <Unknown>\n"
+"Language-Team: Slovenian <sl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-10-10 05:35+0000\n"
+"X-Generator: Launchpad (build 18790)\n"
+
+#: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
+#: ../kazam/frontend/about_dialog.py:59
+msgid "Kazam"
+msgstr "Kazam"
+
+#: ../data/ui/kazam.ui.h:2
+msgid "Capture"
+msgstr "Zajemi"
+
+#: ../data/ui/kazam.ui.h:3
+msgid "Seconds to wait before capturing:"
+msgstr "Koliko sekund preden začnete z zajemom:"
+
+#: ../data/ui/kazam.ui.h:4
+msgid "Sound from microphone"
+msgstr "Zvok iz mikrofona"
+
+#: ../data/ui/kazam.ui.h:5
+msgid "Sound from speakers"
+msgstr "Zvok iz zvočnikov"
+
+#: ../data/ui/kazam.ui.h:6
+msgid "Mouse cursor"
+msgstr "Miškin kazalec"
+
+#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
+#: ../kazam/frontend/save_dialog.py:42
+msgid "Screencast"
+msgstr "Zaslonski posnetek"
+
+#: ../data/ui/kazam.ui.h:8
+msgid "Window borders"
+msgstr "Obroba oken"
+
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
+#: ../kazam/frontend/save_dialog.py:44
+msgid "Screenshot"
+msgstr "Zaslonska slika"
+
+#: ../data/ui/kazam.ui.h:10
+msgid "When capturing include:"
+msgstr "Ko zajemamo vključi:"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Kazam Preferences"
+msgstr "Možnosti Kazam"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Speakers:"
+msgstr "Zvočniki:"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Microphone:"
+msgstr "Mikrofon:"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Set volume"
+msgstr "Nastavi glasnost"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Countdown splash:"
+msgstr "Odštevanje:"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "Toggle display of countdown splash"
+msgstr "Preklopi prikaz odštevalnika"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "General"
+msgstr "Splošno"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Framerate:"
+msgstr "Hitrost sličic:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Set the number of frames per second"
+msgstr "Nastavite število sličic na sekundo"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Record with:"
+msgstr "Snemaj z:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Automatic file saving:"
+msgstr "Samodejno shranjevanje datoteke:"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Directory:"
+msgstr "Mapa:"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Select a directory"
+msgstr "Izberite mapo"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Filename prefix:"
+msgstr "Predpona datoteke:"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Shutter sound:"
+msgstr "Zvok zaslonke:"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Shutter type:"
+msgstr "Vrsta zaslonke:"
+
+#: ../data/kazam.desktop.in.h:2
+msgid "Screencast and Screenshot tool"
+msgstr "Orodje za zaslonske posnetke ter slike"
+
+#: ../data/kazam.desktop.in.h:3
+msgid "Record a video or take a screenshot of your screen"
+msgstr "Zajemite video ali sliko svojega zaslona"
+
+#: ../data/kazam.desktop.in.h:4
+msgid "screenshot;screencast;videorecord;desktop recording;"
+msgstr "zaslonska slika;zaslonski posnetek;zajem videa;zajem namizja;"
+
+#: ../data/kazam.desktop.in.h:5
+msgid "Take a screenshot of entire workspace"
+msgstr "Zajemite zaslonsko sliko celotne delovne površine"
+
+#: ../data/kazam.desktop.in.h:6
+msgid "Select an area to screenshot"
+msgstr "Izberite področje za zajem zaslonske slike"
+
+#: ../data/kazam.desktop.in.h:7
+msgid "Select a window to screenshot"
+msgstr "Izberite okno za zajem zaslonske slike"
+
+#: ../data/kazam.desktop.in.h:8 ../kazam/frontend/main_menu.py:65
+msgid "Preferences"
+msgstr "Možnosti"
+
+#: ../kazam/app.py:57 ../kazam/app.py:66
+msgid "Gstreamer 1.0 or higher required, bailing out."
+msgstr "Zahtevana je različica Gstreamer 1.0 ali višja, končujem."
+
+#: ../kazam/app.py:172
+msgid "Record a video of your desktop."
+msgstr "Posnemite video svojega namizja."
+
+#: ../kazam/app.py:186
+msgid "Record a picture of your desktop."
+msgstr "Zajemite sliko svojega namizja."
+
+#: ../kazam/app.py:198
+msgid "Webcam"
+msgstr ""
+
+#: ../kazam/app.py:199
+msgid "Capture form your webcam."
+msgstr ""
+
+#: ../kazam/app.py:212
+msgid "Broadcast"
+msgstr ""
+
+#: ../kazam/app.py:213
+msgid "Broadcast your desktop."
+msgstr ""
+
+#: ../kazam/app.py:239
+msgid "Fullscreen"
+msgstr "Celozaslonsko"
+
+#: ../kazam/app.py:240
+msgid "Capture contents of the current screen."
+msgstr "Zajem vsebine trenutnega zaslona."
+
+#: ../kazam/app.py:251
+msgid "All Screens"
+msgstr "Vsi zasloni"
+
+#: ../kazam/app.py:252
+msgid "Capture contents of all of your screens."
+msgstr "Zajem vsebine vseh zaslonov."
+
+#: ../kazam/app.py:264
+msgid "Window"
+msgstr "Okno"
+
+#: ../kazam/app.py:265
+msgid "Capture contents of a single window."
+msgstr "Zajem vsebine okna."
+
+#: ../kazam/app.py:276
+msgid "Area"
+msgstr "Področje"
+
+#: ../kazam/app.py:277
+msgid "Capture a pre-selected area of your screen."
+msgstr "Zajem predizbranega področja vašega zaslona."
+
+#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+msgid "Start recording"
+msgstr "Začni snemati"
+
+#: ../kazam/app.py:349
+msgid "Take screenshot"
+msgstr "Zajemite zaslonsko sliko"
+
+#: ../kazam/app.py:363
+msgid "Start broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+msgid "Finish recording"
+msgstr "Končaj snemanje"
+
+#: ../kazam/app.py:790
+msgid "Cancel countdown"
+msgstr "Prekliči odštevanje"
+
+#: ../kazam/frontend/window_select.py:155
+msgid "Select a window by clicking on it."
+msgstr "S klikom na okno ga izberete."
+
+#: ../kazam/frontend/window_select.py:156
+msgid "Press ENTER or ESC to cancel"
+msgstr "Pritisnite ENTER ali ESC za preklic"
+
+#: ../kazam/frontend/done_recording.py:50
+msgid "Recording finished"
+msgstr "Snemanje zaključeno"
+
+#: ../kazam/frontend/done_recording.py:62
+msgid ""
+"Kazam finished recording.\n"
+"What do you want to do now?"
+msgstr ""
+"Snemanje je končano.\n"
+"Kako želite nadaljevati?"
+
+#: ../kazam/frontend/done_recording.py:65
+msgid "Edit with:"
+msgstr "Uredi z:"
+
+#: ../kazam/frontend/done_recording.py:73
+msgid "Save for later"
+msgstr "Shrani za pozneje"
+
+#: ../kazam/frontend/done_recording.py:83
+msgid "Cancel"
+msgstr "Prekliči"
+
+#: ../kazam/frontend/done_recording.py:85
+msgid "Continue"
+msgstr "Nadaljuj"
+
+#: ../kazam/frontend/done_recording.py:121
+msgid "Save screencast"
+msgstr "Shrani zaslonski posnetek"
+
+#: ../kazam/frontend/about_dialog.py:60
+msgid "Record a video of activity on your screen or capture a screenshot."
+msgstr ""
+"Posnemite video dejavnosti na svojem  zaslonu ali zajemite zaslonsko sliko."
+
+#: ../kazam/frontend/save_dialog.py:37
+msgid "Save"
+msgstr "Shrani"
+
+#: ../kazam/frontend/main_menu.py:62
+msgid "File"
+msgstr "Datoteka"
+
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+msgid "Quit"
+msgstr "Izhod"
+
+#: ../kazam/frontend/main_menu.py:63
+msgid "Quit Kazam"
+msgstr "Končaj Kazam"
+
+#: ../kazam/frontend/main_menu.py:65
+msgid "Open preferences"
+msgstr "Odprite možnosti"
+
+#: ../kazam/frontend/main_menu.py:67
+msgid "Help"
+msgstr "Pomoč"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About"
+msgstr "O programu"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About Kazam"
+msgstr "O programu"
+
+#: ../kazam/frontend/window_area.py:384
+msgid "Select an area by clicking and dragging."
+msgstr "Izberite področje s klikanjem in vlečenjem."
+
+#: ../kazam/frontend/window_area.py:385
+msgid "Press ENTER to confirm or ESC to cancel"
+msgstr "Pritisnite ENTER da potrdite ali ESC za preklic"
+
+#: ../kazam/frontend/indicator.py:72
+msgid "Pause recording"
+msgstr "Premor snemanja"
+
+#: ../kazam/backend/grabber.py:172
+msgid "Save capture"
+msgstr "Shrani zajem"
+
+#: ../kazam/backend/prefs.py:148
+msgid "Unknown"
+msgstr "Neznano"
+
+#~ msgid "Kazam_screencast"
+#~ msgstr "Kazam_zaslonski-posnetek"

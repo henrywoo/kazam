@@ -1,0 +1,9 @@
+TODO
+----
+
+Whishlist (by BigWhale) and reasons why is something still on a whishlist
+
+ - Memory consuption issues with VP8 (needs checking)
+ - Detection of avenc_aac and x264enc, if one of them is missing, disable
+   broadcast mode.
+ 

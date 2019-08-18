@@ -1,0 +1,333 @@
+# English (United Kingdom) translation for kazam
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the kazam package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kazam\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"PO-Revision-Date: 2012-10-16 09:37+0000\n"
+"Last-Translator: Luthfi Emka <Unknown>\n"
+"Language-Team: English (United Kingdom) <en_GB@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-10-10 05:35+0000\n"
+"X-Generator: Launchpad (build 18790)\n"
+
+#: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
+#: ../kazam/frontend/about_dialog.py:59
+msgid "Kazam"
+msgstr "Kazam"
+
+#: ../data/ui/kazam.ui.h:2
+msgid "Capture"
+msgstr "Tangkap"
+
+#: ../data/ui/kazam.ui.h:3
+msgid "Seconds to wait before capturing:"
+msgstr "Detik yang perlu ditunggu sebelum menangkap:"
+
+#: ../data/ui/kazam.ui.h:4
+msgid "Sound from microphone"
+msgstr "Suara dari mikrofon:"
+
+#: ../data/ui/kazam.ui.h:5
+msgid "Sound from speakers"
+msgstr "Suara dari pengeras suara"
+
+#: ../data/ui/kazam.ui.h:6
+msgid "Mouse cursor"
+msgstr "Kursor tetikus"
+
+#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
+#: ../kazam/frontend/save_dialog.py:42
+msgid "Screencast"
+msgstr "Rekaman layar"
+
+#: ../data/ui/kazam.ui.h:8
+msgid "Window borders"
+msgstr "Tepi jendela"
+
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
+#: ../kazam/frontend/save_dialog.py:44
+msgid "Screenshot"
+msgstr "Tangkapan layar"
+
+#: ../data/ui/kazam.ui.h:10
+msgid "When capturing include:"
+msgstr "Saat menangkap masukkan:"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Kazam Preferences"
+msgstr "Pilihan Kazam"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Speakers:"
+msgstr "Speaker"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Microphone:"
+msgstr "Mikrofon"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Set volume"
+msgstr "Atur volume"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Countdown splash:"
+msgstr "Percikan hitungan mundur:"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "Toggle display of countdown splash"
+msgstr "Toggle tampilan splash pewaktu mundur"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "General"
+msgstr "Umum"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Framerate:"
+msgstr "Laju frame:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Set the number of frames per second"
+msgstr "Atur jumlah frame per detik"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Record with:"
+msgstr "Rekam dengan:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Automatic file saving:"
+msgstr "Otomatis menyimpan berkas:"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Directory:"
+msgstr "Direktori:"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Select a directory"
+msgstr "Pilih suatu direktori"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Filename prefix:"
+msgstr "Awalan nama berkas"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Shutter sound:"
+msgstr "Suara pemetik potret:"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Shutter type:"
+msgstr "Jenis pemetik potret:"
+
+#: ../data/kazam.desktop.in.h:2
+msgid "Screencast and Screenshot tool"
+msgstr "Perkakas rekaman dan tangkapan layar"
+
+#: ../data/kazam.desktop.in.h:3
+msgid "Record a video or take a screenshot of your screen"
+msgstr "Rekam video atau ambil tangkapan layar dari layar Anda"
+
+#: ../data/kazam.desktop.in.h:4
+msgid "screenshot;screencast;videorecord;desktop recording;"
+msgstr "tangkapan layar;rekaman layar;rekamanvideo;perekaman desktop;"
+
+#: ../data/kazam.desktop.in.h:5
+msgid "Take a screenshot of entire workspace"
+msgstr "Ambil tangkapan layar dari seluruh ruang kerja"
+
+#: ../data/kazam.desktop.in.h:6
+msgid "Select an area to screenshot"
+msgstr "Pilih suatu kawasan untuk ditangkap layar"
+
+#: ../data/kazam.desktop.in.h:7
+msgid "Select a window to screenshot"
+msgstr "Pilih suatu jendela untuk ditangkap layar"
+
+#: ../data/kazam.desktop.in.h:8 ../kazam/frontend/main_menu.py:65
+msgid "Preferences"
+msgstr "Pilihan"
+
+#: ../kazam/app.py:57 ../kazam/app.py:66
+msgid "Gstreamer 1.0 or higher required, bailing out."
+msgstr "Dibutuhkan Gstreamer 1.0 atau lebih tinggi, terpaksa keluar."
+
+#: ../kazam/app.py:172
+msgid "Record a video of your desktop."
+msgstr "Rekam suatu video dari desktop Anda"
+
+#: ../kazam/app.py:186
+msgid "Record a picture of your desktop."
+msgstr "Rekam suatu gambar dari desktop Anda"
+
+#: ../kazam/app.py:198
+msgid "Webcam"
+msgstr ""
+
+#: ../kazam/app.py:199
+msgid "Capture form your webcam."
+msgstr ""
+
+#: ../kazam/app.py:212
+msgid "Broadcast"
+msgstr ""
+
+#: ../kazam/app.py:213
+msgid "Broadcast your desktop."
+msgstr ""
+
+#: ../kazam/app.py:239
+msgid "Fullscreen"
+msgstr "Layar penuh"
+
+#: ../kazam/app.py:240
+msgid "Capture contents of the current screen."
+msgstr "Tangkap kandungan dari layar saat ini."
+
+#: ../kazam/app.py:251
+msgid "All Screens"
+msgstr "Seluruh Layar"
+
+#: ../kazam/app.py:252
+msgid "Capture contents of all of your screens."
+msgstr "Tangkap kandungan dari seluruh layar Anda."
+
+#: ../kazam/app.py:264
+msgid "Window"
+msgstr "Jendela"
+
+#: ../kazam/app.py:265
+msgid "Capture contents of a single window."
+msgstr "Tangkap kandungand dari jendela tunggal."
+
+#: ../kazam/app.py:276
+msgid "Area"
+msgstr "Area"
+
+#: ../kazam/app.py:277
+msgid "Capture a pre-selected area of your screen."
+msgstr "Tangkap kawasan yang dipilih sebelumnya dari layar Anda."
+
+#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+msgid "Start recording"
+msgstr "Mulai merekam"
+
+#: ../kazam/app.py:349
+msgid "Take screenshot"
+msgstr "Ambil tangkapan layar"
+
+#: ../kazam/app.py:363
+msgid "Start broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+msgid "Finish recording"
+msgstr "Selesai merekam"
+
+#: ../kazam/app.py:790
+msgid "Cancel countdown"
+msgstr "Batalkan pewaktu mundur"
+
+#: ../kazam/frontend/window_select.py:155
+msgid "Select a window by clicking on it."
+msgstr "Pilih suatu jendela dengan mengkliknya"
+
+#: ../kazam/frontend/window_select.py:156
+msgid "Press ENTER or ESC to cancel"
+msgstr "Tekan ENTER atau ESC untuk membatalkan"
+
+#: ../kazam/frontend/done_recording.py:50
+msgid "Recording finished"
+msgstr "Perekaman selesai"
+
+#: ../kazam/frontend/done_recording.py:62
+msgid ""
+"Kazam finished recording.\n"
+"What do you want to do now?"
+msgstr ""
+"Kazam selesai merekam.\n"
+"Apa yang akan anda lakukan sekarang?"
+
+#: ../kazam/frontend/done_recording.py:65
+msgid "Edit with:"
+msgstr "Sunting dengan:"
+
+#: ../kazam/frontend/done_recording.py:73
+msgid "Save for later"
+msgstr "Simpan untuk kemudian"
+
+#: ../kazam/frontend/done_recording.py:83
+msgid "Cancel"
+msgstr "Batal"
+
+#: ../kazam/frontend/done_recording.py:85
+msgid "Continue"
+msgstr "Lanjutkan"
+
+#: ../kazam/frontend/done_recording.py:121
+msgid "Save screencast"
+msgstr "Simpan screencast"
+
+#: ../kazam/frontend/about_dialog.py:60
+msgid "Record a video of activity on your screen or capture a screenshot."
+msgstr ""
+"Rekam suatu video untuk aktivitas layar Anda atau tangkap suatu layar."
+
+#: ../kazam/frontend/save_dialog.py:37
+msgid "Save"
+msgstr "Simpan"
+
+#: ../kazam/frontend/main_menu.py:62
+msgid "File"
+msgstr "Berkas"
+
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+msgid "Quit"
+msgstr "Keluar"
+
+#: ../kazam/frontend/main_menu.py:63
+msgid "Quit Kazam"
+msgstr "Hentikan Kazam"
+
+#: ../kazam/frontend/main_menu.py:65
+msgid "Open preferences"
+msgstr "Buka pilihan"
+
+#: ../kazam/frontend/main_menu.py:67
+msgid "Help"
+msgstr "Bantuan"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About"
+msgstr "Tentang"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About Kazam"
+msgstr "Tentang Kazam"
+
+#: ../kazam/frontend/window_area.py:384
+msgid "Select an area by clicking and dragging."
+msgstr "Pilih suatu kawasan dengan mengklik dan menyeret"
+
+#: ../kazam/frontend/window_area.py:385
+msgid "Press ENTER to confirm or ESC to cancel"
+msgstr "Tekan ENTER untuk menegaskan atau ESC untuk membatalkan"
+
+#: ../kazam/frontend/indicator.py:72
+msgid "Pause recording"
+msgstr "Jeda perekaman"
+
+#: ../kazam/backend/grabber.py:172
+msgid "Save capture"
+msgstr "Simpan tangkapan"
+
+#: ../kazam/backend/prefs.py:148
+msgid "Unknown"
+msgstr "Tidak dikenal"
+
+#~ msgid "Kazam_screencast"
+#~ msgstr "Rekaman layar Kazam"

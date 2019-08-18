@@ -1,0 +1,332 @@
+# Korean translation for kazam
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the kazam package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kazam\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"PO-Revision-Date: 2012-07-07 12:25+0000\n"
+"Last-Translator: alisol <qrobo.ubuntu@gmail.com>\n"
+"Language-Team: Korean <ko@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-10-10 05:35+0000\n"
+"X-Generator: Launchpad (build 18790)\n"
+
+#: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
+#: ../kazam/frontend/about_dialog.py:59
+msgid "Kazam"
+msgstr "카잠"
+
+#: ../data/ui/kazam.ui.h:2
+msgid "Capture"
+msgstr "캡처하기"
+
+#: ../data/ui/kazam.ui.h:3
+msgid "Seconds to wait before capturing:"
+msgstr "캡처하기 전 대기 시간:"
+
+#: ../data/ui/kazam.ui.h:4
+msgid "Sound from microphone"
+msgstr "마이크에서 나는 소리"
+
+#: ../data/ui/kazam.ui.h:5
+msgid "Sound from speakers"
+msgstr "스피커에서 나는 소리"
+
+#: ../data/ui/kazam.ui.h:6
+msgid "Mouse cursor"
+msgstr "마우스 커서"
+
+#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
+#: ../kazam/frontend/save_dialog.py:42
+msgid "Screencast"
+msgstr "화면 녹화"
+
+#: ../data/ui/kazam.ui.h:8
+msgid "Window borders"
+msgstr "창 테두리"
+
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
+#: ../kazam/frontend/save_dialog.py:44
+msgid "Screenshot"
+msgstr "스크린샷"
+
+#: ../data/ui/kazam.ui.h:10
+msgid "When capturing include:"
+msgstr "캠쳐할 때 포함할 내용:"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Kazam Preferences"
+msgstr "카잠 환경 설정"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Speakers:"
+msgstr "스피커:"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Microphone:"
+msgstr "마이크:"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Set volume"
+msgstr "볼륨 설정"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Countdown splash:"
+msgstr "카운트다운 화면:"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "Toggle display of countdown splash"
+msgstr "카운트다운 화면 표시 토글"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "General"
+msgstr "일반 설정"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Framerate:"
+msgstr "프레임 속도:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Set the number of frames per second"
+msgstr "초당 프레임 수 설정"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Record with:"
+msgstr "녹음 기구:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Automatic file saving:"
+msgstr "파일 자동 저장:"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Directory:"
+msgstr "디렉토리:"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Select a directory"
+msgstr "디렉토리 선택"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Filename prefix:"
+msgstr "파일 이름 접두사:"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Shutter sound:"
+msgstr "셔터 소리:"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Shutter type:"
+msgstr "셔터 종류:"
+
+#: ../data/kazam.desktop.in.h:2
+msgid "Screencast and Screenshot tool"
+msgstr "화면 녹화 및 화면 캡처 도구"
+
+#: ../data/kazam.desktop.in.h:3
+msgid "Record a video or take a screenshot of your screen"
+msgstr "여러분의 화면을 녹화하거나 캡처합니다"
+
+#: ../data/kazam.desktop.in.h:4
+msgid "screenshot;screencast;videorecord;desktop recording;"
+msgstr "스크린샷;스크린캐스트;비디오녹화;데스크톱 녹화;"
+
+#: ../data/kazam.desktop.in.h:5
+msgid "Take a screenshot of entire workspace"
+msgstr "전체 작업 공간 찍기"
+
+#: ../data/kazam.desktop.in.h:6
+msgid "Select an area to screenshot"
+msgstr "캡처할 영역을 선택합니다"
+
+#: ../data/kazam.desktop.in.h:7
+msgid "Select a window to screenshot"
+msgstr "캡처할 창을 선택합니다"
+
+#: ../data/kazam.desktop.in.h:8 ../kazam/frontend/main_menu.py:65
+msgid "Preferences"
+msgstr "환경 설정"
+
+#: ../kazam/app.py:57 ../kazam/app.py:66
+msgid "Gstreamer 1.0 or higher required, bailing out."
+msgstr "Gstreamer 1.0 또는 그 이상의 버전이 필요합니다, 끝냅니다."
+
+#: ../kazam/app.py:172
+msgid "Record a video of your desktop."
+msgstr "여러분의 데스크톱을 녹화합니다"
+
+#: ../kazam/app.py:186
+msgid "Record a picture of your desktop."
+msgstr "여러분의 데스크톱을 캡처합니다."
+
+#: ../kazam/app.py:198
+msgid "Webcam"
+msgstr ""
+
+#: ../kazam/app.py:199
+msgid "Capture form your webcam."
+msgstr ""
+
+#: ../kazam/app.py:212
+msgid "Broadcast"
+msgstr ""
+
+#: ../kazam/app.py:213
+msgid "Broadcast your desktop."
+msgstr ""
+
+#: ../kazam/app.py:239
+msgid "Fullscreen"
+msgstr "전체 화면"
+
+#: ../kazam/app.py:240
+msgid "Capture contents of the current screen."
+msgstr "현재 화면의 내용을 캡처 합니다."
+
+#: ../kazam/app.py:251
+msgid "All Screens"
+msgstr "모든 화면"
+
+#: ../kazam/app.py:252
+msgid "Capture contents of all of your screens."
+msgstr "모든 화면의 내용을 캡처합니다."
+
+#: ../kazam/app.py:264
+msgid "Window"
+msgstr "창"
+
+#: ../kazam/app.py:265
+msgid "Capture contents of a single window."
+msgstr "창 하나의 내용만 캡처합니다."
+
+#: ../kazam/app.py:276
+msgid "Area"
+msgstr "영역"
+
+#: ../kazam/app.py:277
+msgid "Capture a pre-selected area of your screen."
+msgstr "미리 선택한 범위의 내용을 캡처합니다."
+
+#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+msgid "Start recording"
+msgstr "녹화를  시작합니다"
+
+#: ../kazam/app.py:349
+msgid "Take screenshot"
+msgstr "스크린샷 찍기"
+
+#: ../kazam/app.py:363
+msgid "Start broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+msgid "Finish recording"
+msgstr "녹화를 마칩니다"
+
+#: ../kazam/app.py:790
+msgid "Cancel countdown"
+msgstr "카운트다운 취소"
+
+#: ../kazam/frontend/window_select.py:155
+msgid "Select a window by clicking on it."
+msgstr "클릭하셔서 창을 선택하세요."
+
+#: ../kazam/frontend/window_select.py:156
+msgid "Press ENTER or ESC to cancel"
+msgstr "Enter 키나 Esc 키를 누르시면 취소됩니다"
+
+#: ../kazam/frontend/done_recording.py:50
+msgid "Recording finished"
+msgstr "녹화를 마쳤습니다"
+
+#: ../kazam/frontend/done_recording.py:62
+msgid ""
+"Kazam finished recording.\n"
+"What do you want to do now?"
+msgstr ""
+"카잠이 녹화를 마칩니다.\n"
+"이제 무엇을 할까요?"
+
+#: ../kazam/frontend/done_recording.py:65
+msgid "Edit with:"
+msgstr "편집할 도구 선택:"
+
+#: ../kazam/frontend/done_recording.py:73
+msgid "Save for later"
+msgstr "다음을 위해 저장"
+
+#: ../kazam/frontend/done_recording.py:83
+msgid "Cancel"
+msgstr "취소"
+
+#: ../kazam/frontend/done_recording.py:85
+msgid "Continue"
+msgstr "계속하기"
+
+#: ../kazam/frontend/done_recording.py:121
+msgid "Save screencast"
+msgstr "스크린 캐스트 저장 하기"
+
+#: ../kazam/frontend/about_dialog.py:60
+msgid "Record a video of activity on your screen or capture a screenshot."
+msgstr "화면에 일어나는 일을 녹화하거나 캡처합니다."
+
+#: ../kazam/frontend/save_dialog.py:37
+msgid "Save"
+msgstr "저장하기"
+
+#: ../kazam/frontend/main_menu.py:62
+msgid "File"
+msgstr "파일"
+
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+msgid "Quit"
+msgstr "끝내기"
+
+#: ../kazam/frontend/main_menu.py:63
+msgid "Quit Kazam"
+msgstr "카잠 종료"
+
+#: ../kazam/frontend/main_menu.py:65
+msgid "Open preferences"
+msgstr "환경 설정 열기"
+
+#: ../kazam/frontend/main_menu.py:67
+msgid "Help"
+msgstr "도움말"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About"
+msgstr "정보"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About Kazam"
+msgstr "카잠에 대한 일반 정보"
+
+#: ../kazam/frontend/window_area.py:384
+msgid "Select an area by clicking and dragging."
+msgstr "클릭한 후 끌어서 범위를 결정합니다."
+
+#: ../kazam/frontend/window_area.py:385
+msgid "Press ENTER to confirm or ESC to cancel"
+msgstr "Enter 키를 눌러서 확정하시거나 Esc 키를 눌러서 취소하세요"
+
+#: ../kazam/frontend/indicator.py:72
+msgid "Pause recording"
+msgstr "녹화 일시 중지"
+
+#: ../kazam/backend/grabber.py:172
+msgid "Save capture"
+msgstr "캡처한 것 저장하기"
+
+#: ../kazam/backend/prefs.py:148
+msgid "Unknown"
+msgstr "알 수 없음"
+
+#~ msgid "Kazam_screencast"
+#~ msgstr "카잠 스크린캐스트"

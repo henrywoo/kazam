@@ -1,0 +1,335 @@
+# Hungarian translation for kazam
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the kazam package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kazam\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"PO-Revision-Date: 2014-12-15 19:11+0000\n"
+"Last-Translator: Richard Somlói <ricsipontaz@gmail.com>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-10-10 05:35+0000\n"
+"X-Generator: Launchpad (build 18790)\n"
+
+#: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
+#: ../kazam/frontend/about_dialog.py:59
+msgid "Kazam"
+msgstr "Kazam"
+
+#: ../data/ui/kazam.ui.h:2
+msgid "Capture"
+msgstr "Rögzítés"
+
+#: ../data/ui/kazam.ui.h:3
+msgid "Seconds to wait before capturing:"
+msgstr "Ennyi másodpercet várjon a rögzítés előtt:"
+
+#: ../data/ui/kazam.ui.h:4
+msgid "Sound from microphone"
+msgstr "Hang a mikrofonból"
+
+#: ../data/ui/kazam.ui.h:5
+msgid "Sound from speakers"
+msgstr "Hang a hangszórókból"
+
+#: ../data/ui/kazam.ui.h:6
+msgid "Mouse cursor"
+msgstr "Egérmutató"
+
+#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
+#: ../kazam/frontend/save_dialog.py:42
+msgid "Screencast"
+msgstr "Képernyővideó"
+
+#: ../data/ui/kazam.ui.h:8
+msgid "Window borders"
+msgstr "Ablakkeretek"
+
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
+#: ../kazam/frontend/save_dialog.py:44
+msgid "Screenshot"
+msgstr "Képernyőkép"
+
+#: ../data/ui/kazam.ui.h:10
+msgid "When capturing include:"
+msgstr "Rögzítéskor tartalmazza:"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Kazam Preferences"
+msgstr "Kazam beállítások"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Speakers:"
+msgstr "Hangszóró:"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Microphone:"
+msgstr "Mikrofon:"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Set volume"
+msgstr "Hangerő beállítása"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Countdown splash:"
+msgstr "Visszaszámlálás indítókép:"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "Toggle display of countdown splash"
+msgstr "A visszaszámlálás indítókép megjelenítésének ki- és bekapcsolása"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "General"
+msgstr "Általános"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Framerate:"
+msgstr "Képkockasebesség:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Set the number of frames per second"
+msgstr "Adja meg a másodpercenkénti képkocka számot"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Record with:"
+msgstr "Rögzítés ezzel:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Automatic file saving:"
+msgstr "Automatikus fájlmentés:"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Directory:"
+msgstr "Könyvtár:"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Select a directory"
+msgstr "Könyvtár kiválasztása"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Filename prefix:"
+msgstr "Fájlnév előtag:"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Shutter sound:"
+msgstr "Zárhang:"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Shutter type:"
+msgstr "Zártípus:"
+
+#: ../data/kazam.desktop.in.h:2
+msgid "Screencast and Screenshot tool"
+msgstr "Képernyővideó és képernyőkép eszköz"
+
+#: ../data/kazam.desktop.in.h:3
+msgid "Record a video or take a screenshot of your screen"
+msgstr "Videó vagy képernyőkép készítése a képernyőről"
+
+#: ../data/kazam.desktop.in.h:4
+msgid "screenshot;screencast;videorecord;desktop recording;"
+msgstr "képernyőkép;képernyővideó;videofelvétel;asztal rögzítése;"
+
+#: ../data/kazam.desktop.in.h:5
+msgid "Take a screenshot of entire workspace"
+msgstr "Képernyőkép készítése a teljes munkaterületről"
+
+#: ../data/kazam.desktop.in.h:6
+msgid "Select an area to screenshot"
+msgstr "Jelöljön ki egy területet a képernyőkép készítéséhez"
+
+#: ../data/kazam.desktop.in.h:7
+msgid "Select a window to screenshot"
+msgstr "Válasszon egy ablakot a képernyőkép készítéséhez"
+
+#: ../data/kazam.desktop.in.h:8 ../kazam/frontend/main_menu.py:65
+msgid "Preferences"
+msgstr "Beállítások"
+
+#: ../kazam/app.py:57 ../kazam/app.py:66
+msgid "Gstreamer 1.0 or higher required, bailing out."
+msgstr "A Gstreamer 1.0 vagy újabb szükséges, feladom."
+
+#: ../kazam/app.py:172
+msgid "Record a video of your desktop."
+msgstr "Videó rögzítése az asztalról."
+
+#: ../kazam/app.py:186
+msgid "Record a picture of your desktop."
+msgstr "Kép készítése az asztalról."
+
+#: ../kazam/app.py:198
+msgid "Webcam"
+msgstr "Webkamera"
+
+#: ../kazam/app.py:199
+msgid "Capture form your webcam."
+msgstr "Képkészítés a webkamerával."
+
+#: ../kazam/app.py:212
+msgid "Broadcast"
+msgstr ""
+
+#: ../kazam/app.py:213
+msgid "Broadcast your desktop."
+msgstr ""
+
+#: ../kazam/app.py:239
+msgid "Fullscreen"
+msgstr "Teljes képernyő"
+
+#: ../kazam/app.py:240
+msgid "Capture contents of the current screen."
+msgstr "A jelenlegi képernyő tartalmának rögzítése."
+
+#: ../kazam/app.py:251
+msgid "All Screens"
+msgstr "Minden képernyő"
+
+#: ../kazam/app.py:252
+msgid "Capture contents of all of your screens."
+msgstr "Minden képernyő tartalmának rögzítése."
+
+#: ../kazam/app.py:264
+msgid "Window"
+msgstr "Ablak"
+
+#: ../kazam/app.py:265
+msgid "Capture contents of a single window."
+msgstr "Egy adott ablak tartalmának rögzítése."
+
+#: ../kazam/app.py:276
+msgid "Area"
+msgstr "Terület"
+
+#: ../kazam/app.py:277
+msgid "Capture a pre-selected area of your screen."
+msgstr "A képernyő előre kijelölt területének rögzítése."
+
+#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+msgid "Start recording"
+msgstr "Felvétel indítása"
+
+#: ../kazam/app.py:349
+msgid "Take screenshot"
+msgstr "Képernyőkép készítése"
+
+#: ../kazam/app.py:363
+msgid "Start broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+msgid "Finish recording"
+msgstr "Felvétel befejezése"
+
+#: ../kazam/app.py:790
+msgid "Cancel countdown"
+msgstr "Visszaszámlálás megszakítása"
+
+#: ../kazam/frontend/window_select.py:155
+msgid "Select a window by clicking on it."
+msgstr "Válasszon egy ablakot arra kattintva."
+
+#: ../kazam/frontend/window_select.py:156
+msgid "Press ENTER or ESC to cancel"
+msgstr "Nyomja meg az ENTER-t vagy az ESC billentyűt a megszakításhoz"
+
+#: ../kazam/frontend/done_recording.py:50
+msgid "Recording finished"
+msgstr "Felvétel befejezve"
+
+#: ../kazam/frontend/done_recording.py:62
+msgid ""
+"Kazam finished recording.\n"
+"What do you want to do now?"
+msgstr ""
+"A Kazam befejezte a felvételt.\n"
+"Mit kíván tenni ezután?"
+
+#: ../kazam/frontend/done_recording.py:65
+msgid "Edit with:"
+msgstr "Szerkesztés ezzel:"
+
+#: ../kazam/frontend/done_recording.py:73
+msgid "Save for later"
+msgstr "Elmentés későbbre"
+
+#: ../kazam/frontend/done_recording.py:83
+msgid "Cancel"
+msgstr "Mégse"
+
+#: ../kazam/frontend/done_recording.py:85
+msgid "Continue"
+msgstr "Folytatás"
+
+#: ../kazam/frontend/done_recording.py:121
+msgid "Save screencast"
+msgstr "Képernyővideó mentése"
+
+#: ../kazam/frontend/about_dialog.py:60
+msgid "Record a video of activity on your screen or capture a screenshot."
+msgstr ""
+"A képernyőn lévő tevékenység videójának felvétele vagy képernyőkép készítése."
+
+#: ../kazam/frontend/save_dialog.py:37
+msgid "Save"
+msgstr "Mentés"
+
+#: ../kazam/frontend/main_menu.py:62
+msgid "File"
+msgstr "Fájl"
+
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+msgid "Quit"
+msgstr "Kilépés"
+
+#: ../kazam/frontend/main_menu.py:63
+msgid "Quit Kazam"
+msgstr "Kazam bezárása"
+
+#: ../kazam/frontend/main_menu.py:65
+msgid "Open preferences"
+msgstr "Beállítások megnyitása"
+
+#: ../kazam/frontend/main_menu.py:67
+msgid "Help"
+msgstr "Súgó"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About"
+msgstr "Névjegy"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About Kazam"
+msgstr "A Kazam névjegye"
+
+#: ../kazam/frontend/window_area.py:384
+msgid "Select an area by clicking and dragging."
+msgstr "Jelöljön ki egy területet kattintással és húzással."
+
+#: ../kazam/frontend/window_area.py:385
+msgid "Press ENTER to confirm or ESC to cancel"
+msgstr ""
+"Nyomja meg az ENTER-t a megerősítéshez vagy az ESC billentyűt a "
+"megszakításhoz"
+
+#: ../kazam/frontend/indicator.py:72
+msgid "Pause recording"
+msgstr "Felvétel szüneteltetése"
+
+#: ../kazam/backend/grabber.py:172
+msgid "Save capture"
+msgstr "Rögzítés mentése"
+
+#: ../kazam/backend/prefs.py:148
+msgid "Unknown"
+msgstr "Ismeretlen"
+
+#~ msgid "Kazam_screencast"
+#~ msgstr "Kazam_képernyővideó"

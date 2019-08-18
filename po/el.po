@@ -1,0 +1,335 @@
+# English (United Kingdom) translation for kazam
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the kazam package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kazam\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"PO-Revision-Date: 2010-10-15 21:31+0000\n"
+"Last-Translator: Salih EMIN <Unknown>\n"
+"Language-Team: Greek <el@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-10-10 05:35+0000\n"
+"X-Generator: Launchpad (build 18790)\n"
+
+#: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
+#: ../kazam/frontend/about_dialog.py:59
+msgid "Kazam"
+msgstr "Kazam"
+
+#: ../data/ui/kazam.ui.h:2
+msgid "Capture"
+msgstr "Καταγραφή"
+
+#: ../data/ui/kazam.ui.h:3
+msgid "Seconds to wait before capturing:"
+msgstr "Δευτερόλεπτα αναμονής πριν τη καταγραφή:"
+
+#: ../data/ui/kazam.ui.h:4
+msgid "Sound from microphone"
+msgstr "Ήχος από μικρόφωνο"
+
+#: ../data/ui/kazam.ui.h:5
+msgid "Sound from speakers"
+msgstr "Ήχος από ηχεία"
+
+#: ../data/ui/kazam.ui.h:6
+msgid "Mouse cursor"
+msgstr "Δρομέας ποντικιού"
+
+#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
+#: ../kazam/frontend/save_dialog.py:42
+msgid "Screencast"
+msgstr "Βίντεο οθόνης"
+
+#: ../data/ui/kazam.ui.h:8
+msgid "Window borders"
+msgstr "Περιγράμματα παραθύρου"
+
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
+#: ../kazam/frontend/save_dialog.py:44
+msgid "Screenshot"
+msgstr "Στιγμιότυπο οθόνης"
+
+#: ../data/ui/kazam.ui.h:10
+msgid "When capturing include:"
+msgstr "Κατά την καταγραφή να περιλαμβάνονται:"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Kazam Preferences"
+msgstr "Προτιμήσεις Kazam"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Speakers:"
+msgstr "Ηχεία:"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Microphone:"
+msgstr "Μικρόφωνο:"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Set volume"
+msgstr "Ορισμός έντασης"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Countdown splash:"
+msgstr "Αντίστροφη μέτρηση εκκίνησης:"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "Toggle display of countdown splash"
+msgstr "Εναλλαγή οθόνης αντίστροφης μέτρησης εκκίνησης"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "General"
+msgstr "Γενικά"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Framerate:"
+msgstr "Ρυθμός λήψεων:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Set the number of frames per second"
+msgstr "Ορισμός του αριθμού λήψεων ανά δευτερόλεπτο"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Record with:"
+msgstr "Εγγραφή με:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Automatic file saving:"
+msgstr "Αυτόματη αποθήκευση αρχείου:"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Directory:"
+msgstr "Κατάλογος:"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Select a directory"
+msgstr "Επιλογή καταλόγου"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Filename prefix:"
+msgstr "Πρόθεμα ονόματος αρχείου:"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Shutter sound:"
+msgstr "Ήχος διαφράγματος:"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Shutter type:"
+msgstr "Τύπος διαφράγματος:"
+
+#: ../data/kazam.desktop.in.h:2
+msgid "Screencast and Screenshot tool"
+msgstr "Εργαλείο βίντεο και στιγμιότυπου οθόνης"
+
+#: ../data/kazam.desktop.in.h:3
+msgid "Record a video or take a screenshot of your screen"
+msgstr "Εγγραφή βίντεο ή λήψη στιγμιότυπου της οθόνης σας"
+
+#: ../data/kazam.desktop.in.h:4
+msgid "screenshot;screencast;videorecord;desktop recording;"
+msgstr ""
+"στιγμιότυπο οθόνης;βίντεο οθόνης;εγγραφή βίντεο;εγγραφή επιφάνειας εργασίας;"
+
+#: ../data/kazam.desktop.in.h:5
+msgid "Take a screenshot of entire workspace"
+msgstr "Λήψη στιγμιότυπου οθόνης ολόκληρου του χώρου εργασίας"
+
+#: ../data/kazam.desktop.in.h:6
+msgid "Select an area to screenshot"
+msgstr "Επιλέξτε μια περιοχή για στιγμιότυπο οθόνης"
+
+#: ../data/kazam.desktop.in.h:7
+msgid "Select a window to screenshot"
+msgstr "Επιλέξτε ένα παράθυρο για στιγμιότυπο οθόνης"
+
+#: ../data/kazam.desktop.in.h:8 ../kazam/frontend/main_menu.py:65
+msgid "Preferences"
+msgstr "Προτιμήσεις"
+
+#: ../kazam/app.py:57 ../kazam/app.py:66
+msgid "Gstreamer 1.0 or higher required, bailing out."
+msgstr "Απαιτείται Gstreamer 1.0 ή νεότερο, εγκατάλειψη."
+
+#: ../kazam/app.py:172
+msgid "Record a video of your desktop."
+msgstr "Εγγραφή βίντεο της επιφάνειας εργασίας σας."
+
+#: ../kazam/app.py:186
+msgid "Record a picture of your desktop."
+msgstr "Εγγραφή εικόνας της επιφάνειας εργασίας σας."
+
+#: ../kazam/app.py:198
+msgid "Webcam"
+msgstr ""
+
+#: ../kazam/app.py:199
+msgid "Capture form your webcam."
+msgstr ""
+
+#: ../kazam/app.py:212
+msgid "Broadcast"
+msgstr ""
+
+#: ../kazam/app.py:213
+msgid "Broadcast your desktop."
+msgstr ""
+
+#: ../kazam/app.py:239
+msgid "Fullscreen"
+msgstr "Πλήρης οθόνη"
+
+#: ../kazam/app.py:240
+msgid "Capture contents of the current screen."
+msgstr "Καταγραφή περιεχομένων της τρέχουσας οθόνης."
+
+#: ../kazam/app.py:251
+msgid "All Screens"
+msgstr "Όλες οι οθόνες"
+
+#: ../kazam/app.py:252
+msgid "Capture contents of all of your screens."
+msgstr "Καταγραφή περιεχομένων όλων των οθονών σας."
+
+#: ../kazam/app.py:264
+msgid "Window"
+msgstr "Παράθυρο"
+
+#: ../kazam/app.py:265
+msgid "Capture contents of a single window."
+msgstr "Καταγραφή περιεχομένων ενός μοναδικού παραθύρου."
+
+#: ../kazam/app.py:276
+msgid "Area"
+msgstr "Περιοχή"
+
+#: ../kazam/app.py:277
+msgid "Capture a pre-selected area of your screen."
+msgstr "Καταγραφή μιας προεπιλεγμένης περιοχής της οθόνης σας."
+
+#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+msgid "Start recording"
+msgstr "Έναρξη εγγραφής"
+
+#: ../kazam/app.py:349
+msgid "Take screenshot"
+msgstr "Λήψη στιγμιότυπου οθόνης"
+
+#: ../kazam/app.py:363
+msgid "Start broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+msgid "Finish recording"
+msgstr "Τερματισμός εγγραφής"
+
+#: ../kazam/app.py:790
+msgid "Cancel countdown"
+msgstr "Ακύρωση αντίστροφης μέτρησης"
+
+#: ../kazam/frontend/window_select.py:155
+msgid "Select a window by clicking on it."
+msgstr "Επιλέξτε ένα παράθυρο πατώντας πάνω του."
+
+#: ../kazam/frontend/window_select.py:156
+msgid "Press ENTER or ESC to cancel"
+msgstr "Πατήστε ENTER ή ESC για ακύρωση"
+
+#: ../kazam/frontend/done_recording.py:50
+msgid "Recording finished"
+msgstr "Η εγγραφή τελείωσε"
+
+#: ../kazam/frontend/done_recording.py:62
+msgid ""
+"Kazam finished recording.\n"
+"What do you want to do now?"
+msgstr ""
+"Το Kazam τελείωσε την εγγραφή.\n"
+"Τι θέλετε να κάνει τώρα;"
+
+#: ../kazam/frontend/done_recording.py:65
+msgid "Edit with:"
+msgstr "Επεξεργασία με:"
+
+#: ../kazam/frontend/done_recording.py:73
+msgid "Save for later"
+msgstr "Αποθήκευση για αργότερα"
+
+#: ../kazam/frontend/done_recording.py:83
+msgid "Cancel"
+msgstr "Άκυρο"
+
+#: ../kazam/frontend/done_recording.py:85
+msgid "Continue"
+msgstr "Συνέχεια"
+
+#: ../kazam/frontend/done_recording.py:121
+msgid "Save screencast"
+msgstr "Αποθήκευση βίντεο οθόνης"
+
+#: ../kazam/frontend/about_dialog.py:60
+msgid "Record a video of activity on your screen or capture a screenshot."
+msgstr ""
+"Καταγραφή ενός βίντεο με τη δραστηριότητα στην οθόνη σας ή λήψη ενός "
+"στιγμιότυπου."
+
+#: ../kazam/frontend/save_dialog.py:37
+msgid "Save"
+msgstr "Αποθήκευση"
+
+#: ../kazam/frontend/main_menu.py:62
+msgid "File"
+msgstr "Αρχείο"
+
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+msgid "Quit"
+msgstr "Έξοδος"
+
+#: ../kazam/frontend/main_menu.py:63
+msgid "Quit Kazam"
+msgstr "Έξοδος από το Kazam"
+
+#: ../kazam/frontend/main_menu.py:65
+msgid "Open preferences"
+msgstr "Άνοιγμα προτιμήσεων"
+
+#: ../kazam/frontend/main_menu.py:67
+msgid "Help"
+msgstr "Βοήθεια"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About"
+msgstr "Περί"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About Kazam"
+msgstr "Σχετικά με το Kazam"
+
+#: ../kazam/frontend/window_area.py:384
+msgid "Select an area by clicking and dragging."
+msgstr "Επιλέξτε μια περιοχή πατώντας και μεταφέροντας."
+
+#: ../kazam/frontend/window_area.py:385
+msgid "Press ENTER to confirm or ESC to cancel"
+msgstr "Πατήστε ENTER για επιβεβαίωση ή ESC για ακύρωση"
+
+#: ../kazam/frontend/indicator.py:72
+msgid "Pause recording"
+msgstr "Παύση εγγραφής"
+
+#: ../kazam/backend/grabber.py:172
+msgid "Save capture"
+msgstr "Αποθήκευση καταγραφής"
+
+#: ../kazam/backend/prefs.py:148
+msgid "Unknown"
+msgstr "Άγνωστο"
+
+#~ msgid "Kazam_screencast"
+#~ msgstr "ΒίντεοΟθόνης_Kazam"

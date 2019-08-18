@@ -1,0 +1,332 @@
+# Chinese (Simplified) translation for kazam
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the kazam package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kazam\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"PO-Revision-Date: 2012-10-18 04:18+0000\n"
+"Last-Translator: Guan Jun-Ming <gjunming@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-10-10 05:35+0000\n"
+"X-Generator: Launchpad (build 18790)\n"
+
+#: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
+#: ../kazam/frontend/about_dialog.py:59
+msgid "Kazam"
+msgstr "Kazam"
+
+#: ../data/ui/kazam.ui.h:2
+msgid "Capture"
+msgstr "捕获"
+
+#: ../data/ui/kazam.ui.h:3
+msgid "Seconds to wait before capturing:"
+msgstr "抓拍前的等待时间："
+
+#: ../data/ui/kazam.ui.h:4
+msgid "Sound from microphone"
+msgstr "来自于麦克风的声音"
+
+#: ../data/ui/kazam.ui.h:5
+msgid "Sound from speakers"
+msgstr "来自于扬声器的声音"
+
+#: ../data/ui/kazam.ui.h:6
+msgid "Mouse cursor"
+msgstr "鼠标光标"
+
+#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
+#: ../kazam/frontend/save_dialog.py:42
+msgid "Screencast"
+msgstr "屏幕录像"
+
+#: ../data/ui/kazam.ui.h:8
+msgid "Window borders"
+msgstr "窗口边框"
+
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
+#: ../kazam/frontend/save_dialog.py:44
+msgid "Screenshot"
+msgstr "屏幕截图"
+
+#: ../data/ui/kazam.ui.h:10
+msgid "When capturing include:"
+msgstr "捕获的项目包括："
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Kazam Preferences"
+msgstr "Kazam 首选项"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Speakers:"
+msgstr "扬声器："
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Microphone:"
+msgstr "麦克风："
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Set volume"
+msgstr "设置音量"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Countdown splash:"
+msgstr "倒计时动画："
+
+#: ../data/ui/preferences.ui.h:6
+msgid "Toggle display of countdown splash"
+msgstr "切换倒计时动画的显示"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "General"
+msgstr "常规"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Framerate:"
+msgstr "帧率:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Set the number of frames per second"
+msgstr "设定每秒帧数"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Record with:"
+msgstr "录音音源："
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Automatic file saving:"
+msgstr "自动文件保存："
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Directory:"
+msgstr "目录："
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Select a directory"
+msgstr "选择目录"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Filename prefix:"
+msgstr "文件名前缀："
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Shutter sound:"
+msgstr "快门声音："
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Shutter type:"
+msgstr "快门类型："
+
+#: ../data/kazam.desktop.in.h:2
+msgid "Screencast and Screenshot tool"
+msgstr "录屏与截图工具"
+
+#: ../data/kazam.desktop.in.h:3
+msgid "Record a video or take a screenshot of your screen"
+msgstr "录制屏幕视频或抓取屏幕截图"
+
+#: ../data/kazam.desktop.in.h:4
+msgid "screenshot;screencast;videorecord;desktop recording;"
+msgstr "screenshot;screencast;videorecord;desktop recording;录屏;截图;桌面录制;"
+
+#: ../data/kazam.desktop.in.h:5
+msgid "Take a screenshot of entire workspace"
+msgstr "抓取整个工作区截图"
+
+#: ../data/kazam.desktop.in.h:6
+msgid "Select an area to screenshot"
+msgstr "选择截屏区域"
+
+#: ../data/kazam.desktop.in.h:7
+msgid "Select a window to screenshot"
+msgstr "选择截屏窗口"
+
+#: ../data/kazam.desktop.in.h:8 ../kazam/frontend/main_menu.py:65
+msgid "Preferences"
+msgstr "首选项"
+
+#: ../kazam/app.py:57 ../kazam/app.py:66
+msgid "Gstreamer 1.0 or higher required, bailing out."
+msgstr "Gstreamer 1.0 或更高版本，必须的。"
+
+#: ../kazam/app.py:172
+msgid "Record a video of your desktop."
+msgstr "录制桌面视频。"
+
+#: ../kazam/app.py:186
+msgid "Record a picture of your desktop."
+msgstr "截取桌面图片。"
+
+#: ../kazam/app.py:198
+msgid "Webcam"
+msgstr ""
+
+#: ../kazam/app.py:199
+msgid "Capture form your webcam."
+msgstr ""
+
+#: ../kazam/app.py:212
+msgid "Broadcast"
+msgstr ""
+
+#: ../kazam/app.py:213
+msgid "Broadcast your desktop."
+msgstr ""
+
+#: ../kazam/app.py:239
+msgid "Fullscreen"
+msgstr "全屏"
+
+#: ../kazam/app.py:240
+msgid "Capture contents of the current screen."
+msgstr "抓取整个屏幕的内容。"
+
+#: ../kazam/app.py:251
+msgid "All Screens"
+msgstr "全部屏幕"
+
+#: ../kazam/app.py:252
+msgid "Capture contents of all of your screens."
+msgstr "抓取全部屏幕的内容。"
+
+#: ../kazam/app.py:264
+msgid "Window"
+msgstr "窗口"
+
+#: ../kazam/app.py:265
+msgid "Capture contents of a single window."
+msgstr "抓取单个窗口的内容。"
+
+#: ../kazam/app.py:276
+msgid "Area"
+msgstr "区域"
+
+#: ../kazam/app.py:277
+msgid "Capture a pre-selected area of your screen."
+msgstr "抓取预先选择的屏幕区域。"
+
+#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+msgid "Start recording"
+msgstr "开始录制"
+
+#: ../kazam/app.py:349
+msgid "Take screenshot"
+msgstr "屏幕截图"
+
+#: ../kazam/app.py:363
+msgid "Start broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+msgid "Finish recording"
+msgstr "完成录制"
+
+#: ../kazam/app.py:790
+msgid "Cancel countdown"
+msgstr "取消倒计时"
+
+#: ../kazam/frontend/window_select.py:155
+msgid "Select a window by clicking on it."
+msgstr "通过点击选择窗口。"
+
+#: ../kazam/frontend/window_select.py:156
+msgid "Press ENTER or ESC to cancel"
+msgstr "按下回车键或 ESC 以取消"
+
+#: ../kazam/frontend/done_recording.py:50
+msgid "Recording finished"
+msgstr "录制已结束"
+
+#: ../kazam/frontend/done_recording.py:62
+msgid ""
+"Kazam finished recording.\n"
+"What do you want to do now?"
+msgstr ""
+"Kazam 已完成录制。\n"
+"您现在想做什么？"
+
+#: ../kazam/frontend/done_recording.py:65
+msgid "Edit with:"
+msgstr "编辑方式："
+
+#: ../kazam/frontend/done_recording.py:73
+msgid "Save for later"
+msgstr "保存"
+
+#: ../kazam/frontend/done_recording.py:83
+msgid "Cancel"
+msgstr "取消"
+
+#: ../kazam/frontend/done_recording.py:85
+msgid "Continue"
+msgstr "继续"
+
+#: ../kazam/frontend/done_recording.py:121
+msgid "Save screencast"
+msgstr "保存屏幕录像"
+
+#: ../kazam/frontend/about_dialog.py:60
+msgid "Record a video of activity on your screen or capture a screenshot."
+msgstr "录制一段屏幕活动的视频或截图。"
+
+#: ../kazam/frontend/save_dialog.py:37
+msgid "Save"
+msgstr "保存"
+
+#: ../kazam/frontend/main_menu.py:62
+msgid "File"
+msgstr "文件"
+
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+msgid "Quit"
+msgstr "退出"
+
+#: ../kazam/frontend/main_menu.py:63
+msgid "Quit Kazam"
+msgstr "退出 Kazam"
+
+#: ../kazam/frontend/main_menu.py:65
+msgid "Open preferences"
+msgstr "打开首选项"
+
+#: ../kazam/frontend/main_menu.py:67
+msgid "Help"
+msgstr "帮助"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About"
+msgstr "关于"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About Kazam"
+msgstr "关于 Kazam"
+
+#: ../kazam/frontend/window_area.py:384
+msgid "Select an area by clicking and dragging."
+msgstr "通过点击或拖拽来选择区域。"
+
+#: ../kazam/frontend/window_area.py:385
+msgid "Press ENTER to confirm or ESC to cancel"
+msgstr "按下回车键以确认或 ESC 以取消"
+
+#: ../kazam/frontend/indicator.py:72
+msgid "Pause recording"
+msgstr "暂停录制"
+
+#: ../kazam/backend/grabber.py:172
+msgid "Save capture"
+msgstr "保存截图"
+
+#: ../kazam/backend/prefs.py:148
+msgid "Unknown"
+msgstr "未知"
+
+#~ msgid "Kazam_screencast"
+#~ msgstr "Kazam_screencast"

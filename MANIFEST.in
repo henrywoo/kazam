@@ -1,0 +1,6 @@
+include AUTHORS COPYING COPYING.LGPL README setup.cfg setup.py TODO MANIFEST.in
+recursive-include bin *
+recursive-include data *
+recursive-include kazam *
+recursive-include po *
+

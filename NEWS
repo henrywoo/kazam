@@ -1,0 +1,97 @@
+Kazam 1.5.3 - NX-72307
+
+- Rudimentary broadcasting to YouTube Live
+- On screen display of mouse clicks and keystrokes
+- Some code cleanups here and there
+
+Kazam 1.5.0 - NX-72307
+----------------------
+
+- Planned support for webcams
+- Planned support for broadcasting directly to YouTube Live and Twitch
+
+
+Kazam 1.4.0 - NCC-2000
+----------------------
+
+- When recording an area a red rectangle will be displayed to mark
+  the recording area during the recording if you are using Ubuntu
+  13.04 or higher.
+
+- New program icon.
+
+- Kazam is now using symbolic icons for toolbars.
+
+- Minor changes to countdown screen.
+
+- Various minor bug fixes:
+  #1096331
+  #1104888
+  #1105618
+  #1116294
+  #1099942
+  #1096370
+  #1073818
+  #1073572
+
+
+Kazam 1.3.99 - NX-01
+--------------------
+
+- Switch to python3 is complete and all necessary dependencies are
+  taken care of.
+
+- Audio sources are now separated in two groups 'monitor sources'
+  which can be used for capturing computer audio and 'standar input'
+  sources which can be used to capture microphone and other inputs.
+
+- The following launchpad bugs were addresed:
+
+  #1085437
+  #1073712
+  #1079962
+  #1083041
+  #1037538
+  #1072256
+  #1074354
+  #1080636
+  #1082865
+  #1083047
+
+Kazam 1.3.4 - NCC-2893 (Stargazer Edition)
+------------------------------------------
+
+- Instant mode, to capture screenshots from command line, use
+  the following switches:
+    -f / --fullscreen   capture full screen
+    -w / --window       capture currently active window
+    -a / --area         capture a preselected screen area
+    -g / --godmode      disable sounds, use automatic file saving and
+                        capture full screen & active window at the same
+                        time
+
+- New area and window selection screens.
+- Unity Launcher quicklist added.
+
+Kazam 1.3.1 - NCC-2893 (Stargazer Edition)
+------------------------------------------
+
+- GStreamer 1.0 support, Kazam will no longer work with older versions
+  of GStreamer. This includes 0.11 (1.0 alpha/beta/rc) version. Some
+  encoders were changed in transition from beta to final release which
+  messed up a lot of things.
+
+- Completely new GUI. Designed by https://launchpad.net/~kokoto-java with
+  the omnipresent guiding hand of https://launchpad.net/~mpt
+
+- Support for taking still screen captures, also known as screenshots.
+
+- Support for automatic file saving. You can set the prefix filename
+  separately for screenshots and screencasts.
+
+- Support for selecting a single window to screencast. Screenshots are
+  still limited to full screen and/or area selection.
+
+- Theme-able shutter sounds. Right now you can choose between Canon 7D
+  and Nikon D80. ;)
+

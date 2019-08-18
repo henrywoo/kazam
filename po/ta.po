@@ -1,0 +1,333 @@
+# Tamil translation for kazam
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the kazam package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kazam\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-06-16 20:19+0200\n"
+"PO-Revision-Date: 2013-01-05 15:15+0000\n"
+"Last-Translator: A.K.Karthikeyan <77minds@gmail.com>\n"
+"Language-Team: Tamil <ta@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-10-10 05:35+0000\n"
+"X-Generator: Launchpad (build 18790)\n"
+
+#: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
+#: ../kazam/frontend/about_dialog.py:59
+msgid "Kazam"
+msgstr "காசாம்"
+
+#: ../data/ui/kazam.ui.h:2
+msgid "Capture"
+msgstr "படப்பதிவு"
+
+#: ../data/ui/kazam.ui.h:3
+msgid "Seconds to wait before capturing:"
+msgstr "படப்பதிவிற்கு முன் காத்திருக்க வேண்டிய விநாடிகள்:"
+
+#: ../data/ui/kazam.ui.h:4
+msgid "Sound from microphone"
+msgstr "ஒலிவாங்கியிலிருந்து வரும் ஒலி"
+
+#: ../data/ui/kazam.ui.h:5
+msgid "Sound from speakers"
+msgstr "ஒலிபெருக்கியிலிருந்து வரும் ஒலி"
+
+#: ../data/ui/kazam.ui.h:6
+msgid "Mouse cursor"
+msgstr "இடஞ்சுட்டி"
+
+#: ../data/ui/kazam.ui.h:7 ../data/ui/preferences.ui.h:15 ../kazam/app.py:171
+#: ../kazam/frontend/save_dialog.py:42
+msgid "Screencast"
+msgstr "திரைபதிவு"
+
+#: ../data/ui/kazam.ui.h:8
+msgid "Window borders"
+msgstr "சாளர எல்லைகள்"
+
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:18 ../kazam/app.py:185
+#: ../kazam/frontend/save_dialog.py:44
+msgid "Screenshot"
+msgstr "திரைபிடிப்பு"
+
+#: ../data/ui/kazam.ui.h:10
+msgid "When capturing include:"
+msgstr "படப்பதிவின் போது உள்ளடக்கம்:"
+
+#: ../data/ui/preferences.ui.h:1
+msgid "Kazam Preferences"
+msgstr "காசாம் விருப்பங்கள்"
+
+#: ../data/ui/preferences.ui.h:2
+msgid "Speakers:"
+msgstr "ஒலிபெருக்கிகள்:"
+
+#: ../data/ui/preferences.ui.h:3
+msgid "Microphone:"
+msgstr "ஓலி வாங்கி"
+
+#: ../data/ui/preferences.ui.h:4
+msgid "Set volume"
+msgstr "ஒலியளவை அமை"
+
+#: ../data/ui/preferences.ui.h:5
+msgid "Countdown splash:"
+msgstr "கீழெண்ணு காணொளி"
+
+#: ../data/ui/preferences.ui.h:6
+msgid "Toggle display of countdown splash"
+msgstr "கீழெண்ணு காணொளியின் மாற்று காட்சி"
+
+#: ../data/ui/preferences.ui.h:7
+msgid "General"
+msgstr "பொது"
+
+#: ../data/ui/preferences.ui.h:8
+msgid "Framerate:"
+msgstr "சட்டவிகிதம்:"
+
+#: ../data/ui/preferences.ui.h:9
+msgid "Set the number of frames per second"
+msgstr "ஒரு நோடியின் சட்டவிகித அளவை அமை"
+
+#: ../data/ui/preferences.ui.h:10
+msgid "Record with:"
+msgstr "இதன் மூலம் பதிவு செய்:"
+
+#: ../data/ui/preferences.ui.h:11
+msgid "Automatic file saving:"
+msgstr "தானாக கோப்பை சேமி:"
+
+#: ../data/ui/preferences.ui.h:12
+msgid "Directory:"
+msgstr "அடைவு:"
+
+#: ../data/ui/preferences.ui.h:13
+msgid "Select a directory"
+msgstr "ஓர் அடைவைத் தேர்ந்தெடு"
+
+#: ../data/ui/preferences.ui.h:14
+msgid "Filename prefix:"
+msgstr "கோப்புப்பெயர் முன்னொட்டு:"
+
+#: ../data/ui/preferences.ui.h:16
+msgid "Shutter sound:"
+msgstr "கதவு ஒலி"
+
+#: ../data/ui/preferences.ui.h:17
+msgid "Shutter type:"
+msgstr "கதவு வகை:"
+
+#: ../data/kazam.desktop.in.h:2
+msgid "Screencast and Screenshot tool"
+msgstr "திரைபதிவு மற்றும் திரைப்பிடிப்பு கருவி"
+
+#: ../data/kazam.desktop.in.h:3
+msgid "Record a video or take a screenshot of your screen"
+msgstr "உங்கள் திரையை திரைப்பிடிப்பாக அல்லது காணொளியாக பதிவு எடுக்கவும்"
+
+#: ../data/kazam.desktop.in.h:4
+msgid "screenshot;screencast;videorecord;desktop recording;"
+msgstr "திரைப்பிடிப்பு;திரைபதிவு;காணொளி பதிவு;பணிமேடை பதிவு;"
+
+#: ../data/kazam.desktop.in.h:5
+msgid "Take a screenshot of entire workspace"
+msgstr "பணியிடத்தை முழுவதுமாக திரைப்பிடிப்பு செய்"
+
+#: ../data/kazam.desktop.in.h:6
+msgid "Select an area to screenshot"
+msgstr "திரைப்பிடிப்பு செய்வதற்கான பகுதியை தேர்ந்தெடு"
+
+#: ../data/kazam.desktop.in.h:7
+msgid "Select a window to screenshot"
+msgstr "திரைப்பிடிப்பு செய்வதற்கான சாளரத்தைத் தேர்ந்தெடு"
+
+#: ../data/kazam.desktop.in.h:8 ../kazam/frontend/main_menu.py:65
+msgid "Preferences"
+msgstr "விருப்பங்கள்"
+
+#: ../kazam/app.py:57 ../kazam/app.py:66
+msgid "Gstreamer 1.0 or higher required, bailing out."
+msgstr "Gstreamer 1.0 அல்லது  மேற்பதிப்பு தேவை.  வெளியேறுகிறது."
+
+#: ../kazam/app.py:172
+msgid "Record a video of your desktop."
+msgstr "உங்கள் பணிமேடையை காணொளியாக பதிவு செய்க"
+
+#: ../kazam/app.py:186
+msgid "Record a picture of your desktop."
+msgstr "உங்கள் பணிமேடையை புகைப்படமாக பதிவு செய்க"
+
+#: ../kazam/app.py:198
+msgid "Webcam"
+msgstr ""
+
+#: ../kazam/app.py:199
+msgid "Capture form your webcam."
+msgstr ""
+
+#: ../kazam/app.py:212
+msgid "Broadcast"
+msgstr ""
+
+#: ../kazam/app.py:213
+msgid "Broadcast your desktop."
+msgstr ""
+
+#: ../kazam/app.py:239
+msgid "Fullscreen"
+msgstr "முழுத்திரை"
+
+#: ../kazam/app.py:240
+msgid "Capture contents of the current screen."
+msgstr "நடப்பு திரையின் உள்ளடக்கங்களைப் படம் பிடிக்கவும்"
+
+#: ../kazam/app.py:251
+msgid "All Screens"
+msgstr "அனைத்து திரைகள்"
+
+#: ../kazam/app.py:252
+msgid "Capture contents of all of your screens."
+msgstr "அனைத்து திரைகளின் உள்ளடக்கங்களையும் படம்பிடிக்கவும்."
+
+#: ../kazam/app.py:264
+msgid "Window"
+msgstr "சாளரம்"
+
+#: ../kazam/app.py:265
+msgid "Capture contents of a single window."
+msgstr "ஒரு திரையின் உள்ளடக்கங்களைப் படம்பிடிக்கவும்."
+
+#: ../kazam/app.py:276
+msgid "Area"
+msgstr "பரப்பு"
+
+#: ../kazam/app.py:277
+msgid "Capture a pre-selected area of your screen."
+msgstr "முன்னர் தேர்ந்தெடுத்த பரப்பை படம்பிடிக்கவும்."
+
+#: ../kazam/app.py:341 ../kazam/app.py:358 ../kazam/frontend/indicator.py:68
+msgid "Start recording"
+msgstr "பதிவு செய்ய தொடங்கவும்"
+
+#: ../kazam/app.py:349
+msgid "Take screenshot"
+msgstr "திரைபிடிப்பு எடுக்கவும்"
+
+#: ../kazam/app.py:363
+msgid "Start broadcasting"
+msgstr ""
+
+#: ../kazam/app.py:606 ../kazam/app.py:627 ../kazam/frontend/indicator.py:76
+msgid "Finish recording"
+msgstr "பதிவு செய்வதை நிறுத்தவும்"
+
+#: ../kazam/app.py:790
+msgid "Cancel countdown"
+msgstr "கீழெண்ணுதலை ரத்துசெய்யவும்"
+
+#: ../kazam/frontend/window_select.py:155
+msgid "Select a window by clicking on it."
+msgstr "ஒரு சாளரத்தை அதன் மீது சொடுக்கி தேர்ந்தெடுக்கவும்"
+
+#: ../kazam/frontend/window_select.py:156
+msgid "Press ENTER or ESC to cancel"
+msgstr "ரத்து செய்ய ENTER அல்லது ESC அழுத்தவும்"
+
+#: ../kazam/frontend/done_recording.py:50
+msgid "Recording finished"
+msgstr "பதிவு முடிந்தது"
+
+#: ../kazam/frontend/done_recording.py:62
+msgid ""
+"Kazam finished recording.\n"
+"What do you want to do now?"
+msgstr ""
+"காசாம் பதிவை முடித்துவிட்டது\n"
+"நீங்கள் இப்போது என்ன செய்ய விரும்புகிறீர்கள்?"
+
+#: ../kazam/frontend/done_recording.py:65
+msgid "Edit with:"
+msgstr "வைத்து தொகுக்கவும்:"
+
+#: ../kazam/frontend/done_recording.py:73
+msgid "Save for later"
+msgstr "பின்னர் பயன்படுத்த சேமிக்கவும்"
+
+#: ../kazam/frontend/done_recording.py:83
+msgid "Cancel"
+msgstr "ரத்து செய்"
+
+#: ../kazam/frontend/done_recording.py:85
+msgid "Continue"
+msgstr "தொடரவும்"
+
+#: ../kazam/frontend/done_recording.py:121
+msgid "Save screencast"
+msgstr "திரைப்பிடிப்பைச் சேமி"
+
+#: ../kazam/frontend/about_dialog.py:60
+msgid "Record a video of activity on your screen or capture a screenshot."
+msgstr ""
+"உங்கள் திரையின் செயல்பாட்டை காணொளி பதிவு அல்லது  திரைப்பிடிப்பு செய்யவும்."
+
+#: ../kazam/frontend/save_dialog.py:37
+msgid "Save"
+msgstr "சேமி"
+
+#: ../kazam/frontend/main_menu.py:62
+msgid "File"
+msgstr "கோப்பு"
+
+#: ../kazam/frontend/main_menu.py:63 ../kazam/frontend/indicator.py:82
+msgid "Quit"
+msgstr "வெளியேறு"
+
+#: ../kazam/frontend/main_menu.py:63
+msgid "Quit Kazam"
+msgstr "காசாமை விட்டு வெளியேறு"
+
+#: ../kazam/frontend/main_menu.py:65
+msgid "Open preferences"
+msgstr "விருப்பங்களைத் திற"
+
+#: ../kazam/frontend/main_menu.py:67
+msgid "Help"
+msgstr "உதவி"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About"
+msgstr "குறித்து"
+
+#: ../kazam/frontend/main_menu.py:68
+msgid "About Kazam"
+msgstr "காசாமை பற்றி அறியவும்"
+
+#: ../kazam/frontend/window_area.py:384
+msgid "Select an area by clicking and dragging."
+msgstr "சொடுக்குதல் மற்றும் இழுப்பதன் மூலம் ஒரு பகுதியைத் தேர்ந்தெடுக்கவும்."
+
+#: ../kazam/frontend/window_area.py:385
+msgid "Press ENTER to confirm or ESC to cancel"
+msgstr "உறுதி செய்ய ENTER அல்லது ரத்து செய்ய ESC  ஐ அழுத்தவும்"
+
+#: ../kazam/frontend/indicator.py:72
+msgid "Pause recording"
+msgstr "பதிவை இடைநிறுத்து"
+
+#: ../kazam/backend/grabber.py:172
+msgid "Save capture"
+msgstr "படப்பிடிப்பை சேமி"
+
+#: ../kazam/backend/prefs.py:148
+msgid "Unknown"
+msgstr "தெரியாதது"
+
+#~ msgid "Kazam_screencast"
+#~ msgstr "Kazam_screencast"
