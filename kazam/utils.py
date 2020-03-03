@@ -23,16 +23,18 @@
 import os
 import math
 import logging
+import time
+import datetime
 
 logger = logging.getLogger("Utils")
 
 
 def get_next_filename(sdir, prefix, ext):
-    for cnt in range(0, 99999):
-        fname = os.path.join(sdir, "{0}_{1}{2}".format(prefix,
-                                                       str(cnt).zfill(5),
-                                                       ext))
+    for _ in range(0, 99999):
+        now = '{0:%Y-%m-%d_%H-%M-%S}'.format(datetime.datetime.now())
+        fname = os.path.join(sdir, "{}_{}{}".format(prefix, now, ext))
         if os.path.isfile(fname):
+            time.sleep(1)
             continue
         else:
             return fname
