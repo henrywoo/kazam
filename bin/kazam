@@ -29,8 +29,9 @@ import dbus.service
 from argparse import ArgumentParser
 from dbus.mainloop.glib import DBusGMainLoop
 
+import gi
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
-
 
 class KazamService(dbus.service.Object):
 
