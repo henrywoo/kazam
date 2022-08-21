@@ -6,6 +6,16 @@
 
 Kazam is a simple screen recording program that will capture the content of your screen and record a video file that can be played by any video player that supports VP8/WebM video format. Optionally you can record sound from any sound input device that is supported and visible by PulseAudio.
 
+
+.. figure:: https://github.com/henrywoo/kazam-screen-recorder/blob/tmp/img/Kazam_001.png?raw=true
+   :alt: Kazam GUI Screenshot
+
+
+.. figure:: https://github.com/henrywoo/kazam-screen-recorder/blob/tmp/img/Kazam_002.png?raw=true
+   :alt: Kazam Preferences Screenshot
+
+----
+
 .. |image0| image:: https://raw.githubusercontent.com/henrywoo/kazam-screen-recorder/master/kazam.png
 .. |Documentation Status| image:: https://readthedocs.org/projects/hiq/badge/?version=latest
    :target: https://hiq.readthedocs.io/en/latest/?badge=latest
