@@ -1,15 +1,13 @@
 > Kazam v1.5.5 "Bugfix"
 
 
+![](https://raw.githubusercontent.com/henrywoo/kazam-screen-recorder/master/kazam.png)
+
+
 # Introduction
 
 
-Kazam is a simple screen recording program that will capture the content
-of your screen and record a video file that can be played by any video
-player that supports VP8/WebM video format.
-
-Optionally you can record sound from any sound input device that is
-supported and visible by PulseAudio.
+Kazam is a simple screen recording program that will capture the content of your screen and record a video file that can be played by any video player that supports VP8/WebM video format. Optionally you can record sound from any sound input device that is supported and visible by PulseAudio.
 
 I found the launchpad site update is super slow, so I made this one with many bugs fixed. It is working for me in my Ubuntu 19.04 box.
 
