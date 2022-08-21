@@ -25,6 +25,7 @@ from gi.repository import Gtk
 from kazam.version import *
 
 AUTHORS = """
+Henry Fuheng Wu <wufuheng@gmail.com>
 Andrew Higginson <rugby471@gmail.com>
 David Klasinc <bigwhale@lubica.net>
 """
@@ -60,8 +61,8 @@ def AboutDialog(icons):
     dialog.set_comments(_("Record a video of activity on your screen or capture a screenshot."))
     dialog.set_license(LICENSE)
     dialog.set_version(VERSION)
-    dialog.set_copyright("© 2010 Andrew Higginson, © 2012 David Klasinc")
-    dialog.set_website("http://launchpad.net/kazam")
+    dialog.set_copyright("Henry Fuheng Wu\nDavid Klasinc\nAndrew Higginson\n")
+    dialog.set_website("https://github.com/henrywoo/kazam-screen-recorder")
     dialog.set_authors(AUTHORS.split("\n"))
     dialog.set_artists(ARTISTS.split("\n"))
     try:

@@ -61,6 +61,34 @@ If you already have Kazam installed then Kazam icons will be displayed properly.
 
 
 
+Keyboard shortcuts
+--------------------
+
+.. code:: bash
+
+  SUPER-CTRL-Q - Quit
+  SUPER-CTRL-W - Show/Hide main window
+  SUPER-CTRL-R - Start Recording
+  SUPER-CTRL-F - Finish Recording
+
+In a normal logitech keyboard, SUPER-CTRL is Ctrl+CMD.
+
+
+
+Recording Tips
+----------------
+
+Framerates above 20fps are unlikely to work well because of software and hardware limitations. If you increase framerate and framerate in resulting video drops, that is because encoder can't keep up.
+
+Always do a sound check. Especially if you are recording a live commentary with background sound. I got the best results when I used earphones to listen to the audio while recording. This way your mic will not pick up any audio coming from speakers.
+
+If you _really_ want loss-less quality, then you will have to record in RAW format. This is possible, but without an SSD with a lot of free space your results will be terrible. 1920x1080 at 15 frames per second will need around 45 MB of disk space per second. Most people will want to record at 20 or 25 frames per second. Most disk will not handle that and your
+system will start to crawl.
+
+Your next best bet is HUFFYUV format, which is a little bit friendlier on disk bandwidth with 28 MB per second at 15 frames per second. The problem? Not many video editors and players can handle HUFFYUV, let alone video sharing services.
+
+
+
 ----
 
 .. |image0| image:: https://raw.githubusercontent.com/henrywoo/kazam-screen-recorder/master/kazam.png
