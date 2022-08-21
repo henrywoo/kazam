@@ -52,7 +52,7 @@ To run Kazam simply execute te following commands in the source tree:
 From Command Line
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Add ~/.local/bin into you PATH, and run `kazam` in your terminal should work.
+Add **~/.local/bin** into you PATH, and run `kazam` in your terminal should work.
 
 
 From GUI
