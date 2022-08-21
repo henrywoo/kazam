@@ -42,10 +42,11 @@ If you want to run Kazam from the source tree, there are a few limitations that 
 
 To run Kazam simply execute te following commands in the source tree:
 
-```shell script
-$ cd bin
-$ ./kazam
-```
+.. code:: bash
+
+  $ cd bin
+  $ ./kazam
+
 
 
 From Command Line
