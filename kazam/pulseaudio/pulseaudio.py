@@ -255,8 +255,8 @@ class pulseaudio_q:
         try:
             logger.debug("get_audio_sources() called.")
             pa_context_get_source_info_list(self.pa_ctx, self._pa_sourcelist_cb, None)
-            t = time.clock()
-            while time.clock() - t < 5:
+            t = time.perf_counter()
+            while time.perf_counter() - t < 5:
                 if self.pa_status == PA_FINISHED:
                     self.sources = self._sources
                     self._sources = []
@@ -270,8 +270,8 @@ class pulseaudio_q:
         try:
             logger.debug("get_source_info_by_index() called. IDX: {0}".format(index))
             pa_context_get_source_info_by_index(self.pa_ctx, index, self._pa_sourceinfo_cb, None)
-            t = time.clock()
-            while time.clock() - t < 5:
+            t = time.perf_counter()
+            while time.perf_counter() - t < 5:
                 if self.pa_status == PA_FINISHED:
                     time.sleep(0.1)
                     ret = self._return_result
@@ -285,8 +285,8 @@ class pulseaudio_q:
         try:
             pa_context_set_source_volume_by_index(self.pa_ctx, index, cvolume,
                                                   self._pa_context_success_cb, None)
-            t = time.clock()
-            while time.clock() - t < 5:
+            t = time.perf_counter()
+            while time.perf_counter() - t < 5:
                 if self.pa_status == PA_FINISHED:
                     return 1
             raise PAError(PA_GET_SOURCES_TIMEOUT, "Unable to get sources, operation timed out.")
@@ -297,8 +297,8 @@ class pulseaudio_q:
         try:
             pa_context_set_source_mute_by_index(self.pa_ctx, index, mute,
                                                 self._pa_context_success_cb, None)
-            t = time.clock()
-            while time.clock() - t < 5:
+            t = time.perf_counter()
+            while time.perf_counter() - t < 5:
                 if self.pa_status == PA_FINISHED:
                     return 1
             raise PAError(PA_GET_SOURCES_TIMEOUT, "Unable to get sources, operation timed out.")

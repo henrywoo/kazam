@@ -18,7 +18,6 @@ I found the launchpad site update is super slow, so I made this one with many bu
 
 # Latest version
 
-
 Kazam is always available from Launchpad under https://launchpad.net/kazam
 
 Latest stable release is 1.4.4.
