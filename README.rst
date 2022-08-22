@@ -11,7 +11,7 @@ Installation
 
 .. code:: bash
 
-   pip install kazam==1.5.7 distutils-extra-python
+   pip install kazam
 
 Screenshot
 ============================
