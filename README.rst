@@ -9,15 +9,9 @@ Kazam is a simple screen recording program that will capture the content of your
 Installation
 ------------
 
-Make sure you have `distutils-extra` installed. You can run command like the below to install it:
-
 .. code:: bash
 
-  sudo apt-get install python3-distutils-extra
-
-.. code:: bash
-
-   /usr/bin/python3 -m pip install kazam
+   pip install kazam==1.5.6 distutils-extra-python
 
 Screenshot
 ------------
