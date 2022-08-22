@@ -1,5 +1,5 @@
 |image0|
---------
+============================
 
 |Documentation Status| |CodeCov| |Github release| |lic|
 
@@ -7,20 +7,14 @@
 Kazam is a simple screen recording program that will capture the content of your screen and record a video file that can be played by any video player that supports VP8/WebM video format. Optionally you can record sound from any sound input device that is supported and visible by PulseAudio.
 
 Installation
-------------
-
-Make sure you have `distutils-extra` installed. You can run command like the below to install it:
+============================
 
 .. code:: bash
 
-  sudo apt-get install python3-distutils-extra
-
-.. code:: bash
-
-   /usr/bin/python3 -m pip install kazam
+   pip install kazam==1.5.6 distutils-extra-python
 
 Screenshot
-------------
+============================
 
 .. figure:: https://github.com/henrywoo/kazam-screen-recorder/blob/tmp/img/Kazam_001.png?raw=true
    :alt: Kazam GUI Screenshot
@@ -32,11 +26,10 @@ Screenshot
 
 
 Running Kazam
----------------
+============================
 
 From Source Code
 ~~~~~~~~~~~~~~~~~~~~~~
-
 
 If you want to run Kazam from the source tree, there are a few limitations that you have to take into account. Every icon has to be taken from currently installed icon theme. Toolbars will not show any icons and you will not see Unity AppIndicator.
 
@@ -48,11 +41,10 @@ To run Kazam simply execute te following commands in the source tree:
   $ ./kazam
 
 
-
 From Command Line
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Add **~/.local/bin** into you PATH, and run `kazam` in your terminal should work.
+Make sure **~/.local/bin** into you PATH, and run `kazam` in your terminal should work.
 
 
 From GUI
@@ -60,9 +52,8 @@ From GUI
 If you already have Kazam installed then Kazam icons will be displayed properly.
 
 
-
 Keyboard shortcuts
---------------------
+============================
 
 .. code:: bash
 
@@ -76,9 +67,9 @@ In a normal logitech keyboard, SUPER-CTRL is Ctrl+CMD.
 
 
 Recording Tips
-----------------
+============================
 
-Framerates above 20fps are unlikely to work well because of software and hardware limitations. If you increase framerate and framerate in resulting video drops, that is because encoder can't keep up.
+Choose small numerb of framerate. My personal setup is framerate equal to 3. Framerates above 20fps are unlikely to work well because of software and hardware limitations. If you increase framerate and framerate in resulting video drops, that is because encoder can't keep up.
 
 Always do a sound check. Especially if you are recording a live commentary with background sound. I got the best results when I used earphones to listen to the audio while recording. This way your mic will not pick up any audio coming from speakers.
 
@@ -86,6 +77,14 @@ If you _really_ want loss-less quality, then you will have to record in RAW form
 system will start to crawl.
 
 Your next best bet is HUFFYUV format, which is a little bit friendlier on disk bandwidth with 28 MB per second at 15 frames per second. The problem? Not many video editors and players can handle HUFFYUV, let alone video sharing services.
+
+
+
+Debugging & reporting problems
+========================================================
+
+If you encounter a bug or any kind of unexpected behavior please try to reproduce it while you run Kazam from standard terminal with --debug option. Use Launchpad to report bugs (https://github.com/henrywoo/kazam-screen-recorder/issues) and include generated output.
+
 
 
 
