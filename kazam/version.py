@@ -1,4 +1,4 @@
-VERSION = '1.5.6'
+VERSION = '1.5.7'
 CODENAME = 'Bulldog'
 DISTRO = 'Ubuntu'
 RELEASE = '19.04'

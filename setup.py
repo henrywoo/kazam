@@ -5,8 +5,12 @@ import sys
 if sys.version_info < (3, 2):
     sys.exit('Kazam requires Python 3.2 or newer')
 
+import os
+
+here = os.path.dirname(os.path.realpath(__file__))
+
 from distutils.core import setup
-from DistUtilsExtra.command import *
+from DistUtilsExtra.command import build_extra, build_i18n, build_help, build_icons
 
 import re
 import glob
@@ -32,7 +36,7 @@ Installation
 
 .. code:: bash
 
-   pip install kazam==1.5.6 distutils-extra-python
+   pip install kazam distutils-extra-python
 
 Screenshot
 ============================
@@ -113,7 +117,7 @@ If you encounter a bug or any kind of unexpected behavior please try to reproduc
    :target: https://hiq.readthedocs.io/en/latest/?badge=latest
 .. |CodeCov| image:: https://codecov.io/gh/uber/athenadriver/branch/master/graph/badge.svg
    :target: https://hiq.readthedocs.io/en/latest/index.html
-.. |Github release| image:: https://img.shields.io/badge/release-v1.5.6-red
+.. |Github release| image:: https://img.shields.io/badge/release-v1.5.7-red
    :target: https://github.com/uber/athenadriver/releases
 .. |lic| image:: https://img.shields.io/badge/License-Apache--2.0-red
    :target: https://github.com/uber/athenadriver/blob/master/LICENSE
@@ -126,8 +130,7 @@ setup(name='kazam',
       author='Henry Fuheng Wu, David Klasinc',
       author_email='wufuheng@gmail.com, bigwhale@lubica.net',
       long_description=LONG_DESC,
-      #long_description_content_type="text/markdown",
-      classifiers=['Development Status :: 4 - Beta',
+      classifiers=['Development Status :: 4',
                    'Environment :: X11 Applications :: GTK',
                    'Intended Audience :: End Users/Desktop',
                    'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)',
@@ -136,10 +139,19 @@ setup(name='kazam',
                    'Topic :: Multimedia :: Graphics :: Capture :: Screen Capture',
                    'Topic :: Multimedia :: Sound/Audio :: Capture/Recording',
                    'Topic :: Multimedia :: Video :: Capture',
+                  "Programming Language :: Python :: 3",
+                  "Programming Language :: Python :: 3.3",
+                  "Programming Language :: Python :: 3.4",
+                  "Programming Language :: Python :: 3.5",
+                  "Programming Language :: Python :: 3.6",
+                  "Programming Language :: Python :: 3.7",
+                  "Programming Language :: Python :: 3.8",
+                  "Programming Language :: Python :: 3.9",
+                  "Programming Language :: Python :: 3.10",
                    ],
       keywords='screencast screenshot capture audio sound video recorder kazam',
       url='https://github.com/henrywoo/kazam-screen-recorder',
-      license='GPLv3',
+      license='Apache-2.0',
       scripts=['bin/kazam'],
       packages=['kazam',
                 'kazam.pulseaudio',
