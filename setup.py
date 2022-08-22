@@ -41,13 +41,12 @@ Installation
 Screenshot
 ============================
 
-.. figure:: https://github.com/henrywoo/kazam/blob/tmp/img/Kazam_001.png?raw=true
+.. figure:: https://github.com/henrywoo/kazam/blob/master/img/Kazam_001.png?raw=true
    :alt: Kazam GUI Screenshot
 
 
-.. figure:: https://github.com/henrywoo/kazam/blob/tmp/img/Kazam_002.png?raw=true
+.. figure:: https://github.com/henrywoo/kazam/blob/master/img/Kazam_002.png?raw=true
    :alt: Kazam Preferences Screenshot
-
 
 
 Running Kazam
