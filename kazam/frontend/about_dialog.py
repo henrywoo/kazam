@@ -62,7 +62,7 @@ def AboutDialog(icons):
     dialog.set_license(LICENSE)
     dialog.set_version(VERSION)
     dialog.set_copyright("Henry Fuheng Wu\nDavid Klasinc\nAndrew Higginson\n")
-    dialog.set_website("https://github.com/henrywoo/kazam-screen-recorder")
+    dialog.set_website("https://github.com/henrywoo/kazam")
     dialog.set_authors(AUTHORS.split("\n"))
     dialog.set_artists(ARTISTS.split("\n"))
     try:
