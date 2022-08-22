@@ -1,5 +1,5 @@
-|image0|
-============================
+|image0| Kazam - Linux Desktop Screen Recorder and Broadcaster
+==================================================================
 
 |Documentation Status| |CodeCov| |Github release| |lic|
 

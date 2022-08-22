@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-17 23:34-0700\n"
+"POT-Creation-Date: 2022-08-21 20:26-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../data/ui/kazam.ui.h:1 ../data/kazam.desktop.in.h:1
-#: ../kazam/frontend/about_dialog.py:59
+#: ../kazam/frontend/about_dialog.py:60
 msgid "Kazam"
 msgstr ""
 
@@ -392,7 +392,7 @@ msgstr ""
 msgid "Save screencast"
 msgstr ""
 
-#: ../kazam/frontend/about_dialog.py:60
+#: ../kazam/frontend/about_dialog.py:61
 msgid "Record a video of activity on your screen or capture a screenshot."
 msgstr ""
 
