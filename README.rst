@@ -16,11 +16,11 @@ Installation
 Screenshot
 ============================
 
-.. figure:: https://github.com/henrywoo/kazam-screen-recorder/blob/tmp/img/Kazam_001.png?raw=true
+.. figure:: https://github.com/henrywoo/kazam/blob/tmp/img/Kazam_001.png?raw=true
    :alt: Kazam GUI Screenshot
 
 
-.. figure:: https://github.com/henrywoo/kazam-screen-recorder/blob/tmp/img/Kazam_002.png?raw=true
+.. figure:: https://github.com/henrywoo/kazam/blob/tmp/img/Kazam_002.png?raw=true
    :alt: Kazam Preferences Screenshot
 
 
@@ -83,14 +83,14 @@ Your next best bet is HUFFYUV format, which is a little bit friendlier on disk b
 Debugging & reporting problems
 ========================================================
 
-If you encounter a bug or any kind of unexpected behavior please try to reproduce it while you run Kazam from standard terminal with --debug option. Use Launchpad to report bugs (https://github.com/henrywoo/kazam-screen-recorder/issues) and include generated output.
+If you encounter a bug or any kind of unexpected behavior please try to reproduce it while you run Kazam from standard terminal with --debug option. Use Launchpad to report bugs (https://github.com/henrywoo/kazam/issues) and include generated output.
 
 
 
 
 ----
 
-.. |image0| image:: https://raw.githubusercontent.com/henrywoo/kazam-screen-recorder/master/kazam.png
+.. |image0| image:: https://raw.githubusercontent.com/henrywoo/kazam/master/kazam.png
 .. |Documentation Status| image:: https://readthedocs.org/projects/hiq/badge/?version=latest
    :target: https://hiq.readthedocs.io/en/latest/?badge=latest
 .. |CodeCov| image:: https://codecov.io/gh/uber/athenadriver/branch/master/graph/badge.svg
