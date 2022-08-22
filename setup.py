@@ -106,9 +106,6 @@ Debugging & reporting problems
 
 If you encounter a bug or any kind of unexpected behavior please try to reproduce it while you run Kazam from standard terminal with --debug option. Use Launchpad to report bugs (https://github.com/henrywoo/kazam-screen-recorder/issues) and include generated output.
 
-
-
-
 ----
 
 .. |image0| image:: https://raw.githubusercontent.com/henrywoo/kazam-screen-recorder/master/kazam.png
