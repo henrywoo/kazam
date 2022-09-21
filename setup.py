@@ -123,12 +123,23 @@ If you encounter a bug or any kind of unexpected behavior please try to reproduc
 
 """
 
+def read_file(filename: str):
+    try:
+        lines = []
+        with open(filename) as file:
+            lines = file.readlines()
+            lines = [line.rstrip() for line in lines if not line.startswith("#")]
+        return lines
+    except:
+        return []
+
 setup(name='kazam',
       version=VERSION,
       description='A screencasting program created with design in mind.',
       author='Henry Fuheng Wu, David Klasinc',
-      author_email='wufuheng@gmail.com, bigwhale@lubica.net',
+      author_email='wufuheng@gmail.com',
       long_description=LONG_DESC,
+      install_requires=read_file(f"{here}/requirements.txt"),
       classifiers=['Development Status :: 4',
                    'Environment :: X11 Applications :: GTK',
                    'Intended Audience :: End Users/Desktop',
