@@ -20,6 +20,9 @@
 #       MA 02110-1301, USA.
 
 import logging
+import gi
+
+gi.require_version('GUdev', '1.0')
 
 from gi.repository import GObject, GUdev
 

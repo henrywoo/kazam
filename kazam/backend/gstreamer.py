@@ -23,6 +23,7 @@ import os
 import logging
 logger = logging.getLogger("GStreamer")
 
+import gi
 import tempfile
 import multiprocessing
 
@@ -31,6 +32,8 @@ import multiprocessing
 #
 os.environ["GST_DEBUG_DUMP_DOT_DIR"] = "/tmp"
 os.putenv("GST_DEBUG_DUMP_DOT_DIR", "/tmp")
+
+gi.require_version('Gst', '1.0')
 
 from gi.repository import GObject, Gst, GstVideo
 
