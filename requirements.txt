@@ -1,8 +1,8 @@
-hiq-python
+cmake
 distutils-extra-python
 python-xlib
 dbus-python
-cmake
+hiq-python
 PyGObject
 pyxdg
 pycairo
