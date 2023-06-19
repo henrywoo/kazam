@@ -170,7 +170,8 @@ class KazamApp(GObject.GObject):
         logger.debug("Main Window UI setup.")
 
         self.builder = Gtk.Builder()
-        self.builder.add_from_file(os.path.join(prefs.datadir, "ui", "kazam.ui"))
+        fpath = os.path.join(prefs.datadir, "ui", "kazam.ui")
+        self.builder.add_from_file(fpath)
         self.builder.connect_signals(self)
         for w in self.builder.get_objects():
             if issubclass(type(w), Gtk.Buildable):

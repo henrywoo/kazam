@@ -34,6 +34,7 @@ os.environ["GST_DEBUG_DUMP_DOT_DIR"] = "/tmp"
 os.putenv("GST_DEBUG_DUMP_DOT_DIR", "/tmp")
 
 gi.require_version('Gst', '1.0')
+gi.require_version('GstVideo', '1.0')
 
 from gi.repository import GObject, Gst, GstVideo
 

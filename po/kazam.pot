@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-21 20:26-0700\n"
+"POT-Creation-Date: 2023-06-18 22:23-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,8 +22,8 @@ msgstr ""
 msgid "Kazam"
 msgstr ""
 
-#: ../data/ui/kazam.ui.h:2 ../kazam/app.py:400 ../kazam/app.py:411
-#: ../kazam/app.py:427
+#: ../data/ui/kazam.ui.h:2 ../kazam/app.py:401 ../kazam/app.py:412
+#: ../kazam/app.py:428
 msgid "Capture"
 msgstr ""
 
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Key presses and mouse clicks"
 msgstr ""
 
-#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:17 ../kazam/app.py:199
+#: ../data/ui/kazam.ui.h:9 ../data/ui/preferences.ui.h:17 ../kazam/app.py:200
 #: ../kazam/frontend/save_dialog.py:43
 msgid "Screencast"
 msgstr ""
@@ -60,17 +60,17 @@ msgstr ""
 msgid "Window borders"
 msgstr ""
 
-#: ../data/ui/kazam.ui.h:11 ../data/ui/preferences.ui.h:20 ../kazam/app.py:214
+#: ../data/ui/kazam.ui.h:11 ../data/ui/preferences.ui.h:20 ../kazam/app.py:215
 #: ../kazam/frontend/save_dialog.py:45
 msgid "Screenshot"
 msgstr ""
 
-#: ../data/ui/kazam.ui.h:12 ../data/ui/preferences.ui.h:35 ../kazam/app.py:228
-#: ../kazam/app.py:418
+#: ../data/ui/kazam.ui.h:12 ../data/ui/preferences.ui.h:35 ../kazam/app.py:229
+#: ../kazam/app.py:419
 msgid "Broadcast"
 msgstr ""
 
-#: ../data/ui/kazam.ui.h:13 ../data/ui/preferences.ui.h:47 ../kazam/app.py:242
+#: ../data/ui/kazam.ui.h:13 ../data/ui/preferences.ui.h:47 ../kazam/app.py:243
 msgid "Webcam"
 msgstr ""
 
@@ -282,75 +282,75 @@ msgstr ""
 msgid "No Xlib support in python3, unable to capture key and mouse clicks."
 msgstr ""
 
-#: ../kazam/app.py:200
+#: ../kazam/app.py:201
 msgid "Record a video of your desktop."
 msgstr ""
 
-#: ../kazam/app.py:215
+#: ../kazam/app.py:216
 msgid "Record a picture of your desktop."
 msgstr ""
 
-#: ../kazam/app.py:229
+#: ../kazam/app.py:230
 msgid "Broadcast your desktop."
 msgstr ""
 
-#: ../kazam/app.py:243
+#: ../kazam/app.py:244
 msgid "Capture form your webcam."
 msgstr ""
 
-#: ../kazam/app.py:272
+#: ../kazam/app.py:273
 msgid "Fullscreen"
 msgstr ""
 
-#: ../kazam/app.py:273
+#: ../kazam/app.py:274
 msgid "Capture contents of the current screen."
 msgstr ""
 
-#: ../kazam/app.py:284
+#: ../kazam/app.py:285
 msgid "All Screens"
 msgstr ""
 
-#: ../kazam/app.py:285
+#: ../kazam/app.py:286
 msgid "Capture contents of all of your screens."
 msgstr ""
 
-#: ../kazam/app.py:297
+#: ../kazam/app.py:298
 msgid "Window"
 msgstr ""
 
-#: ../kazam/app.py:298
+#: ../kazam/app.py:299
 msgid "Capture contents of a single window."
 msgstr ""
 
-#: ../kazam/app.py:309
+#: ../kazam/app.py:310
 msgid "Area"
 msgstr ""
 
-#: ../kazam/app.py:310
+#: ../kazam/app.py:311
 msgid "Capture a pre-selected area of your screen."
 msgstr ""
 
-#: ../kazam/app.py:399 ../kazam/app.py:426 ../kazam/frontend/indicator.py:69
+#: ../kazam/app.py:400 ../kazam/app.py:427 ../kazam/frontend/indicator.py:69
 msgid "Start recording"
 msgstr ""
 
-#: ../kazam/app.py:408
+#: ../kazam/app.py:409
 msgid "Take screenshot"
 msgstr ""
 
-#: ../kazam/app.py:417
+#: ../kazam/app.py:418
 msgid "Start broadcasting"
 msgstr ""
 
-#: ../kazam/app.py:690
+#: ../kazam/app.py:691
 msgid "Finish broadcasting"
 msgstr ""
 
-#: ../kazam/app.py:692 ../kazam/app.py:716 ../kazam/frontend/indicator.py:77
+#: ../kazam/app.py:693 ../kazam/app.py:717 ../kazam/frontend/indicator.py:77
 msgid "Finish recording"
 msgstr ""
 
-#: ../kazam/app.py:934
+#: ../kazam/app.py:935
 msgid "Cancel countdown"
 msgstr ""
 
@@ -428,11 +428,11 @@ msgstr ""
 msgid "About Kazam"
 msgstr ""
 
-#: ../kazam/frontend/window_area.py:383
+#: ../kazam/frontend/window_area.py:385
 msgid "Select an area by clicking and dragging."
 msgstr ""
 
-#: ../kazam/frontend/window_area.py:384
+#: ../kazam/frontend/window_area.py:386
 msgid "Press ENTER to confirm or ESC to cancel"
 msgstr ""
 

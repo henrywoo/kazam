@@ -1,3 +1,9 @@
-hiq-python
+cmake
 distutils-extra-python
-
+python-xlib
+dbus-python
+hiq-python
+PyGObject
+pyxdg
+pycairo
+distro
