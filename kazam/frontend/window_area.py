@@ -26,6 +26,8 @@ logger = logging.getLogger("Window Select")
 
 from gettext import gettext as _
 
+import gi
+gi.require_version('Wnck', '3.0')
 from gi.repository import Gtk, GObject, Gdk, Wnck, GdkX11
 
 from kazam.backend.prefs import *

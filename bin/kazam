@@ -73,8 +73,8 @@ if __name__ == "__main__":
         datadir = curpath.split('bin/')[0] + "share/kazam/"
 
     try:
-        import platform
-        dist = platform.linux_distribution()
+        import distro
+        dist = distro.id(), distro.version(), distro.codename()
     except:
         # Fallback to the almighty Ubuntu 12.10 ;)
         dist = ('Ubuntu', '12.10', 'quantal')

@@ -26,6 +26,8 @@ import math
 import logging
 
 from ctypes import *
+import gi
+gi.require_version('PangoCairo', '1.0')
 from gi.repository import Gtk, GObject, GLib, Gdk, Pango, PangoCairo
 
 from kazam.backend.prefs import *

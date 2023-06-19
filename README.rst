@@ -13,6 +13,14 @@ Installation
 
    pip install kazam
 
+
+Kazam need some system libraries to work, in Ubuntu 22.04, you need to install:
+
+.. code:: bash
+
+   sudo apt install build-essential libpython3-dev libdbus-1-dev libcairo2-dev libgirepository1.0-dev -y
+
+
 Screenshot
 ============================
 

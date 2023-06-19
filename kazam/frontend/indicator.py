@@ -95,7 +95,10 @@ class KazamSuperIndicator(GObject.GObject):
         # Setup keybindings - Hardcore way
         #
         try:
+            import gi
+            gi.require_version('Keybinder', '3.0')
             from gi.repository import Keybinder
+
             logger.debug("Trying to bind hotkeys.")
             Keybinder.init()
             Keybinder.bind("<Super><Ctrl>R", self.cb_hotkeys, "start-request")
