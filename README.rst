@@ -45,6 +45,7 @@ To run Kazam simply execute te following commands in the source tree:
 
 .. code:: bash
 
+  $ pip install -r requirements.txt
   $ cd bin
   $ ./kazam
 
