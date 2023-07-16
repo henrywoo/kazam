@@ -19,7 +19,8 @@ Kazam need some dependency libraries like `dbus`, `cairo` to work, in Ubuntu 22.
 .. code:: bash
 
    sudo apt install build-essential libpython3-dev \
-       libdbus-1-dev libcairo2-dev libgirepository1.0-dev -y
+       libdbus-1-dev libcairo2-dev libgirepository1.0-dev \
+       gir1.2-gudev-1.0 gir1.2-keybinder-3.0 -y
 
 
 Screenshot
