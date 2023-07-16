@@ -27,7 +27,7 @@ from kazam.backend.prefs import *
 
 
 class WebcamWindow(GObject.GObject):
-    def __init__(self, width, height, position):
+    def __init__(self, width, height, position, x_offset, y_offset):
         super(WebcamWindow, self).__init__()
         logger.debug("Initializing Webcam window.")
 
@@ -46,16 +46,16 @@ class WebcamWindow(GObject.GObject):
         self.window.set_size_request(width, height)
         if position == CAM_PREVIEW_TL:
             self.window.set_gravity(Gdk.Gravity.NORTH_WEST)
-            self.window.move(screen['x'], screen['y'])
+            self.window.move(screen['x'] + x_offset, screen['y'] + y_offset)
         elif position == CAM_PREVIEW_TR:
             self.window.set_gravity(Gdk.Gravity.NORTH_EAST)
-            self.window.move(screen['x'] + screen['width'] - width, screen['y'])
+            self.window.move(screen['x'] + screen['width'] - width - x_offset, screen['y'] + y_offset)
         elif position == CAM_PREVIEW_BR:
             self.window.set_gravity(Gdk.Gravity.SOUTH_EAST)
-            self.window.move(screen['x'] + screen['width'] - width, screen['y'] + screen['height'] - height)
+            self.window.move(screen['x'] + screen['width'] - width - x_offset, screen['y'] + screen['height'] - height - y_offset)
         elif position == CAM_PREVIEW_BL:
             self.window.set_gravity(Gdk.Gravity.SOUTH_WEST)
-            self.window.move(screen['x'], screen['y'] + screen['height'] - height)
+            self.window.move(screen['x'] + x_offset, screen['y'] + screen['height'] - height - y_offset)
         else:
             pass
 

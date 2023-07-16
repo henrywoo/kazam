@@ -205,6 +205,9 @@ class Preferences(GObject.GObject):
 
         self.combobox_webcam.set_active(prefs.webcam_source)
         self.combobox_webcam_preview.set_active(prefs.webcam_preview_pos)
+        self.spinbutton_webcam_preview_x_offset.set_value(prefs.webcam_preview_x_offset)
+        self.spinbutton_webcam_preview_y_offset.set_value(prefs.webcam_preview_y_offset)
+
         self.combobox_webcam_resolution.set_active(prefs.webcam_resolution)
 
         if prefs.webcam_show_preview:
@@ -414,6 +417,14 @@ class Preferences(GObject.GObject):
         logger.debug("Webcam preview position set to:")
         prefs.webcam_preview_pos = self.combobox_webcam_preview.get_active()
         logger.debug("  {}".format(prefs.webcam_preview_pos))
+
+    def cb_webcam_preview_x_offset_changed(self, widget):
+        prefs.webcam_preview_x_offset = widget.get_value_as_int()
+        logger.debug("Webcam X-offset position set to: {0}".format(prefs.webcam_preview_x_offset))
+
+    def cb_webcam_preview_y_offset_changed(self, widget):
+        prefs.webcam_preview_y_offset = widget.get_value_as_int()
+        logger.debug("Webcam Y-offset position set to: {0}".format(prefs.webcam_preview_y_offset))
 
     def cb_switch_webcam_preview(self, widget, user_data):
         prefs.webcam_show_preview = widget.get_active()
