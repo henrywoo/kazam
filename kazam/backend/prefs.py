@@ -124,6 +124,8 @@ class Prefs():
         self.webcam_sources = {}
         self.webcam_show_preview = True
         self.webcam_preview_pos = 1
+        self.webcam_preview_x_offset = 0
+        self.webcam_preview_y_offset = 0
         self.webcam_resolution = 0
 
         self.yt_stream = ''
@@ -270,6 +272,8 @@ class Prefs():
 
         self.webcam_show_preview = self.config.getboolean("main", "webcam_show_preview")
         self.webcam_preview_pos = int(self.config.get("main", "webcam_preview_pos"))
+        self.webcam_preview_x_offset = int(self.config.get("main", "webcam_preview_x_offset"))
+        self.webcam_preview_y_offset = int(self.config.get("main", "webcam_preview_y_offset"))
         self.webcam_resolution = int(self.config.get("main", "webcam_resolution"))
 
         self.capture_keys = self.config.getboolean("main", "capture_keys")
@@ -349,6 +353,8 @@ class Prefs():
 
         self.config.set("main", "webcam_show_preview", self.webcam_show_preview)
         self.config.set("main", "webcam_preview_pos", self.webcam_preview_pos)
+        self.config.set("main", "webcam_preview_x_offset", self.webcam_preview_x_offset)
+        self.config.set("main", "webcam_preview_y_offset", self.webcam_preview_y_offset)
         self.config.set("main", "webcam_resolution", self.webcam_resolution)
 
         self.config.set("main", "yt_stream", self.yt_stream)

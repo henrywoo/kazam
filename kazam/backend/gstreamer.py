@@ -486,7 +486,9 @@ class Screencast(GObject.GObject):
             # Setup camera preview window
             self.cam_window = WebcamWindow(CAM_RESOLUTIONS[prefs.webcam_resolution][0],
                                            CAM_RESOLUTIONS[prefs.webcam_resolution][1],
-                                           prefs.webcam_preview_pos)
+                                           prefs.webcam_preview_pos,
+                                           prefs.webcam_preview_x_offset,
+                                           prefs.webcam_preview_y_offset)
 
             self.cam_xid = self.cam_window.xid
 
@@ -698,7 +700,9 @@ class GWebcam(GObject.GObject):
 
         self.cam_window = WebcamWindow(CAM_RESOLUTIONS[prefs.webcam_resolution][0],
                                        CAM_RESOLUTIONS[prefs.webcam_resolution][1],
-                                       prefs.webcam_preview_pos)
+                                       prefs.webcam_preview_pos,
+                                       prefs.webcam_preview_x_offset,
+                                       prefs.webcam_preview_y_offset)
 
         self.cam_xid = self.cam_window.xid
 
