@@ -244,8 +244,8 @@ except ImportError:
                 self.indicator.set_visible(False)
 
         def cb_indicator_activate(self, widget):
-            def position(menu, widget):
-                return (Gtk.StatusIcon.position_menu(self.menu, widget))
+            def position(x, y, push_in, user_data):
+                return (Gtk.StatusIcon.position_menu(x, y, push_in, user_data))
             self.menu.popup(None, None, position, self.indicator, 0, Gtk.get_current_event_time())
 
         def cb_indicator_popup_menu(self, icon, button, time):
