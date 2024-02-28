@@ -72,7 +72,7 @@ class Grabber(GObject.GObject):
         #
         if prefs.shutter_sound and (not self.god):
             soundfile = os.path.join(prefs.datadir, 'sounds', prefs.sound_files[prefs.shutter_type])
-            subprocess.call(['/usr/bin/canberra-gtk-play', '-f', soundfile])
+            subprocess.call(['canberra-gtk-play', '-f', soundfile])
 
         if self.xid:
             if prefs.capture_borders_pic:
