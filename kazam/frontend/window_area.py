@@ -68,6 +68,9 @@ class AreaWindow(GObject.GObject):
         self.height = 0
         self.width = 0
 
+        self.arrow_last_time_key_press = 0
+        self.arrow_location_type = True
+
         self.window = Gtk.Window()
         self.box = Gtk.Box()
         self.drawing = Gtk.DrawingArea()
@@ -311,7 +314,61 @@ class AreaWindow(GObject.GObject):
 
     def cb_keypress_event(self, widget, event):
         (op, keycode) = event.get_keycode()
-        if keycode == 36 or keycode == 104:  # Enter
+        if keycode in [111,114,116,113]:    # Arrows
+            now = time.time()
+            pixels = 20 if now - self.arrow_last_time_key_press < 0.1 else 1
+            self.arrow_last_time_key_press = now
+            (scr, x, y) = self.pntr_device.get_position()
+            cur = scr.get_monitor_at_point(x, y)
+            sw = HW.screens[cur]['width']
+            sh = HW.screens[cur]['height']
+            if keycode == 111:  # Arrow top
+                if self.arrow_location_type:
+                    self.starty -= pixels
+                    self.g_starty -= pixels
+                    if self.starty < 0:
+                        self.starty = 0
+                        self.g_starty = 0
+                else:
+                    self.height -= pixels
+                    self.endy -= pixels
+                    self.g_endy -= pixels
+            elif keycode == 114:  # Arrow right
+                if self.startx + self.width + pixels >= sw:
+                    pixels = sw - self.startx - self.width - 1
+                if self.arrow_location_type:
+                    self.startx += pixels
+                    self.g_startx += pixels
+                else:
+                    self.width += pixels
+                    self.endx += pixels
+                    self.g_endx += pixels
+            elif keycode == 116:  # Arrow bottom
+                if self.starty + self.height + pixels >= sh:
+                    pixels = sh - self.starty - self.height - 1
+                if self.arrow_location_type:
+                    self.starty += pixels
+                    self.g_starty += pixels
+                else:
+                    self.height += pixels
+                    self.endy += pixels
+                    self.g_endy += pixels
+            elif keycode == 113:  # Arrow left
+                if self.arrow_location_type:
+                    self.startx -= pixels
+                    self.g_startx -= pixels
+                    if self.startx < 0:
+                        self.startx = 0
+                        self.g_startx = 0
+                else:
+                    self.width -= pixels
+                    self.endx -= pixels
+                    self.g_endx -= pixels
+            widget.queue_draw()
+        elif keycode == 23:  # TAB: Switch arrow effect
+            self.arrow_location_type = not self.arrow_location_type
+            widget.queue_draw()
+        elif keycode == 36 or keycode == 104:  # Enter
             self.accept_area()
             self.emit("area-selected")
         elif keycode == 9:  # ESC
@@ -385,7 +442,7 @@ class AreaWindow(GObject.GObject):
         self._outline_text(cr, w, h, 30, _("Select an area by clicking and dragging."))
         self._outline_text(cr, w, h + 50, 26, _("Press ENTER to confirm or ESC to cancel"))
 
-        self._outline_text(cr, w, h + 100, 20, "({0} × {1})".format(abs(self.width + 1), abs(self.height + 1)))
+        self._outline_text(cr, w, h + 100, 20, "{0}Location: {1} x {2}, {3}Size: {4} × {5}".format('-> ' if self.arrow_location_type else '', self.startx, self.starty, '' if self.arrow_location_type else '-> ', abs(self.width+1), abs(self.height+1)))
         cr.set_operator(cairo.OPERATOR_SOURCE)
 
     def _outline_text(self, cr, w, h, size, text):
