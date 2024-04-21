@@ -7,10 +7,10 @@
 Kazam is a simple screen recording program that will capture the content of your screen and record a video file that can be played by any video player that supports VP8/WebM video format. Optionally you can record sound from any sound input device that is supported and visible by PulseAudio.
 
 
-**Please use the latest version kazam 1.5.8. Make sure the version is the latest when you report issues.**
+📌 **Please use the latest version kazam 1.5.8. Make sure the version is the latest when you report issues.**
 
 
-Installation
+📥 Installation
 ============================
 
 .. code:: bash
@@ -34,7 +34,7 @@ In Ubuntu 20.04, make sure pulseaudio gstream plugin is installed, if not, run:
   sudo apt reinstall gstreamer1.0-pulseaudio -y
 
 
-Screenshot
+🧸 Screenshot
 ============================
 
 .. figure:: https://github.com/henrywoo/kazam/blob/master/img/Kazam_001.png?raw=true
@@ -46,7 +46,7 @@ Screenshot
 
 
 
-Running Kazam
+💎 Running Kazam
 ============================
 
 From Source Code
@@ -69,12 +69,12 @@ From Command Line
 Make sure **~/.local/bin** into you PATH, and run `kazam` in your terminal should work.
 
 
-From GUI
+🔮 From GUI
 ~~~~~~~~~~~~~~~~~~~~~~
 If you already have Kazam installed then Kazam icons will be displayed properly.
 
 
-Keyboard shortcuts
+⌨️ Keyboard shortcuts
 ============================
 
 .. code:: bash
@@ -88,7 +88,7 @@ In a normal logitech keyboard, SUPER-CTRL is Ctrl+CMD.
 
 
 
-Recording Tips
+💡 Recording Tips
 ============================
 
 Choose small numerb of framerate. My personal setup is framerate equal to 3. Framerates above 20fps are unlikely to work well because of software and hardware limitations. If you increase framerate and framerate in resulting video drops, that is because encoder can't keep up.
@@ -102,7 +102,7 @@ Your next best bet is HUFFYUV format, which is a little bit friendlier on disk b
 
 
 
-Debugging & reporting problems
+💣 Debugging & reporting problems
 ========================================================
 
 If you encounter a bug or any kind of unexpected behavior please try to reproduce it while you run Kazam from standard terminal with --debug option. Please report bugs at (https://github.com/henrywoo/kazam/issues) and include generated output.
