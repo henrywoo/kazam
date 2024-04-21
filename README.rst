@@ -6,12 +6,16 @@
 
 Kazam is a simple screen recording program that will capture the content of your screen and record a video file that can be played by any video player that supports VP8/WebM video format. Optionally you can record sound from any sound input device that is supported and visible by PulseAudio.
 
+
+**Please use the latest version kazam 1.5.8. Make sure the version is the latest when you report issues.**
+
+
 Installation
 ============================
 
 .. code:: bash
 
-   pip install kazam
+   pip install -U kazam
 
 
 Kazam need some dependency libraries like `dbus`, `cairo` to work, in Ubuntu 22.04, you can use the following command to install them:
@@ -20,7 +24,14 @@ Kazam need some dependency libraries like `dbus`, `cairo` to work, in Ubuntu 22.
 
    sudo apt install build-essential libpython3-dev \
        libdbus-1-dev libcairo2-dev libgirepository1.0-dev \
-       gir1.2-gudev-1.0 gir1.2-keybinder-3.0 -y
+       gir1.2-gudev-1.0 gir1.2-keybinder-3.0 python3-gi python3-gst-1.0 -y
+
+
+In Ubuntu 20.04, make sure pulseaudio gstream plugin is installed, if not, run:
+
+.. code:: bash
+
+  sudo apt reinstall gstreamer1.0-pulseaudio -y
 
 
 Screenshot
@@ -104,7 +115,7 @@ If you encounter a bug or any kind of unexpected behavior please try to reproduc
    :target: https://hiq.readthedocs.io/en/latest/?badge=latest
 .. |CodeCov| image:: https://codecov.io/gh/uber/athenadriver/branch/master/graph/badge.svg
    :target: https://hiq.readthedocs.io/en/latest/index.html
-.. |Github release| image:: https://img.shields.io/badge/release-v1.5.7-red
+.. |Github release| image:: https://img.shields.io/badge/release-v1.5.8-red
    :target: https://github.com/uber/athenadriver/releases
 .. |lic| image:: https://img.shields.io/badge/License-Apache--2.0-red
    :target: https://github.com/uber/athenadriver/blob/master/LICENSE
