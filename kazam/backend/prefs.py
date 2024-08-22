@@ -417,11 +417,13 @@ class hw:
                                      "scale": scale})
 
             if self.default_screen.get_n_monitors() > 1:
+                scale = self.default_screen.get_monitor_scale_factor(0)
                 self.combined_screen = {"x": 0, "y": 0,
                                         "width": self.default_screen.get_width(),
-                                        "height": self.default_screen.get_height()}
-                self.logger.debug("  Combined - X: 0, Y: 0, W: {0}, H: {1}".format(self.default_screen.get_width(),
-                                                                                   self.default_screen.get_height()))
+                                        "height": self.default_screen.get_height(),
+                                        "scale": scale}
+                self.logger.debug("  Combined - X: 0, Y: 0, W: {0}, H: {1}, scale: {2}".format(self.default_screen.get_width(),
+                                                                                   self.default_screen.get_height(), scale))
             else:
                 self.combined_screen = None
 
