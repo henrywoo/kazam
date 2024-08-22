@@ -403,15 +403,18 @@ class hw:
 
             for i in range(self.default_screen.get_n_monitors()):
                 rect = self.default_screen.get_monitor_geometry(i)
-                self.logger.debug("  Monitor {0} - X: {1}, Y: {2}, W: {3}, H: {4}".format(i,
+                scale = self.default_screen.get_monitor_scale_factor(i)
+                self.logger.debug("  Monitor {0} - X: {1}, Y: {2}, W: {3}, H: {4}, scale: {5}".format(i,
                                                                                           rect.x,
                                                                                           rect.y,
                                                                                           rect.width,
-                                                                                          rect.height))
+                                                                                          rect.height,
+                                                                                          scale))
                 self.screens.append({"x": rect.x,
                                      "y": rect.y,
                                      "width": rect.width,
-                                     "height": rect.height})
+                                     "height": rect.height,
+                                     "scale": scale})
 
             if self.default_screen.get_n_monitors() > 1:
                 self.combined_screen = {"x": 0, "y": 0,
