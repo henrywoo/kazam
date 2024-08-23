@@ -154,7 +154,11 @@ class Screencast(GObject.GObject):
                 height = CAM_RESOLUTIONS[prefs.webcam_resolution][1]
                 endx = CAM_RESOLUTIONS[prefs.webcam_resolution][0] - 1
                 endy = CAM_RESOLUTIONS[prefs.webcam_resolution][1] - 1
-
+        scale = self.video_source['scale']
+        startx = int(startx * scale)
+        starty = int(starty * scale)
+        endx = int(endx * scale)
+        endy = int(endy * scale)
         #
         # H264 requirement is that video dimensions are divisible by 2.
         # If they are not, we have to get rid of that extra pixel.
