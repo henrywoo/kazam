@@ -7,8 +7,11 @@
 Kazam is a simple screen recording program that will capture the content of your screen and record a video file that can be played by any video player that supports VP8/WebM video format. Optionally you can record sound from any sound input device that is supported and visible by PulseAudio.
 
 
-📌 **Please use the latest version kazam 1.5.8. Make sure the version is the latest when you report issues.**
+📌 **Please use the latest version kazam 1.5.10. Make sure the version is the latest when you report issues.**
 
+.. code:: bash
+
+    🍄 Tested in: Ubuntu 20.04, 22.04 and 24.04 with Python 3.8 - 3.12.
 
 📥 Installation
 ============================
@@ -18,7 +21,7 @@ Kazam is a simple screen recording program that will capture the content of your
    pip install -U kazam
 
 
-Kazam need some dependency libraries like `dbus`, `cairo` to work, in Ubuntu 22.04, you can use the following command to install them:
+Kazam need some dependency libraries like `dbus`, `cairo` to work, in Ubuntu, you can use the following command to install them:
 
 .. code:: bash
 
@@ -27,7 +30,7 @@ Kazam need some dependency libraries like `dbus`, `cairo` to work, in Ubuntu 22.
        gir1.2-gudev-1.0 gir1.2-keybinder-3.0 python3-gi python3-gst-1.0 -y
 
 
-In Ubuntu 20.04, make sure pulseaudio gstream plugin is installed, if not, run:
+In Ubuntu, make sure pulseaudio gstream plugin is installed, if not, run:
 
 .. code:: bash
 
@@ -115,7 +118,7 @@ If you encounter a bug or any kind of unexpected behavior please try to reproduc
    :target: https://hiq.readthedocs.io/en/latest/?badge=latest
 .. |CodeCov| image:: https://codecov.io/gh/uber/athenadriver/branch/master/graph/badge.svg
    :target: https://hiq.readthedocs.io/en/latest/index.html
-.. |Github release| image:: https://img.shields.io/badge/release-v1.5.8-red
+.. |Github release| image:: https://img.shields.io/badge/release-v1.5.10-red
    :target: https://github.com/uber/athenadriver/releases
 .. |lic| image:: https://img.shields.io/badge/License-Apache--2.0-red
    :target: https://github.com/uber/athenadriver/blob/master/LICENSE
