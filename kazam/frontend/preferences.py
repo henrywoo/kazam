@@ -216,7 +216,7 @@ class Preferences(GObject.GObject):
             self.switch_webcam_preview.set_active(False)
 
         self.entry_autosave_picture.set_text(prefs.autosave_picture_file)
-        self.filechooser_picture.set_current_folder(prefs.autosave_picture_dir)
+        self.filechooser_picture.set_current_folder(prefs.autosave_picture_dir or "")
 
         self.combobox_broadcast_dst.set_active(prefs.broadcast_dst)
 
