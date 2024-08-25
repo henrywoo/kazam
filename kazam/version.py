@@ -1,4 +1,4 @@
-VERSION = '1.5.10'
+VERSION = '1.5.11'
 CODENAME = 'Jammy'
 DISTRO = 'Ubuntu'
 RELEASE = '22.04'

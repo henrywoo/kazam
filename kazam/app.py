@@ -58,7 +58,7 @@ logger = logging.getLogger("Main")
 # Detect GStreamer version and bail out if lower than 1.0 and no GI
 #
 try:
-    from gi.repository import Gst
+    from gi.repository import Gst, Wnck
     gst_gi = Gst.version()
     if not gst_gi[0]:
         logger.critical(_("Gstreamer 1.0 or higher required, bailing out."))
@@ -124,6 +124,10 @@ class KazamApp(GObject.GObject):
         self.keypress_detect = False
         self.keypress_viewer = None
         self.cam = None
+
+        self.wnd_follow_sig = None
+        self.outline_window = None
+        self.target_window = None
 
         if prefs.sound:
             try:
@@ -200,7 +204,7 @@ class KazamApp(GObject.GObject):
         self.main_fg_color = self.main_context.get_color(Gtk.StateFlags.ACTIVE)
 
         #
-        # Screen cast mode
+        # Screencast mode
         #
         self.btn_screencast = Gtk.RadioToolButton(group=None)
         self.btn_screencast.set_label(_("Screencast"))
@@ -484,6 +488,7 @@ class KazamApp(GObject.GObject):
                 self.select_window.disconnect(self.tmp_sig4)
                 self.select_window.window.destroy()
                 self.select_window = None
+                self.destroy_outline_window()
 
     def cb_main_context_change(self, widget):
         #
@@ -577,6 +582,7 @@ class KazamApp(GObject.GObject):
 
     def cb_record_window_clicked(self, widget):
         if self.select_window:
+            self.destroy_outline_window()
             logger.debug("Window mode clicked.")
             self.select_window.window.show_all()
             self.window.set_sensitive(False)
@@ -600,10 +606,18 @@ class KazamApp(GObject.GObject):
                       self.area_window.height)
         self.window.set_sensitive(True)
 
+        self.outline_window = OutlineWindow(prefs.area[0],
+                                            prefs.area[1],
+                                            prefs.area[4],
+                                            prefs.area[5])
+        self.outline_window.show()
+
     def cb_area_canceled(self, widget):
         logger.debug("Area selection canceled.")
         self.window.set_sensitive(True)
         self.last_mode.set_active(True)
+
+        self.destroy_outline_window()
 
     def cb_window_selected(self, widget):
         prefs.xid = self.select_window.xid
@@ -612,10 +626,19 @@ class KazamApp(GObject.GObject):
         logger.debug("Window geometry: {0}".format(self.select_window.geometry))
         self.window.set_sensitive(True)
 
+        self.outline_window = OutlineWindow(prefs.xid_geometry[0],
+                                            prefs.xid_geometry[1],
+                                            prefs.xid_geometry[2],
+                                            prefs.xid_geometry[3])
+        self.outline_window.show()
+        self.track_target_window(prefs.xid)
+
     def cb_window_canceled(self, widget):
         logger.debug("Window selection canceled.")
+        self.outline_window = None
         self.window.set_sensitive(True)
         self.last_mode.set_active(True)
+        self.destroy_outline_window()
 
     def cb_screen_size_changed(self, screen):
         logger.debug("Screen size changed.")
@@ -717,13 +740,17 @@ class KazamApp(GObject.GObject):
             self.grabber.grab()
             self.indicator.show_it()
 
+    def destroy_outline_window(self):
+        if self.outline_window:
+            self.outline_window.destroy()
+            self.outline_window = None
+        if self.wnd_follow_sig and self.target_window:
+            self.target_window.disconnect(self.wnd_follow_sig)
+            self.wnd_follow_sig = None
+
     def cb_stop_request(self, widget):
         self.recording = False
-
-        if self.outline_window:
-            self.outline_window.hide()
-            self.outline_window.window.destroy()
-            self.outline_window = None
+        self.destroy_outline_window()
 
         if self.in_countdown:
             logger.debug("Cancel countdown request.")
@@ -783,9 +810,12 @@ class KazamApp(GObject.GObject):
 
         elif self.main_mode == MODE_SCREENSHOT:
             if self.outline_window:
-                self.outline_window.hide()
-                self.outline_window.window.destroy()
+                self.outline_window.destroy()
                 self.outline_window = None
+                if self.wnd_follow_sig:
+                    self.target_window.disconnect(self.wnd_follow_sig)
+                    self.wnd_follow_sig = None
+
 
             self.grabber.connect("save-done", self.cb_save_done)
             self.indicator.recording = False
@@ -1040,13 +1070,40 @@ class KazamApp(GObject.GObject):
             try:
                 if self.record_mode == MODE_AREA and prefs.area:
                     logger.debug("Showing recording outline.")
-                    self.outline_window = OutlineWindow(prefs.area[0],
-                                                        prefs.area[1],
-                                                        prefs.area[4],
-                                                        prefs.area[5])
-                    self.outline_window.show()
-            except:
-                logger.debug("Unable to show recording outline.")
+                    if self.outline_window is None:
+                        self.outline_window = OutlineWindow(prefs.area[0],
+                                                            prefs.area[1],
+                                                            prefs.area[4],
+                                                            prefs.area[5])
+                    self.outline_window.show(show_ready=False)
+                elif self.record_mode == MODE_WIN and prefs.xid_geometry:
+                    logger.debug("Showing recording outline for window capture.")
+                    if self.outline_window is None:
+                        self.outline_window = OutlineWindow(prefs.xid_geometry[0],
+                                                            prefs.xid_geometry[1],
+                                                            prefs.xid_geometry[2],
+                                                            prefs.xid_geometry[3])
+                    self.outline_window.show(show_ready=False)
+                    if self.wnd_follow_sig is None:
+                        self.track_target_window(self.select_window.xid)
+            except Exception as e:
+                logger.debug(f"Unable to show recording outline. Error: {str(e)}")
+
+    def track_target_window(self, xid):
+        screen = Wnck.Screen.get_default()
+        screen.force_update()
+        self.target_window = Wnck.Window.get(xid)
+
+        if self.target_window:
+            def on_window_geometry_changed(window):
+                geometry = window.get_geometry()
+                if self.outline_window:
+                    self.outline_window.update_position(geometry[0], geometry[1], geometry[2], geometry[3])
+            # Connect the geometry-changed signal to the Wnck.Window
+            self.wnd_follow_sig = self.target_window.connect("geometry-changed", on_window_geometry_changed)
+            logger.debug(f"Connected to geometry-changed with ID {self.wnd_follow_sig}.")
+        else:
+            logger.debug("Unable to find the Wnck.Window to track its position.")
 
     def setup_translations(self):
         gettext.bindtextdomain("kazam", "/usr/share/locale")

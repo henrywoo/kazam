@@ -33,18 +33,10 @@ class OutlineWindow(GObject.GObject):
     def __init__(self, x, y, w, h):
         super(OutlineWindow, self).__init__()
         logger.debug("Initializing outline window.")
-        self.x = x - 1
-        self.y = y - 1
-        self.w = w + 3
-        if y > 23:
-            self.h = h + 3
-        else:
-            self.no_top = True
-            self.h = h - 23 + y
+        self.x, self.y, self.w, self.h = x, y, w, h
+        self.pos_adjust(x, y, w, h)
         self.window = Gtk.Window()
-
         self.window.connect("draw", self.cb_draw)
-
         self.window.set_border_width(0)
         self.window.set_app_paintable(True)
         self.window.set_has_resize_grip(False)
@@ -94,16 +86,37 @@ class OutlineWindow(GObject.GObject):
         (x, y) = self.window.get_position()
         (w, h) = self.window.get_size()
         logger.debug("Showing outline window.")
+        self.window.move(self.x, self.y)
+        self.window.set_default_geometry(self.w, self.h)
         self.window.show_all()
         logger.debug("Outline window shown.")
+        self.show_ready = True
 
-    def show(self):
+    def pos_adjust(self, x, y, w, h):
+        self.x = x - 1
+        self.y = y - 1
+        self.w = w + 3
+        if y > 23:
+            self.h = h + 3
+        else:
+            self.no_top = True
+            self.h = h - 23 + y
+
+
+    def update_position(self, x, y, w, h):
+        self.pos_adjust(x, y, w, h)
+        if self.window:
+            self.window.move(self.x, self.y)
+            self.window.resize(self.w, self.h)  # Resize the window
+
+    def show(self, show_ready=True):
+        self.show_ready = show_ready
         self.window.show_all()
+        self.window.queue_draw()
 
     def hide(self):
-        (x, y) = self.window.get_position()
-        (w, h) = self.window.get_size()
-        self.window.hide()
+        if self.window:
+            self.window.hide()
 
     def cb_draw(self, widget, cr):
         cr.set_source_rgba(0.0, 0.0, 0.0, 0.0)
@@ -122,8 +135,9 @@ class OutlineWindow(GObject.GObject):
             widget.input_shape_combine_region(reg)
 
         cr.move_to(0, 0)
-        cr.set_source_rgba(1.0, 0.0, 0.0, 0.8)
+        cr.set_source_rgba(0.0, 0.5, 1.0, 0.8)
         cr.set_line_width(2.0)
+        cr.set_dash([3.0, 3.0])  # Set dash pattern (dash length, space length)
 
         #
         # Seriously?
@@ -147,3 +161,26 @@ class OutlineWindow(GObject.GObject):
 
         cr.stroke()
         cr.set_operator(cairo.OPERATOR_OVER)
+
+        if self.show_ready:
+            # Draw the background rectangle first
+            cr.set_source_rgba(0.0, 0.5, 1.0, 0.8)  # Set background color to green with some transparency
+            background_width = 220  # Adjust width as needed
+            background_height = 18  # Adjust height as needed
+            cr.rectangle(0, 0, background_width, background_height)  # Position the background rectangle
+            cr.fill()  # Fill the rectangle with the current color
+
+            # Add text "Ready To Record" on top of the background
+            cr.set_source_rgba(1.0, 1.0, 1.0, 0.8)  # Set text color to white with some transparency
+            cr.select_font_face("Sans", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+            cr.set_font_size(11)  # Set font size
+            cr.move_to(5, 12)  # Position the text slightly inside the background rectangle
+            cr.show_text("Press Capture button to record.")
+            cr.stroke()
+
+    def destroy(self):
+        """Destroy the outline window and clean up resources."""
+        self.hide()
+        if self.window:
+            self.window.destroy()  # Destroy the Gtk.Window
+            self.window = None  # Clear the reference to the Gtk.Window

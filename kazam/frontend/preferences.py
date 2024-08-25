@@ -134,7 +134,9 @@ class Preferences(GObject.GObject):
         for source in prefs.audio_sources:
             logger.debug("Adding audio device D: {} Idx: {}".format(source[2], source[0]))
             if "Monitor" in source[2]:
-                speaker_source_model.append([source[2], source[0]])
+                # fix for https://github.com/henrywoo/kazam/issues/11
+                t = source[2][len('Monitor of '):] if 'Monitor of' in source[2] else source[2]
+                speaker_source_model.append([t, source[0]])
             else:
                 mic_source_model.append([source[2], source[0]])
 

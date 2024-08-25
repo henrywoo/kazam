@@ -51,8 +51,8 @@ else:
 
 class Screencast(GObject.GObject):
     __gsignals__ = {"flush-done": (GObject.SIGNAL_RUN_LAST,
-                    None,
-                    (),),
+                                   None,
+                                   (),),
                     }
 
     def __init__(self, mode):
@@ -154,7 +154,10 @@ class Screencast(GObject.GObject):
                 height = CAM_RESOLUTIONS[prefs.webcam_resolution][1]
                 endx = CAM_RESOLUTIONS[prefs.webcam_resolution][0] - 1
                 endy = CAM_RESOLUTIONS[prefs.webcam_resolution][1] - 1
-        scale = self.video_source['scale']
+        if isinstance(self.video_source, dict) and 'scale' in self.video_source:
+            scale = self.video_source['scale']
+        else:
+            scale = 1
         startx = int(startx * scale)
         starty = int(starty * scale)
         endx = int(endx * scale)
@@ -179,7 +182,7 @@ class Screencast(GObject.GObject):
         else:
             if self.mode == MODE_SCREENCAST:
                 logger.debug("Testing for xid: {0}".format(self.xid))
-                if self.xid:   # xid was passed, so we have to capture a single window.
+                if self.xid:  # xid was passed, so we have to capture a single window.
                     logger.debug("Capturing Window: {0} {1}".format(self.xid, prefs.xid_geometry))
                     self.video_src.set_property("xid", self.xid)
 
@@ -577,7 +580,6 @@ class Screencast(GObject.GObject):
             ret = self.f_audio2stereo_caps.link(self.audiomixer)
             logger.debug(" Link f_audio2stereo_caps -> audiomixer: %s" % ret)
 
-
             # Link mixer to audio convert
             ret = self.audiomixer.link(self.audioconv)
             logger.debug(" Link audiomixer -> audioconv: %s" % ret)
@@ -691,6 +693,7 @@ class GWebcam(GObject.GObject):
 
         self.bus.enable_sync_message_emission()
         self.bus.connect('sync-message::element', self.on_sync_message)
+        self.pipeline.set_state(Gst.State.PAUSED)
 
     def start(self):
         width = CAM_RESOLUTIONS[prefs.webcam_resolution][0]
@@ -701,10 +704,61 @@ class GWebcam(GObject.GObject):
 
         self.video_src.set_property("device", prefs.webcam_sources[prefs.webcam_source][0])
         logger.debug("Webcam source: {}".format(prefs.webcam_sources[prefs.webcam_source][0]))
-        caps_str = "video/x-raw, framerate={}/1, width={}, height={}"
-        self.video_caps = Gst.caps_from_string(caps_str.format(int(prefs.framerate),
-                                                               width,
-                                                               height))
+
+        desired_framerate = int(prefs.framerate)
+        fallback_framerate = 30
+        # Check if the desired framerate is supported
+        src_pad = self.video_src.get_static_pad("src")
+        caps = src_pad.query_caps(None)
+
+        def is_framerate_supported(caps, framerate, width, height):
+            for i in range(caps.get_size()):
+                structure = caps.get_structure(i)
+
+                try:
+                    cap_framerate = structure.get_value('framerate')
+                except TypeError:
+                    logger.warning("Encountered an unknown type while retrieving framerate. Skipping.")
+                    continue
+
+                if cap_framerate is None:
+                    continue
+
+                cap_width = structure.get_value('width')
+                cap_height = structure.get_value('height')
+
+                # Handle GstFractionRange
+                if hasattr(cap_framerate, 'get_min') and hasattr(cap_framerate, 'get_max'):
+                    min_framerate = cap_framerate.get_min()
+                    max_framerate = cap_framerate.get_max()
+                    if (min_framerate.num <= framerate <= max_framerate.num and
+                            cap_width == width and cap_height == height):
+                        return True
+
+                # Handle GstFraction
+                elif isinstance(cap_framerate, Gst.Fraction):
+                    if (cap_framerate.num == framerate and cap_framerate.denom == 1 and
+                            cap_width == width and cap_height == height):
+                        return True
+
+                # Unknown type handling
+                else:
+                    logger.warning(f"Unknown framerate type encountered: {type(cap_framerate)}. Skipping.")
+                    continue
+
+            return False
+
+        if is_framerate_supported(caps, desired_framerate, width, height):
+                   chosen_framerate = desired_framerate
+        else:
+               logger.warning("Desired framerate {} not supported, falling back to {} fps.".format(desired_framerate, fallback_framerate))
+               chosen_framerate = fallback_framerate
+
+        # Clean up the pad after querying capabilities
+        src_pad.unref()
+        caps_str = "video/x-raw, framerate={}/1, width={}, height={}".format(chosen_framerate, width, height)
+        logger.debug("webcam caps: {}".format(caps_str))
+        self.video_caps = Gst.caps_from_string(caps_str)
         self.f_video_caps = Gst.ElementFactory.make("capsfilter", "vid_filter")
         self.f_video_caps.set_property("caps", self.video_caps)
         self.screen_queue = Gst.ElementFactory.make("queue", "screen_queue")
@@ -723,28 +777,45 @@ class GWebcam(GObject.GObject):
                                        prefs.webcam_preview_y_offset)
 
         self.cam_xid = self.cam_window.xid
-
-        self.video_src.link(self.f_video_caps)
-        self.f_video_caps.link(self.q_video_src)
-
-        self.q_video_src.link(self.screen_queue)
-        self.screen_queue.link(self.screen_sink)
-
+        ret = self.video_src.link(self.f_video_caps)
+        logger.debug("Link video_src -> f_video_caps: {}".format(ret))
+        ret = self.f_video_caps.link(self.q_video_src)
+        logger.debug("Link f_video_caps -> q_video_src: {}".format(ret))
+        ret = self.q_video_src.link(self.screen_queue)
+        logger.debug("Link q_video_src -> screen_queue: {}".format(ret))
+        ret = self.screen_queue.link(self.screen_sink)
+        logger.debug("Link screen_queue -> screen_sink: {}".format(ret))
         self.pipeline.set_state(Gst.State.PLAYING)
 
     def close(self):
         self.pipeline.send_event(Gst.Event.new_eos())
+        self.close_pipeline()
+        logger.debug("close_pipeline")
 
     def on_eos(self, bus, message):
         logger.debug("Received EOS, setting pipeline to NULL.")
-        self.cam_window.window.destroy()
-        self.cam_window = None
+        if self.cam_window:
+            self.cam_window.window.destroy()
+            self.cam_window = None
         self.pipeline.set_state(Gst.State.NULL)
 
     def on_error(self, bus, message):
         logger.debug("Received an error message: %s", message.parse_error()[1])
 
     def on_sync_message(self, bus, message):
-        if message.get_structure().get_name() == 'prepare-window-handle':
+        structure = message.get_structure()
+        if structure and structure.get_name() == 'prepare-window-handle':
             logger.debug("Preparing Window Handle")
-            message.src.set_window_handle(self.cam_window.xid)
+            if isinstance(message.src, GstVideo.VideoOverlay):
+                message.src.set_window_handle(self.cam_xid)
+            else:
+                logger.warning("Current video sink does not support setting a window handle.")
+
+    def close_pipeline(self):
+        self.pipeline.set_state(Gst.State.NULL)
+        elements = [self.video_src, self.q_video_src, self.f_video_caps, self.screen_queue, self.screen_sink]
+        for element in elements:
+            if element is not None:
+                self.pipeline.remove(element)
+        self.pipeline = None
+
