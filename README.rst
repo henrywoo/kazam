@@ -118,7 +118,7 @@ If you encounter a bug or any kind of unexpected behavior please try to reproduc
    :target: https://hiq.readthedocs.io/en/latest/?badge=latest
 .. |CodeCov| image:: https://codecov.io/gh/uber/athenadriver/branch/master/graph/badge.svg
    :target: https://hiq.readthedocs.io/en/latest/index.html
-.. |Github release| image:: https://img.shields.io/badge/release-v1.5.10-red
+.. |Github release| image:: https://img.shields.io/badge/release-v1.5.11-red
    :target: https://github.com/uber/athenadriver/releases
 .. |lic| image:: https://img.shields.io/badge/License-Apache--2.0-red
    :target: https://github.com/uber/athenadriver/blob/master/LICENSE
