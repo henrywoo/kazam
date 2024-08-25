@@ -366,6 +366,11 @@ class Screencast(GObject.GObject):
             self.aud2_in_queue = Gst.ElementFactory.make("queue", "queue_a2_in")
             self.audio2conv = Gst.ElementFactory.make("audioconvert", "audio2_conv")
 
+            self.audio2stereo = Gst.ElementFactory.make("audioconvert", "audio2_stereo")
+            self.audio2stereo_caps = Gst.caps_from_string("audio/x-raw, channels=2")
+            self.f_audio2stereo_caps = Gst.ElementFactory.make("capsfilter", "audio2stereo_filter")
+            self.f_audio2stereo_caps.set_property("caps", self.audio2stereo_caps)
+
         if self.audio_source and self.audio2_source:
             self.audiomixer = Gst.ElementFactory.make("adder", "audiomixer")
             # if self.mode == MODE_BROADCAST:
@@ -460,6 +465,8 @@ class Screencast(GObject.GObject):
             self.pipeline.add(self.audio2src)
             self.pipeline.add(self.aud2_in_queue)
             self.pipeline.add(self.f_aud2_caps)
+            self.pipeline.add(self.audio2stereo)
+            self.pipeline.add(self.f_audio2stereo_caps)
 
         if self.audio_source and self.audio2_source:
             self.pipeline.add(self.audiomixer)
@@ -561,8 +568,15 @@ class Screencast(GObject.GObject):
             logger.debug(" Link audio2src -> aud2_in_queue: %s" % ret)
             ret = self.aud2_in_queue.link(self.f_aud2_caps)
             logger.debug(" Link aud2_in_queue -> aud2_caps_filter: %s" % ret)
-            ret = self.f_aud2_caps.link(self.audiomixer)
-            logger.debug(" Link aud2_caps_filter -> audiomixer: %s" % ret)
+            #ret = self.f_aud2_caps.link(self.audiomixer)
+            #logger.debug(" Link aud2_caps_filter -> audiomixer: %s" % ret)
+            ret = self.f_aud2_caps.link(self.audio2stereo)
+            logger.debug(" Link aud2_caps_filter -> audio2stereo: %s" % ret)
+            ret = self.audio2stereo.link(self.f_audio2stereo_caps)
+            logger.debug(" Link audio2stereo -> audio2stereo_caps_filter: %s" % ret)
+            ret = self.f_audio2stereo_caps.link(self.audiomixer)
+            logger.debug(" Link f_audio2stereo_caps -> audiomixer: %s" % ret)
+
 
             # Link mixer to audio convert
             ret = self.audiomixer.link(self.audioconv)

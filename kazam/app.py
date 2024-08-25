@@ -387,7 +387,10 @@ class KazamApp(GObject.GObject):
                               mouse buttons.)
         """
         logger.info("GOT EVENT: {}, {}, {}".format(ev_type, action, value))
-        self.keypress_window.show(ev_type, value, action)
+        if self.keypress_window:
+            self.keypress_window.show(ev_type, value, action)
+        else:
+            logger.debug("self.keypress_window is already destroyed.")
 
     #
     # Mode of operation toggles
@@ -636,8 +639,11 @@ class KazamApp(GObject.GObject):
         self.gdk_win.set_cursor(self.default_cursor)
         (prefs.main_x, prefs.main_y) = self.window.get_position()
         try:
-            os.remove(self.recorder.tempfile)
-            os.remove("{0}.mux".format(self.recorder.tempfile))
+            if os.path.exists(self.recorder.tempfile):
+                os.remove(self.recorder.tempfile)
+            t = "{0}.mux".format(self.recorder.tempfile)
+            if os.path.exists(t):
+                os.remove(t)
         except OSError:
             logger.info("Unable to delete one of the temporary files. Check your temporary directory.")
         except AttributeError:
@@ -702,7 +708,10 @@ class KazamApp(GObject.GObject):
             self.recorder.start_recording()
             if (self.main_mode == MODE_SCREENCAST and prefs.capture_keys) or (self.main_mode == MODE_BROADCAST and prefs.capture_keys_broadcast):
                 self.keypress_window = KeypressWindow()
-                self.keypress_viewer.start()
+                if hasattr(self.keypress_window, 'start'):
+                    self.keypress_viewer.start()
+                else:
+                    logger.debug("💀 self.keypress_window cannot be started.")
         elif self.main_mode == MODE_SCREENSHOT:
             self.indicator.hide_it()
             self.grabber.grab()
@@ -730,10 +739,12 @@ class KazamApp(GObject.GObject):
             logger.debug("Stop request.")
             self.recorder.stop_recording()
             if (self.main_mode == MODE_SCREENCAST and prefs.capture_keys) or (self.main_mode == MODE_BROADCAST and prefs.capture_keys_broadcast):
-                self.keypress_viewer.stop()
+                if self.keypress_viewer:
+                    self.keypress_viewer.stop()
                 self.keypress_window.window.destroy()
                 self.keypress_window = None
                 self.keypress_viewer = None
+                logger.debug("keypress window is destroyed.")
 
             self.tempfile = self.recorder.get_tempfile()
             logger.debug("Recorded tmp file: {0}".format(self.tempfile))

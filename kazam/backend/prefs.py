@@ -469,7 +469,7 @@ def get_codec(codec):
     for c in CODEC_LIST:
         if c[0] == codec:
             return c
-    return None
+    return CODEC_LIST[0]
 
 
 #

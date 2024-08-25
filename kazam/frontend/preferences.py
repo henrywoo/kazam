@@ -348,7 +348,8 @@ class Preferences(GObject.GObject):
         model = widget.get_model()
         c_iter = model.get_iter(i)
         prefs.codec = model.get_value(c_iter, 0)
-        logger.debug('Codec selected: {0} - {1}'.format(get_codec(prefs.codec)[2], prefs.codec))
+        t = get_codec(prefs.codec)
+        logger.debug('Codec selected: {0} - {1}'.format(t[2], prefs.codec))
 
     def cb_switch_autosave_video(self, widget, user_data):
         prefs.autosave_video = widget.get_active()
