@@ -36,6 +36,13 @@ In Ubuntu, make sure pulseaudio gstream plugin is installed, if not, run:
 
   sudo apt reinstall gstreamer1.0-pulseaudio -y
 
+🧸 New Features
+============================
+
+- Add dash-lined border to window and area capture
+
+ .. figure:: https://github.com/henrywoo/kazam/blob/master/img/window_capture.gif?raw=true
+   :alt: Kazam Preferences Screenshot
 
 🧸 Screenshot
 ============================
