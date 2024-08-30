@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 #
-#       window_webcam.py
+#       window_select.py
 #
-#       Copyright 2014 David Klasinc <bigwhale@lubica.net>
+#       Copyright 2018 Henry Fuheng Wu <wufuheng@gmail.com>
 #
 #       This program is free software; you can redistribute it and/or modify
 #       it under the terms of the GNU General Public License as published by
@@ -18,13 +18,12 @@
 #       along with this program; if not, write to the Free Software
 #       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #       MA 02110-1301, USA.
+
 import logging
 logger = logging.getLogger("Window Webcam")
 
 from gi.repository import Gtk, GObject, Gdk, GdkX11
-
 from kazam.backend.prefs import *
-
 
 class WebcamWindow(GObject.GObject):
     def __init__(self, width, height, position, x_offset, y_offset):
@@ -32,6 +31,8 @@ class WebcamWindow(GObject.GObject):
         logger.debug("Initializing Webcam window.")
 
         self.xid = None
+        self.drag_offset_x = 0
+        self.drag_offset_y = 0
 
         self.window = Gtk.Window()
         self.window.set_default_size(width, height)
@@ -40,6 +41,17 @@ class WebcamWindow(GObject.GObject):
         self.window.set_decorated(False)
         self.window.set_property("skip-taskbar-hint", True)
         self.window.set_keep_above(True)
+
+        # Connect to the realize signal to safely access the window's XID
+        self.webcam_area.connect("realize", self.on_realize)
+        self.webcam_area.set_double_buffered(True)
+        self.webcam_area.set_app_paintable(True)
+        self.window.set_app_paintable(True)
+
+        # Connect mouse events for dragging
+        self.window.connect("button-press-event", self.on_button_press)
+        self.window.connect("motion-notify-event", self.on_motion_notify)
+
         self.window.show_all()
 
         screen = HW.screens[prefs.current_screen]
@@ -59,4 +71,21 @@ class WebcamWindow(GObject.GObject):
         else:
             pass
 
-        self.xid = self.webcam_area.get_property('window').get_xid()
+    def on_realize(self, widget):
+        # Ensure the GDK window is realized before accessing XID
+        self.xid = widget.get_property('window').get_xid()
+        logger.debug(f"Webcam area XID: {self.xid}")
+
+    def on_button_press(self, widget, event):
+        # Store the initial click position for dragging
+        if event.type == Gdk.EventType.BUTTON_PRESS and event.button == 1:  # Left click
+            self.drag_offset_x = event.x
+            self.drag_offset_y = event.y
+
+    def on_motion_notify(self, widget, event):
+        # Update window position based on mouse movement
+        if event.state & Gdk.ModifierType.BUTTON1_MASK:  # Left button is held
+            x, y = self.window.get_position()
+            new_x = x + (event.x - self.drag_offset_x)
+            new_y = y + (event.y - self.drag_offset_y)
+            self.window.move(new_x, new_y)

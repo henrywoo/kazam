@@ -2,6 +2,7 @@
 #
 #       app.py
 #
+#       Copyright 2018 Henry Fuheng Wu <wufuheng@gmail.com>
 #       Copyright 2012 David Klasinc <bigwhale@lubica.net>
 #       Copyright 2010 Andrew <andrew@karmic-desktop>
 #
@@ -73,6 +74,10 @@ except ImportError:
     logger.critical(_("Gstreamer 1.0 or higher required, bailing out."))
     sys.exit(0)
 
+from kazam import __file__ as kazam_dir
+
+icons_dir = os.path.join(os.path.dirname(kazam_dir), 'data/icons/scalable')
+print(icons_dir)
 
 class KazamApp(GObject.GObject):
 
@@ -101,6 +106,8 @@ class KazamApp(GObject.GObject):
                 prefs.sound = False
 
         self.icons = Gtk.IconTheme.get_default()
+        self.icons.append_search_path(icons_dir)
+
         self.default_cursor = Gdk.Cursor(Gdk.CursorType.LEFT_PTR)
 
         # Initialize all the variables
@@ -189,6 +196,14 @@ class KazamApp(GObject.GObject):
                 setattr(self, name, w)
             else:
                 logger.debug("Unable to get name for '%s'" % w)
+        self.label_when_capturing = self.builder.get_object("label4")
+        self.radio_tesseract = self.builder.get_object("ocr_tesseract")
+        self.radio_dnn = self.builder.get_object("ocr_dnn")
+        if self.radio_tesseract and self.radio_dnn:
+            self.radio_dnn.join_group(self.radio_tesseract)
+            self.radio_dnn.set_active(True)
+        else:
+            logger.warning("Radio buttons for OCR not found.")
 
         # Retrieve gdk_win for the root window
         self.gdk_win = self.window.get_root_window()
@@ -249,7 +264,7 @@ class KazamApp(GObject.GObject):
         #
         # Webcam mode
         #
-        self.btn_webcam = Gtk.RadioToolButton(group=self.btn_screencast)
+        '''self.btn_webcam = Gtk.RadioToolButton(group=self.btn_screencast)
         self.btn_webcam.set_label(_("Webcam"))
         self.btn_webcam.set_tooltip_text(_("Capture form your webcam."))
         webcam_icon = self.icons.lookup_icon("kazam-webcam-symbolic", 24, Gtk.IconLookupFlags.FORCE_SIZE)
@@ -258,7 +273,21 @@ class KazamApp(GObject.GObject):
             cam_img = Gtk.Image.new_from_pixbuf(cam_icon_pixbuf)
             self.btn_webcam.set_icon_widget(cam_img)
         self.btn_webcam.set_name("MAIN_WEBCAM")
-        self.btn_webcam.connect("toggled", self.cb_main_toggled)
+        self.btn_webcam.connect("toggled", self.cb_main_toggled)'''
+
+        #
+        # OCR mode
+        #
+        self.btn_ocr = Gtk.RadioToolButton(group=self.btn_screencast)
+        self.btn_ocr.set_label(_("OCR"))
+        self.btn_ocr.set_tooltip_text(_("OCR for screen"))
+        ocr_icon = self.icons.lookup_icon("kazam-ocr-symbolic", 24, Gtk.IconLookupFlags.FORCE_SIZE)
+        if ocr_icon:
+            ocr_icon_pixbuf, was_sym = ocr_icon.load_symbolic(self.main_fg_color, None, None, None)
+            ocr_img = Gtk.Image.new_from_pixbuf(ocr_icon_pixbuf)
+            self.btn_ocr.set_icon_widget(ocr_img)
+        self.btn_ocr.set_name("MAIN_OCR")
+        self.btn_ocr.connect("toggled", self.cb_main_toggled)
 
         self.sep_1 = Gtk.SeparatorToolItem()
         self.sep_1.set_draw(False)
@@ -267,8 +296,10 @@ class KazamApp(GObject.GObject):
         self.toolbar_main.insert(self.btn_screencast, -1)
         self.toolbar_main.insert(self.btn_screenshot, -1)
         self.toolbar_main.insert(self.btn_broadcast, -1)
+        self.toolbar_main.insert(self.btn_ocr, -1)
         if prefs.webcam_sources:
-            self.toolbar_main.insert(self.btn_webcam, -1)
+            #self.toolbar_main.insert(self.btn_webcam, -1)
+            pass
         else:
             self.chk_webcam.set_sensitive(False)
             self.chk_webcam_broadcast.set_sensitive(False)
@@ -406,6 +437,10 @@ class KazamApp(GObject.GObject):
         self.chk_borders_pic.set_sensitive(True)
 
         name = widget.get_name()
+        self.label_when_capturing.set_text("When capturing include:")
+        prefs.capture_cursor_pic = self.chk_cursor_pic.get_active()
+        prefs.countdown_timer = self.spinbutton_delay.get_value()
+        self.spinbutton_delay.set_sensitive(True)
         if name == "MAIN_SCREENCAST" and widget.get_active():
             logger.debug("Main toggled: {0}".format(name))
             self.main_mode = MODE_SCREENCAST
@@ -423,14 +458,18 @@ class KazamApp(GObject.GObject):
             if self.record_mode != "MODE_WIN":
                 self.chk_borders_pic.set_sensitive(False)
             self.btn_record.set_label(_("Capture"))
+            self.chk_cursor_pic.set_visible(False)
+            prefs.capture_cursor_pic = False
+            self.grey_out_counter()
 
         elif name == "MAIN_BROADCAST" and widget.get_active():
+            self.label_when_capturing.set_text("When broadcasting, include:")
             logger.debug("Main toggled: {0}".format(name))
             self.main_mode = MODE_BROADCAST
             self.ntb_main.set_current_page(2)
             self.indicator.menuitem_start.set_label(_("Start broadcasting"))
             self.btn_record.set_label(_("Broadcast"))
-            self.toolbar_aux.set_sensitive(False)
+            #self.toolbar_aux.set_sensitive(False)
 
         elif name == "MAIN_WEBCAM" and widget.get_active():
             logger.debug("Main toggled: {0}".format(name))
@@ -439,6 +478,29 @@ class KazamApp(GObject.GObject):
             self.toolbar_aux.set_sensitive(False)
             self.indicator.menuitem_start.set_label(_("Start recording"))
             self.btn_record.set_label(_("Capture"))
+
+        elif name == "MAIN_OCR" and widget.get_active():
+            logger.debug("Main toggled: {0}".format(name))
+            self.ntb_main.set_current_page(4)
+            self.main_mode = MODE_OCR
+            if self.record_mode == MODE_WIN:
+                self.last_mode.set_active(True)
+            #self.toolbar_aux.set_sensitive(False)
+            self.indicator.menuitem_start.set_label(_("Capture and OCR"))
+            if self.record_mode != "MODE_WIN":
+                self.chk_borders_pic.set_sensitive(False)
+            self.btn_record.set_label(_("OCR"))
+            if self.label_when_capturing:
+                #self.label_when_capturing.set_visible(False)  # Hide the label
+                self.label_when_capturing.set_text("Choose an OCR Engine:")
+            else:
+                logger.warning("Label 'When capturing include:' not found.")
+            self.grey_out_counter()
+
+
+    def grey_out_counter(self):
+        self.spinbutton_delay.set_sensitive(False)
+        prefs.countdown_timer = 0
 
     #
     # Record mode toggles
@@ -488,7 +550,7 @@ class KazamApp(GObject.GObject):
                 self.select_window.disconnect(self.tmp_sig4)
                 self.select_window.window.destroy()
                 self.select_window = None
-                self.destroy_outline_window()
+            self.destroy_outline_window()
 
     def cb_main_context_change(self, widget):
         #
@@ -576,6 +638,7 @@ class KazamApp(GObject.GObject):
 
     def cb_record_area_clicked(self, widget):
         if self.area_window:
+            self.destroy_outline_window()
             logger.debug("Area mode clicked.")
             self.area_window.window.show_all()
             self.window.set_sensitive(False)
@@ -610,13 +673,14 @@ class KazamApp(GObject.GObject):
                                             prefs.area[1],
                                             prefs.area[4],
                                             prefs.area[5])
-        self.outline_window.show()
+        self.outline_window.show(show_text="Area is ready.")
 
     def cb_area_canceled(self, widget):
         logger.debug("Area selection canceled.")
         self.window.set_sensitive(True)
-        self.last_mode.set_active(True)
-
+        t = self.last_mode.get_name()
+        if t != 'MODE_AREA' and t != 'MODE_WIN':
+            self.last_mode.set_active(True)
         self.destroy_outline_window()
 
     def cb_window_selected(self, widget):
@@ -630,12 +694,11 @@ class KazamApp(GObject.GObject):
                                             prefs.xid_geometry[1],
                                             prefs.xid_geometry[2],
                                             prefs.xid_geometry[3])
-        self.outline_window.show()
+        self.outline_window.show(show_text="Window is ready.")
         self.track_target_window(prefs.xid)
 
     def cb_window_canceled(self, widget):
         logger.debug("Window selection canceled.")
-        self.outline_window = None
         self.window.set_sensitive(True)
         self.last_mode.set_active(True)
         self.destroy_outline_window()
@@ -735,10 +798,11 @@ class KazamApp(GObject.GObject):
                     self.keypress_viewer.start()
                 else:
                     logger.debug("💀 self.keypress_window cannot be started.")
-        elif self.main_mode == MODE_SCREENSHOT:
+        elif self.main_mode == MODE_SCREENSHOT or self.main_mode == MODE_OCR:
             self.indicator.hide_it()
             self.grabber.grab()
             self.indicator.show_it()
+
 
     def destroy_outline_window(self):
         if self.outline_window:
@@ -764,7 +828,8 @@ class KazamApp(GObject.GObject):
             if self.recording_paused:
                 self.recorder.unpause_recording()
             logger.debug("Stop request.")
-            self.recorder.stop_recording()
+            if self.recorder is not None:
+                self.recorder.stop_recording()
             if (self.main_mode == MODE_SCREENCAST and prefs.capture_keys) or (self.main_mode == MODE_BROADCAST and prefs.capture_keys_broadcast):
                 if self.keypress_viewer:
                     self.keypress_viewer.stop()
@@ -773,8 +838,9 @@ class KazamApp(GObject.GObject):
                 self.keypress_viewer = None
                 logger.debug("keypress window is destroyed.")
 
-            self.tempfile = self.recorder.get_tempfile()
-            logger.debug("Recorded tmp file: {0}".format(self.tempfile))
+            if self.recorder is not None:
+                self.tempfile = self.recorder.get_tempfile()
+                logger.debug("Recorded tmp file: {0}".format(self.tempfile))
             logger.debug("Waiting for data to flush.")
 
     def cb_flush_done(self, widget):
@@ -807,8 +873,11 @@ class KazamApp(GObject.GObject):
             self.window.show_all()
             self.window.present()
             self.window.move(prefs.main_x, prefs.main_y)
+            if os.path.exists(self.tempfile):
+                os.remove(self.tempfile)
+                logger.debug(f"Removed temporary file: {self.tempfile}")
 
-        elif self.main_mode == MODE_SCREENSHOT:
+        elif self.main_mode == MODE_SCREENSHOT or self.main_mode == MODE_OCR:
             if self.outline_window:
                 self.outline_window.destroy()
                 self.outline_window = None
@@ -825,7 +894,7 @@ class KazamApp(GObject.GObject):
             self.indicator.menuitem_finish.set_sensitive(False)
             self.indicator.menuitem_quit.set_sensitive(True)
 
-            if prefs.autosave_picture:
+            if prefs.autosave_picture and self.main_mode == MODE_SCREENSHOT:
                 fname = get_next_filename(prefs.autosave_picture_dir,
                                           prefs.autosave_picture_file,
                                           ".png")
@@ -933,7 +1002,7 @@ class KazamApp(GObject.GObject):
 
     def cb_check_webcam(self, widget):
         name = Gtk.Buildable.get_name(widget)
-        if widget.get_active() is True:
+        if widget.get_active():
             if self.cam is None:
                 logger.debug("Turning ON webcam window.")
                 self.cam = GWebcam()
@@ -974,15 +1043,6 @@ class KazamApp(GObject.GObject):
             prefs.main_x = main_x
             prefs.main_y = main_y
 
-        self.indicator.recording = True
-        self.indicator.menuitem_start.set_sensitive(False)
-        self.indicator.menuitem_pause.set_sensitive(False)
-        self.indicator.menuitem_finish.set_sensitive(True)
-        self.indicator.menuitem_quit.set_sensitive(False)
-        self.indicator.menuitem_finish.set_label(_("Cancel countdown"))
-        self.in_countdown = True
-
-        self.indicator.blink_set_state(BLINK_START)
 
         if prefs.sound:
             if (self.main_mode == MODE_SCREENCAST and prefs.capture_speakers) or \
@@ -1013,7 +1073,9 @@ class KazamApp(GObject.GObject):
                         audio2_channels = 1
                     logger.debug("Detected audio2 channels: {}".format(audio2_channels))
                 except IndexError:
-                    logger.warning("It appears that microphone audio source isn't set up correctly.")
+                    from kazam.backend.utils import show_popup
+                    show_popup("It appears that microphone audio source isn't set up correctly. Please setup preferences first.",)
+                    logger.error("It appears that microphone audio source isn't set up correctly.")
                     audio2_source = None
             else:
                 audio2_source = None
@@ -1042,22 +1104,42 @@ class KazamApp(GObject.GObject):
 
         if self.main_mode in [MODE_SCREENCAST, MODE_WEBCAM, MODE_BROADCAST]:
             self.recorder = Screencast(self.main_mode)
-            self.recorder.setup_sources(video_source,
+            ret = self.recorder.setup_sources(video_source,
                                         audio_source,
                                         audio2_source,
-                                        prefs.area if self.record_mode == MODE_AREA and self.main_mode not in [MODE_WEBCAM, MODE_BROADCAST] else None,
-                                        prefs.xid if self.record_mode == MODE_WIN and self.main_mode not in [MODE_WEBCAM, MODE_BROADCAST] else None,
+                                        prefs.area if self.record_mode == MODE_AREA and self.main_mode not in [MODE_WEBCAM] else None,
+                                        prefs.xid if self.record_mode == MODE_WIN and self.main_mode not in [MODE_WEBCAM] else None,
                                         audio_channels,
                                         audio2_channels)
+            if not ret:
+                return
 
             self.recorder.connect("flush-done", self.cb_flush_done)
 
         elif self.main_mode == MODE_SCREENSHOT:
             self.grabber = Grabber()
+            self.grabber.set_main_window(self.window)
             self.grabber.setup_sources(video_source,
                                        prefs.area if self.record_mode == MODE_AREA else None,
                                        prefs.xid if self.record_mode == MODE_WIN else None)
             self.grabber.connect("flush-done", self.cb_flush_done)
+        elif self.main_mode == MODE_OCR:
+            self.grabber = Grabber(is_ocr=True, use_tesseract=self.radio_tesseract.get_active())
+            self.grabber.set_main_window(self.window)
+            self.grabber.setup_sources(video_source,
+                                       prefs.area if self.record_mode == MODE_AREA else None,
+                                       prefs.xid if self.record_mode == MODE_WIN else None)
+            self.grabber.connect("flush-done", self.cb_flush_done)
+
+        self.indicator.recording = True
+        self.indicator.menuitem_start.set_sensitive(False)
+        self.indicator.menuitem_pause.set_sensitive(False)
+        self.indicator.menuitem_finish.set_sensitive(True)
+        self.indicator.menuitem_quit.set_sensitive(False)
+        self.indicator.menuitem_finish.set_label(_("Cancel countdown"))
+        self.in_countdown = True
+
+        self.indicator.blink_set_state(BLINK_START)
 
         self.countdown = CountdownWindow(self.indicator, show_window=prefs.countdown_splash)
         self.countdown.connect("counter-finished", self.cb_counter_finished)
@@ -1066,7 +1148,7 @@ class KazamApp(GObject.GObject):
         self.recording = True
         logger.debug("Hiding main window.")
         self.window.hide()
-        if self.main_mode == MODE_SCREENCAST or self.main_mode == MODE_SCREENSHOT:
+        if self.main_mode == MODE_SCREENCAST or self.main_mode == MODE_SCREENSHOT or self.main_mode == MODE_OCR:
             try:
                 if self.record_mode == MODE_AREA and prefs.area:
                     logger.debug("Showing recording outline.")
@@ -1147,7 +1229,7 @@ class KazamApp(GObject.GObject):
     def cb_webcam_change(self, widget):
         prefs.get_webcam_sources()
         logger.debug("Webcams: {}".format(prefs.webcam_sources))
-        if prefs.webcam_sources:
+        '''if prefs.webcam_sources:
             logger.debug("Adding Webcam UI items.")
             self.toolbar_main.insert(self.btn_webcam, -1)
             self.toolbar_main.show_all()
@@ -1159,4 +1241,4 @@ class KazamApp(GObject.GObject):
             self.chk_webcam.set_sensitive(False)
             self.chk_webcam.set_active(False)
             if self.btn_webcam.get_active():
-                self.btn_screencast.set_active(True)
+                self.btn_screencast.set_active(True)'''

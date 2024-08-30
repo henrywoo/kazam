@@ -15,6 +15,7 @@
 #
 # examples/record_demo.py -- demonstrate record extension
 #
+#    Copyright 2018 Henry Fuheng Wu <wufuheng@gmail.com>
 #    Copyright (C) 2006 Alex Badea <vamposdecampos@gmail.com>
 #
 #    This program is free software; you can redistribute it and/or modify

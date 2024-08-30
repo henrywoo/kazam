@@ -3,6 +3,7 @@
 #
 #       instant.py
 #
+#       Copyright 2018 Henry Fuheng Wu <wufuheng@gmail.com>
 #       Copyright 2012 David Klasinc <bigwhale@lubica.net>
 #
 #       This program is free software; you can redistribute it and/or modify

@@ -275,7 +275,7 @@ msgid "Save screencast"
 msgstr "Gardar a secuencia de pantalla"
 
 #: ../kazam/frontend/about_dialog.py:60
-msgid "Record a video of activity on your screen or capture a screenshot."
+msgid "Linux Screen Recorder, Broadcaster and OCR"
 msgstr "Grave un vídeo da actividade na súa pantalla ou capture unha imaxe."
 
 #: ../kazam/frontend/save_dialog.py:37

@@ -2,6 +2,7 @@
 #
 #       gstreamer.py
 #
+#       Copyright 2018 Henry Fuheng Wu <wufuheng@gmail.com>
 #       Copyright 2012 David Klasinc <bigwhale@lubica.net>
 #
 #       This program is free software; you can redistribute it and/or modify
@@ -18,9 +19,10 @@
 #       along with this program; if not, write to the Free Software
 #       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #       MA 02110-1301, USA.
-
-import os
+# PYTHONUNBUFFERED=1;GST_DEBUG=*:3,*ringbuffer*:2;GTK_THEME=Yaru
 import logging
+import os
+
 logger = logging.getLogger("GStreamer")
 
 import gi
@@ -40,6 +42,7 @@ from gi.repository import GObject, Gst, GstVideo
 
 from kazam.frontend.window_webcam import WebcamWindow
 from kazam.backend.prefs import *
+from kazam.backend.utils import is_xdotool_installed, show_popup
 
 GObject.threads_init()
 Gst.init(None)
@@ -103,7 +106,9 @@ class Screencast(GObject.GObject):
         logger.debug("Framerate : {0}".format(prefs.framerate))
 
         if self.video_source or self.area:
-            self.setup_video_source()
+            ret = self.setup_video_source()
+            if not ret:
+                return False
 
         self.setup_audio_sources()
 
@@ -118,9 +123,11 @@ class Screencast(GObject.GObject):
         self.bus.add_signal_watch()
         self.bus.connect("message::eos", self.on_eos)
         self.bus.connect("message::error", self.on_error)
+        self.last_err_msg = None
 
         self.bus.enable_sync_message_emission()
         self.bus.connect('sync-message::element', self.on_sync_message)
+        return True
 
     def setup_video_source(self):
 
@@ -184,6 +191,16 @@ class Screencast(GObject.GObject):
                 logger.debug("Testing for xid: {0}".format(self.xid))
                 if self.xid:  # xid was passed, so we have to capture a single window.
                     logger.debug("Capturing Window: {0} {1}".format(self.xid, prefs.xid_geometry))
+                    window_x, window_y, window_width, window_height = prefs.xid_geometry
+                    if is_window_offscreen(window_x, window_y, window_width, window_height):
+                        logger.warning("Window is partially or completely off-screen. Moving it on-screen...")
+                        nxy = move_window_on_screen(self.xid, window_x, window_y, window_width, window_height)
+                        if nxy is None:
+                            return False
+                        # After moving the window on-screen, create a new tuple with the updated values
+                        new_geometry = (nxy[0], nxy[1], prefs.xid_geometry[2], prefs.xid_geometry[3])
+                        # Assign the new tuple back to prefs.xid_geometry
+                        prefs.xid_geometry = new_geometry
                     self.video_src.set_property("xid", self.xid)
 
                     if prefs.codec == CODEC_H264:
@@ -207,8 +224,36 @@ class Screencast(GObject.GObject):
                 self.f_video_caps.set_property("caps", self.video_caps)
             elif self.mode == MODE_BROADCAST:
                 logger.debug("Setting up MODE_BROADCAST for video.")
-                self.video_src.set_property("endx", endx)
-                self.video_src.set_property("endy", endy)
+                if self.xid:  # xid was passed, so we have to capture a single window.
+                    logger.debug("Original Capturing Window: {0} {1}".format(self.xid, prefs.xid_geometry))
+                    window_x, window_y, window_width, window_height = prefs.xid_geometry
+                    odd_window = (window_width % 2) or (window_height % 2)
+                    if window_width % 2 != 0:
+                        window_width -= 1
+                    if window_height % 2 != 0:
+                        window_height -= 1
+                    if odd_window:
+                        import subprocess
+                        command_resize = ["xdotool", "windowsize", str(self.xid), str(window_width), str(window_height)]
+                        try:
+                            result = subprocess.run(command_resize, check=True, timeout=10)  # 10 seconds timeout
+                        except subprocess.TimeoutExpired:
+                            show_popup("xdotool timed out!")
+                    if is_window_offscreen(window_x, window_y, window_width, window_height):
+                        logger.warning("Window is partially or completely off-screen. Moving it on-screen...")
+                        nxy = move_window_on_screen(self.xid, window_x, window_y, window_width, window_height)
+                        if nxy is None:
+                            return False
+                        prefs.xid_geometry = (nxy[0], nxy[1], window_width, window_height)
+                    else:
+                        prefs.xid_geometry = (window_x, window_y, window_width, window_height)
+                    self.video_src.set_property("xid", self.xid)
+                    logger.debug("New Capturing Window: {0} {1}".format(self.xid, prefs.xid_geometry))
+                else:
+                    self.video_src.set_property("startx", startx)
+                    self.video_src.set_property("starty", starty)
+                    self.video_src.set_property("endx", endx)
+                    self.video_src.set_property("endy", endy)
 
                 self.video_src.set_property("use-damage", False)
                 self.video_src.set_property("show-pointer", prefs.capture_cursor_broadcast)
@@ -222,13 +267,26 @@ class Screencast(GObject.GObject):
                 self.f_video_parse_caps = Gst.ElementFactory.make("capsfilter", "vid_parse_caps")
                 self.f_video_parse_caps.set_property("caps", self.video_parse_caps)
 
-            elif self.mode == MODE_WEBCAM:
+            '''elif self.mode == MODE_WEBCAM:
                 self.video_src.set_property("device", prefs.webcam_sources[prefs.webcam_source][0])
                 logger.debug("Webcam source: {}".format(prefs.webcam_sources[prefs.webcam_source][0]))
-                caps_str = "video/x-raw, framerate={}/1, width={}, height={}"
-                self.video_caps = Gst.caps_from_string(caps_str.format(int(prefs.framerate),
-                                                                       width,
-                                                                       height))
+                desired_framerate = int(prefs.framerate)
+                fallback_framerate = 30
+                # Check if the desired framerate is supported
+                src_pad = self.video_src.get_static_pad("src")
+                caps = src_pad.query_caps(None)
+                if is_framerate_supported(caps, desired_framerate, width, height):
+                    chosen_framerate = desired_framerate
+                else:
+                    logger.warning(
+                        "Desired framerate {} not supported, falling back to {} fps.".format(desired_framerate,
+                                                                                             fallback_framerate))
+                    chosen_framerate = fallback_framerate
+                caps_str = "video/x-raw, framerate={}/1, width={}, height={}".format(chosen_framerate,
+                                                                                     width,
+                                                                                     height)
+                self.video_caps = Gst.caps_from_string(caps_str)
+                self.video_src.set_property("num-buffers", 10)  # Adjust this number as needed
                 self.f_video_caps = Gst.ElementFactory.make("capsfilter", "vid_filter")
                 self.f_video_caps.set_property("caps", self.video_caps)
 
@@ -237,7 +295,7 @@ class Screencast(GObject.GObject):
                     self.video_flip.set_property("method", "horizontal-flip")
                     self.tee = Gst.ElementFactory.make("tee", "tee")
                     self.screen_queue = Gst.ElementFactory.make("queue", "screen_queue")
-                    self.screen_sink = Gst.ElementFactory.make("xvimagesink", "screen_sink")
+                    self.screen_sink = Gst.ElementFactory.make("xvimagesink", "screen_sink")'''
 
         self.video_convert = Gst.ElementFactory.make("videoconvert", "videoconvert")
         self.video_rate = Gst.ElementFactory.make("videorate", "video_rate")
@@ -285,11 +343,11 @@ class Screencast(GObject.GObject):
                 self.video_enc.set_property("threads", self.cores)
 
                 # Good framerate, bad memory
-                #self.videnc.set_property("cpu-used", 6)
-                #self.videnc.set_property("deadline", 1000000)
-                #self.videnc.set_property("min-quantizer", 15)
-                #self.videnc.set_property("max-quantizer", 15)
-                #self.videnc.set_property("threads", self.cores)
+                # self.videnc.set_property("cpu-used", 6)
+                # self.videnc.set_property("deadline", 1000000)
+                # self.videnc.set_property("min-quantizer", 15)
+                # self.videnc.set_property("max-quantizer", 15)
+                # self.videnc.set_property("threads", self.cores)
 
                 self.mux = Gst.ElementFactory.make("webmmux", "muxer")
             elif prefs.codec == CODEC_H264:
@@ -313,6 +371,7 @@ class Screencast(GObject.GObject):
         self.q_video_src = Gst.ElementFactory.make("queue", "queue_video_source")
         self.q_video_in = Gst.ElementFactory.make("queue", "queue_video_in")
         self.q_video_out = Gst.ElementFactory.make("queue", "queue_video_out")
+        return True
 
     def setup_audio_sources(self):
         if self.audio_source or self.audio2_source:
@@ -323,7 +382,7 @@ class Screencast(GObject.GObject):
                 self.audio_bitrate = 128000
                 self.audioenc = Gst.ElementFactory.make("avenc_aac", "audio_encoder")
                 self.audioenc.set_property("bitrate", self.audio_bitrate)
-                self.audioenc.set_property("compliance", -2)
+                #self.audioenc.set_property("compliance", -2)
 
                 self.aacparse = Gst.ElementFactory.make("aacparse", "aacparse")
                 self.aacparse_caps = Gst.caps_from_string("audio/mpeg,mpegversion=4,stream-format=raw")
@@ -409,6 +468,9 @@ class Screencast(GObject.GObject):
             #
             # Broadcast to Twitch
             #
+            if prefs.tw_server is None:
+                print("Please set up Twitch server first")
+                return
             if (prefs.tw_server.endswith('/')):
                 self.rtmp_location = "".join([prefs.tw_server, prefs.tw_stream])
             else:
@@ -436,7 +498,7 @@ class Screencast(GObject.GObject):
         self.pipeline.add(self.q_video_out)
         self.pipeline.add(self.final_queue)
 
-        if prefs.webcam_show_preview is True and self.mode == MODE_WEBCAM:
+        if prefs.webcam_show_preview and self.mode == MODE_WEBCAM:
             self.pipeline.add(self.tee)
             self.pipeline.add(self.video_flip)
             self.pipeline.add(self.screen_queue)
@@ -496,7 +558,7 @@ class Screencast(GObject.GObject):
             ret = self.f_video_caps.link(self.q_video_src)
             logger.debug("Link f_video_caps -> q_video_src: {}".format(ret))
 
-        if self.mode == MODE_WEBCAM and prefs.webcam_show_preview is True:
+        if self.mode == MODE_WEBCAM and prefs.webcam_show_preview:
             # Setup camera preview window
             self.cam_window = WebcamWindow(CAM_RESOLUTIONS[prefs.webcam_resolution][0],
                                            CAM_RESOLUTIONS[prefs.webcam_resolution][1],
@@ -571,8 +633,8 @@ class Screencast(GObject.GObject):
             logger.debug(" Link audio2src -> aud2_in_queue: %s" % ret)
             ret = self.aud2_in_queue.link(self.f_aud2_caps)
             logger.debug(" Link aud2_in_queue -> aud2_caps_filter: %s" % ret)
-            #ret = self.f_aud2_caps.link(self.audiomixer)
-            #logger.debug(" Link aud2_caps_filter -> audiomixer: %s" % ret)
+            # ret = self.f_aud2_caps.link(self.audiomixer)
+            # logger.debug(" Link aud2_caps_filter -> audiomixer: %s" % ret)
             ret = self.f_aud2_caps.link(self.audio2stereo)
             logger.debug(" Link aud2_caps_filter -> audio2stereo: %s" % ret)
             ret = self.audio2stereo.link(self.f_audio2stereo_caps)
@@ -650,6 +712,10 @@ class Screencast(GObject.GObject):
             self.pipeline.set_state(Gst.State.NULL)
             logger.debug("Emitting flush-done.")
             self.emit("flush-done")
+        elif self.mode == MODE_WEBCAM:
+            logger.debug("Sending new EOS event")
+            self.pipeline.send_event(Gst.Event.new_eos())
+            print("stop_recording for webcam is done")
         else:
             logger.debug("Sending new EOS event")
             self.pipeline.send_event(Gst.Event.new_eos())
@@ -662,7 +728,7 @@ class Screencast(GObject.GObject):
 
     def on_eos(self, bus, message):
         logger.debug("Received EOS, setting pipeline to NULL.")
-        if self.mode == MODE_WEBCAM and prefs.webcam_show_preview is True:
+        if self.mode == MODE_WEBCAM and prefs.webcam_show_preview:
             self.cam_window.window.destroy()
             self.cam_window = None
 
@@ -671,6 +737,14 @@ class Screencast(GObject.GObject):
         self.emit("flush-done")
 
     def on_error(self, bus, message):
+        if message.type == Gst.MessageType.ERROR:
+            err, debug = message.parse_error()
+            if self.last_err_msg != err.message:
+                error_message = f"Error: {err.message}"
+                if debug:
+                    error_message += f"\nDebug info: {debug}"
+                show_popup(error_message, title="Kazam encountered errors")
+                self.last_err_msg = err.message
         logger.debug("Received an error message: %s", message.parse_error()[1])
 
     def on_sync_message(self, bus, message):
@@ -710,52 +784,15 @@ class GWebcam(GObject.GObject):
         # Check if the desired framerate is supported
         src_pad = self.video_src.get_static_pad("src")
         caps = src_pad.query_caps(None)
-
-        def is_framerate_supported(caps, framerate, width, height):
-            for i in range(caps.get_size()):
-                structure = caps.get_structure(i)
-
-                try:
-                    cap_framerate = structure.get_value('framerate')
-                except TypeError:
-                    logger.warning("Encountered an unknown type while retrieving framerate. Skipping.")
-                    continue
-
-                if cap_framerate is None:
-                    continue
-
-                cap_width = structure.get_value('width')
-                cap_height = structure.get_value('height')
-
-                # Handle GstFractionRange
-                if hasattr(cap_framerate, 'get_min') and hasattr(cap_framerate, 'get_max'):
-                    min_framerate = cap_framerate.get_min()
-                    max_framerate = cap_framerate.get_max()
-                    if (min_framerate.num <= framerate <= max_framerate.num and
-                            cap_width == width and cap_height == height):
-                        return True
-
-                # Handle GstFraction
-                elif isinstance(cap_framerate, Gst.Fraction):
-                    if (cap_framerate.num == framerate and cap_framerate.denom == 1 and
-                            cap_width == width and cap_height == height):
-                        return True
-
-                # Unknown type handling
-                else:
-                    logger.warning(f"Unknown framerate type encountered: {type(cap_framerate)}. Skipping.")
-                    continue
-
-            return False
-
         if is_framerate_supported(caps, desired_framerate, width, height):
-                   chosen_framerate = desired_framerate
+            chosen_framerate = desired_framerate
         else:
-               logger.warning("Desired framerate {} not supported, falling back to {} fps.".format(desired_framerate, fallback_framerate))
-               chosen_framerate = fallback_framerate
+            logger.warning("Desired framerate {} not supported, falling back to {} fps.".format(desired_framerate,
+                                                                                                fallback_framerate))
+            chosen_framerate = fallback_framerate
 
         # Clean up the pad after querying capabilities
-        src_pad.unref()
+        # src_pad.unref()
         caps_str = "video/x-raw, framerate={}/1, width={}, height={}".format(chosen_framerate, width, height)
         logger.debug("webcam caps: {}".format(caps_str))
         self.video_caps = Gst.caps_from_string(caps_str)
@@ -791,6 +828,11 @@ class GWebcam(GObject.GObject):
         self.pipeline.send_event(Gst.Event.new_eos())
         self.close_pipeline()
         logger.debug("close_pipeline")
+        # Destroy the webcam window if it exists
+        if self.cam_window is not None:
+            logger.debug("Destroying webcam window.")
+            self.cam_window.window.destroy()  # Destroy the window
+            self.cam_window = None  # Set to None to avoid further operations on it
 
     def on_eos(self, bus, message):
         logger.debug("Received EOS, setting pipeline to NULL.")
@@ -812,10 +854,84 @@ class GWebcam(GObject.GObject):
                 logger.warning("Current video sink does not support setting a window handle.")
 
     def close_pipeline(self):
-        self.pipeline.set_state(Gst.State.NULL)
-        elements = [self.video_src, self.q_video_src, self.f_video_caps, self.screen_queue, self.screen_sink]
-        for element in elements:
-            if element is not None:
-                self.pipeline.remove(element)
-        self.pipeline = None
+        if self.pipeline is not None:
+            self.pipeline.set_state(Gst.State.NULL)
+            elements = [self.video_src, self.q_video_src, self.f_video_caps, self.screen_queue, self.screen_sink]
+            for element in elements:
+                if element is not None:
+                    self.pipeline.remove(element)
+            self.pipeline = None
+            logger.debug("Pipeline and elements successfully removed.")
+
+
+def is_framerate_supported(caps, framerate, width, height):
+    for i in range(caps.get_size()):
+        structure = caps.get_structure(i)
+
+        try:
+            cap_framerate = structure.get_value('framerate')
+        except TypeError:
+            logger.warning("Encountered an unknown type while retrieving framerate. Skipping.")
+            continue
+
+        if cap_framerate is None:
+            continue
+
+        cap_width = structure.get_value('width')
+        cap_height = structure.get_value('height')
+
+        # Handle GstFractionRange
+        if hasattr(cap_framerate, 'get_min') and hasattr(cap_framerate, 'get_max'):
+            min_framerate = cap_framerate.get_min()
+            max_framerate = cap_framerate.get_max()
+            if (min_framerate.num <= framerate <= max_framerate.num and
+                    cap_width == width and cap_height == height):
+                return True
+
+        # Handle GstFraction
+        elif isinstance(cap_framerate, Gst.Fraction):
+            if (cap_framerate.num == framerate and cap_framerate.denom == 1 and
+                    cap_width == width and cap_height == height):
+                return True
+
+        # Unknown type handling
+        else:
+            logger.warning(f"Unknown framerate type encountered: {type(cap_framerate)}. Skipping.")
+            continue
+
+    return False
+
+
+def is_window_offscreen(window_x, window_y, window_width, window_height):
+    screen_width, screen_height = get_screen_resolution()
+
+    # Check if the window is completely or partially off the left or right side of the screen
+    if window_x < 0 or window_x + window_width > screen_width:
+        return True  # Offscreen to the left or right
+
+    # Check if the window is completely or partially off the top or bottom of the screen
+    if window_y < 0 or window_y + window_height > screen_height:
+        return True  # Offscreen to the top or bottom
+
+    return False
+
+
+def get_screen_resolution():
+    from kazam.backend.prefs import HW
+    screen = HW.get_current_screen()
+    monitor = HW.default_screen.get_monitor_geometry(screen)
+    return monitor.width, monitor.height
+
+def move_window_on_screen(xid, window_x, window_y, window_width, window_height):
+    if not is_xdotool_installed():
+        show_popup("xdotool is not installed. Please move the window completely on-screen manually or install xdotool.")
+        return None  # Return None if xdotool is not installed
+
+    screen_width, screen_height = get_screen_resolution()
+    import subprocess
+    new_x = max(0, min(window_x, screen_width - window_width))
+    new_y = max(0, min(window_y, screen_height - window_height))
+    command = ["xdotool", "windowmove", str(xid), str(new_x), str(new_y)]
+    subprocess.run(command)
+    return new_x, new_y
 

@@ -2,6 +2,7 @@
 #
 #       config.py
 #
+#       Copyright 2018 Henry Fuheng Wu <wufuheng@gmail.com>
 #       Copyright 2012 David Klasinc <bigwhale@lubica.net>
 #       Copyright 2010 Andrew <andrew@karmic-desktop>
 #
@@ -74,7 +75,8 @@ class KazamConfig(object):
                          "capture_keys_b":         "False",
                          "yt_stream":              "",
                          "yt_server":              "",
-                         "broadcast_dst":          "1"
+                         "broadcast_dst":          "1",
+                         "tw_server":              "rtmp://live.twitch.tv/app/"
                          },
                 },
                 {"name": "keyboard_shortcuts",
