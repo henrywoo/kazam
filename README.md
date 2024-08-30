@@ -122,7 +122,7 @@ And then paste it into the `Stream Key` in your Kazam preferences window.
 
 ![image](https://github.com/user-attachments/assets/962d73f0-3822-4ec1-ad65-cd5824f274a5)
 
-(Do noy use the keys displayed above which are invalid. Use your own ones.)
+(Do not use the keys displayed above which are invalid. Use your own ones, please.)
 
 ### 🥔 YouTube
 
