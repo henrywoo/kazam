@@ -106,6 +106,39 @@ On a normal Logitech keyboard, SUPER-CTRL is `Ctrl+CMD`.
 
 - Your next best bet is HUFFYUV format, which is a little bit friendlier on disk bandwidth with 28 MB per second at 15 frames per second. The problem? Not many video editors and players can handle HUFFYUV, let alone video sharing services.
 
+## 🎤 How to do live broadcasting with Kazam?
+
+Kazam 2 support live broadcasting with Twitch and YouTube.
+
+### 🥁 Twitch
+
+Click `File` -> `Preferences`, and then click `Broadcast` tab. In `Server URL`, input `rtmp://live.twitch.tv/app/`.
+
+For `Stream Key`, please login https://www.twitch.tv/ with your twitch account. Then go to `Creator Dashboard` -> `Settings` -> `Stream`, Click `Copy` button to copy the `Primary Stream key`, which is your `Stream Key`.
+
+![image](https://github.com/user-attachments/assets/13098998-2298-45a6-8136-35c04e3f021c)
+
+And then paste it into the `Stream Key` in your Kazam preferences window.
+
+![image](https://github.com/user-attachments/assets/962d73f0-3822-4ec1-ad65-cd5824f274a5)
+
+(Do noy use the keys displayed above which are invalid. Use your own ones.)
+
+### 🥔 YouTube
+
+Login https://studio.youtube.com/ with your account and find the `Go live` icon as below (it should be on the right side of the page below your account avatar):
+
+![image](https://github.com/user-attachments/assets/a71e7bb7-3470-4f14-9d92-7b1ca0d73831)
+
+Or you can click `Create` and then `Go live` at the top right side of the page.
+
+You will be directed to this page below:
+
+![image](https://github.com/user-attachments/assets/a522d6c9-5129-4ba7-b1d0-c01ef719237f)
+
+You can find your `Stream Key` and `Stream URL` as above. Copy-paste them into your Kazam Preferences window's YouTube Live Settings section, then you can close the window and go to `Kazam` main window, click `Broadcast` and select `Fullscreen`, `Window` or `Area` to start live broadcasting.
+
+
 ## 💣 Debugging & Reporting Problems
 
 If you encounter a bug or any kind of unexpected behavior, please try to reproduce it while running Kazam from a standard terminal with the `--debug` option. Please report bugs at [https://github.com/henrywoo/kazam/issues](https://github.com/henrywoo/kazam/issues) and include the generated output.
