@@ -2,6 +2,7 @@
 #
 #       preferences.py
 #
+#       Copyright 2018 Henry Fuheng Wu <wufuheng@gmail.com>
 #       Copyright 2012 David Klasinc <bigwhale@lubica.net>
 #
 #       This program is free software; you can redistribute it and/or modify
@@ -283,7 +284,7 @@ class Preferences(GObject.GObject):
             if math.isinf(val):
                 vol = 0
             else:
-                vol = 60 + val
+                vol = 120 + val
             self.volumebutton_audio.set_value(vol)
         else:
             logger.debug("Error getting volume info for Audio 1")
@@ -309,7 +310,7 @@ class Preferences(GObject.GObject):
             if math.isinf(val):
                 vol = 0
             else:
-                vol = 60 + val
+                vol = 120 + val
             self.volumebutton_audio2.set_value(vol)
         else:
             logger.debug("Error getting volume info for Audio 1")
@@ -330,11 +331,12 @@ class Preferences(GObject.GObject):
             idx = self.combobox_audio2.get_active()
             model = self.combobox_audio2.get_model()
             chn = self.audio2_source_info[2].channels
-
+        if idx < 0:
+            return
         c_iter = model.get_iter(idx)
         idx = model.get_value(c_iter, 1)
         pa_idx = list(get_by_idx(prefs.audio_sources, idx))[0][0]
-        cvol = prefs.pa_q.dB_to_cvolume(chn, value - 60)
+        cvol = prefs.pa_q.dB_to_cvolume(chn, value - 120)
         prefs.pa_q.set_source_volume_by_index(pa_idx, cvol)
 
     #

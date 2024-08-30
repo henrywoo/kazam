@@ -11,12 +11,12 @@
     <property name="page_increment">10</property>
   </object>
   <object class="GtkAdjustment" id="adjustment_volume">
-    <property name="upper">60</property>
+    <property name="upper">120</property>
     <property name="step_increment">1</property>
     <property name="page_increment">3</property>
   </object>
   <object class="GtkAdjustment" id="adjustment_volume2">
-    <property name="upper">60</property>
+    <property name="upper">120</property>
     <property name="step_increment">1</property>
     <property name="page_increment">3</property>
   </object>
@@ -913,7 +913,7 @@ audio-volume-medium</property>
                   <object class="GtkLabel" id="label27">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Stream Name</property>
+                    <property name="label" translatable="yes">Stream Key</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
@@ -969,7 +969,7 @@ audio-volume-medium</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Make a YouTube Live event and 
 select Custom Ingestion  for it.
-Copy Stream Name and Primary
+Copy Stream Key and Primary
 Server URL in the entry fields.</property>
                     <property name="relief">none</property>
                     <property name="uri">https://www.youtube.com/my_live_events</property>
@@ -1250,9 +1250,10 @@ Server URL in the entry fields.</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <items>
-                      <item id="0" translatable="yes">320x240</item>
-                      <item id="1" translatable="yes">640x480</item>
-                      <item id="2" translatable="yes">800x600</item>
+                      <item id="0" translatable="yes">160x120</item>
+                      <item id="1" translatable="yes">320x240</item>
+                      <item id="2" translatable="yes">640x480</item>
+                      <item id="3" translatable="yes">800x600</item>
                     </items>
                     <signal name="changed" handler="cb_combobox_webcam_resolution_changed" swapped="no"/>
                   </object>

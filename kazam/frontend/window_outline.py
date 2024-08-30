@@ -2,6 +2,7 @@
 #
 #       window_select.py
 #
+#       Copyright 2018 Henry Fuheng Wu <wufuheng@gmail.com>
 #       Copyright 2012 David Klasinc <bigwhale@lubica.net>
 #
 #       This program is free software; you can redistribute it and/or modify
@@ -91,6 +92,7 @@ class OutlineWindow(GObject.GObject):
         self.window.show_all()
         logger.debug("Outline window shown.")
         self.show_ready = True
+        self.show_text = "Press Capture button to record."
 
     def pos_adjust(self, x, y, w, h):
         self.x = x - 1
@@ -109,8 +111,9 @@ class OutlineWindow(GObject.GObject):
             self.window.move(self.x, self.y)
             self.window.resize(self.w, self.h)  # Resize the window
 
-    def show(self, show_ready=True):
+    def show(self, show_ready=True, show_text="Press Capture button to record."):
         self.show_ready = show_ready
+        self.show_text = show_text
         self.window.show_all()
         self.window.queue_draw()
 
@@ -175,7 +178,7 @@ class OutlineWindow(GObject.GObject):
             cr.select_font_face("Sans", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
             cr.set_font_size(11)  # Set font size
             cr.move_to(5, 12)  # Position the text slightly inside the background rectangle
-            cr.show_text("Press Capture button to record.")
+            cr.show_text(self.show_text)
             cr.stroke()
 
     def destroy(self):

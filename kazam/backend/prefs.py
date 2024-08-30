@@ -2,6 +2,7 @@
 #
 #       prefs.py
 #
+#       Copyright 2018 Henry Fuheng Wu <wufuheng@gmail.com>
 #       Copyright 2012 David Klasinc <bigwhale@lubica.net>
 #
 #       This program is free software; you can redistribute it and/or modify
@@ -132,7 +133,7 @@ class Prefs():
         self.yt_server = ''
 
         self.tw_stream = ''
-        self.tw_server = ''
+        self.tw_server = 'rtmp://live.twitch.tv/app/'
 
         self.broadcast_dst = ''
 
@@ -536,6 +537,7 @@ MODE_SCREENCAST = 0
 MODE_SCREENSHOT = 1
 MODE_BROADCAST = 2
 MODE_WEBCAM = 3
+MODE_OCR = 4
 
 # Record modes
 MODE_FULL = 0
@@ -562,10 +564,10 @@ CAM_PREVIEW_BR = 2
 CAM_PREVIEW_BL = 3
 
 CAM_RESOLUTIONS = [
+    [160, 120],
     [320, 240],
     [640, 480],
-    [800, 600],
-    [1024, 768]
+    [800, 600]
 ]
 
 # Area resize handle cursors

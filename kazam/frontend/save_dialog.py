@@ -2,6 +2,7 @@
 #
 #       save_dialog.py
 #
+#       Copyright 2018 Henry Fuheng Wu <wufuheng@gmail.com>
 #       Copyright 2012 David Klasinc <bigwhale@lubica.net>
 #       Copyright 2010 Andrew <andrew@karmic-desktop>
 #
@@ -38,11 +39,15 @@ def SaveDialog(title, old_path, codec, main_mode=MODE_SCREENCAST):
                                    (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
                                     _("Save"), Gtk.ResponseType.OK))
 
-    dt = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
+    dt = datetime.today().strftime("%Y-%m-%d-%H-%M-%S")
     if main_mode == MODE_SCREENCAST:
-        dialog.set_current_name("{0} {1}{2}".format(_("Screencast"), dt, CODEC_LIST[codec][3]))
+        dialog.set_current_name("{0}_{1}{2}".format(_("Screencast"), dt, CODEC_LIST[codec][3]))
     elif main_mode == MODE_SCREENSHOT:
-        dialog.set_current_name("{0} {1}.png".format(_("Screenshot"), dt))
+        dialog.set_current_name("{0}_{1}.png".format(_("Screenshot"), dt))
+    elif main_mode == MODE_OCR:
+        # Use ".png" for images and ".txt" for text files
+        file_extension = ".txt" if codec == "text" else ".png"
+        dialog.set_current_name("{0}_{1}{2}".format(_("OCR"), dt, file_extension))
 
     dialog.set_do_overwrite_confirmation(True)
 
@@ -54,6 +59,9 @@ def SaveDialog(title, old_path, codec, main_mode=MODE_SCREENCAST):
             dialog.set_current_folder(prefs.video_dest)
             logger.debug("Previous path invalid, setting it to: {0}".format(prefs.video_dest))
         elif main_mode == MODE_SCREENSHOT:
+            dialog.set_current_folder(prefs.picture_dest)
+            logger.debug("Previous path invalid, setting it to: {0}".format(prefs.picture_dest))
+        elif main_mode == MODE_OCR:
             dialog.set_current_folder(prefs.picture_dest)
             logger.debug("Previous path invalid, setting it to: {0}".format(prefs.picture_dest))
 

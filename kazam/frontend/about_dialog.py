@@ -2,6 +2,7 @@
 #
 #       authenticate.py
 #
+#       Copyright 2018 Henry Fuheng Wu <wufuheng@gmail.com>
 #       Copyright 2012 David Klasinc <bigwhale@lubica.net>
 #       Copyright 2010 Andrew <andrew@karmic-desktop>
 #
@@ -58,7 +59,7 @@ LICENSE = """
 def AboutDialog(icons):
     dialog = Gtk.AboutDialog()
     dialog.set_program_name(_("Kazam") + " - \"" + CODENAME + "\"")
-    dialog.set_comments(_("Record a video of activity on your screen or capture a screenshot."))
+    dialog.set_comments(_("Linux Screen Recorder, Broadcaster and OCR"))
     dialog.set_license(LICENSE)
     dialog.set_version(VERSION)
     dialog.set_copyright("Henry Fuheng Wu\nDavid Klasinc\nAndrew Higginson\n")
