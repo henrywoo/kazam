@@ -1,4 +1,4 @@
-# ![image0](https://raw.githubusercontent.com/henrywoo/kazam/master/kazam.png) Kazam2 - Linux Screen Recorder, Broadcaster, Capture and OCR
+# ![image0](https://raw.githubusercontent.com/henrywoo/kazam/master/kazam.png) Kazam2 - Linux Screen Recorder, Broadcaster, Capture and OCR with AI
 
 ![Documentation Status](https://readthedocs.org/projects/hiq/badge/?version=latest) ![CodeCov](https://codecov.io/gh/uber/athenadriver/branch/master/graph/badge.svg) ![Github release](https://img.shields.io/badge/release-v2.0.0-red) ![License](https://img.shields.io/badge/License-Apache--2.0-red)
 
