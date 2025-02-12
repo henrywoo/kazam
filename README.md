@@ -37,7 +37,7 @@ Kazam needs some dependency libraries like `dbus`, `cairo` to work. In Ubuntu, y
 ```bash
 sudo apt install build-essential libpython3-dev \
     libdbus-1-dev libcairo2-dev libgirepository1.0-dev \
-    gir1.2-gudev-1.0 gir1.2-keybinder-3.0 python3-gi python3-gst-1.0 xdotool -y
+    gir1.2-gudev-1.0 gir1.2-keybinder-3.0 python3-gi python3-gst-1.0 xdotool cmake -y
 ```
 
 In Ubuntu, make sure the PulseAudio GStreamer plugin is installed. If not, run:
